@@ -1,0 +1,14 @@
+---
+sidebar: sidebar 
+permalink: video_AVDRDS_app_management_54.html 
+summary: NetApp VDS v5.4를 사용하여 AVD 및 RDS의 애플리케이션 관리를 자동화합니다 
+keywords:  
+---
+= NetApp VDS v5.4를 사용하여 AVD 및 RDS의 애플리케이션 관리를 자동화합니다
+
+
+
+
+== 개요
+
+video::19NpO8v15BE[youtube, ]

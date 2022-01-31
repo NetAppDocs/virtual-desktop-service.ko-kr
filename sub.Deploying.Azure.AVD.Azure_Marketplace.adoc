@@ -1,0 +1,120 @@
+---
+sidebar: sidebar 
+permalink: Deploying.Azure.AVD.Azure_Marketplace.html 
+summary: Azure Marketplace를 통해 VDS를 구입하는 단계별 가이드 
+keywords:  
+---
+= Azure 마켓플레이스 단계
+
+
+VDS 팀은 2021년 1월 15일 금요일 현재 Azure 마켓플레이스를 통해 서비스가 유효하며 거래할 준비가 되어 있다고 보고하고 있습니다. 이 새로운 시장 기능은 NetApp/Microsoft 공동 고객으로서 몇 가지 주요 이점을 제공합니다.
+
+* Azure Marketplace를 통해 구입한 서비스에 대한 비용을 지불하기 위해 기존의 기업 계약 약속을 사용할 수 있으므로, 이 강력한 AVD 개선 서비스에 대한 순 신규 예산을 정의 및 할당할 필요가 없습니다. VDS를 지원하고 AVD 환경을 간소화하기 위해 기존 Azure 약속을 활용할 수 있습니다. 전체 클라우드 지출을 줄일 수 있습니다!
+* 관리 부담 없이 운영 향상 – Microsoft는 VDS 서비스를 나머지 인프라 및 서비스와 함께 기존 Azure 송장에 추가하기만 하면 됩니다. 이 방법은 자동화 및 오케스트레이션을 활용하여 AVD 구축을 간소화하고 클라우드 인프라 비용을 절감하는 빠르고 쉬운 방법입니다. AVD 투자를 더욱 효과적으로 활용할 수 있습니다.
+
+
+
+
+=== 라이센스 수 FAQ:
+
+* Azure Marketplace에서 라이센스 수 용량을 적용하려면 라이센스 수 용량이 필요합니다. 즉, Azure Marketplace에서 구매한 라이센스 수보다 많은 사용자에 대해 가상 데스크톱을 사용하도록 설정할 수 없습니다.
++
+** 예를 들어, POC를 위해 100명의 사용자를 구매했으며 추가 사용자를 사용하려는 경우 Azure Marketplace로 다시 이동하여 Azure Marketplace를 통해 구매한 라이센스 수를 늘리십시오.
+
+
+* 라이센스 수 적용이 필요할 때 관리자가 Azure 포털을 통해 구입한 라이센스 수를 VDS에서 프로비저닝된 데스크톱 사용자 수보다 적은 수로 줄이면 VDS UI에 로그인할 때 오류 메시지가 표시됩니다.
++
+** 이러한 이유로 구입한 VDS 라이센스의 수를 줄여야 하는 경우 Azure Marketplace에서 라이센스 수를 줄이기 전에 VDS의 사용자에서 가상 데스크톱의 프로비저닝을 해제하는 것이 가장 좋습니다.
+
+
+
+
+
+
+== 개요
+
+. Azure Marketplace를 검색합니다
+
+
+image::Deploying.Azure.AVD.Azure_Marketplace-18287.png[Deploying.Azure.AVD.Azure Marketplace 18287 을 참조하십시오]
+
+. "프라이빗 특가" 체크인
++
+image::Deploying.Azure.AVD.Azure_Marketplace-4cba8.png[Deploying.Azure.AVD.Azure Marketplace 4cba8 을 참조하십시오]
+
+. "설정 + 가입"을 클릭합니다.
++
+image::Deploying.Azure.AVD.Azure_Marketplace-885e1.png[Deploying.Azure.AVD.Azure 마켓플레이스 8851]
+
+. 구독, 이름 및 사용자 수를 선택합니다
++
+image::Deploying.Azure.AVD.Azure_Marketplace-36efc.png[배포 .Azure.AVD.Azure 마켓플레이스 36efc]
+
+. 약관을 검토하고 "Subscribe"를 클릭합니다.
++
+image::Deploying.Azure.AVD.Azure_Marketplace-bbe9d.png[Deploying.Azure.AVD.Azure 마켓플레이스 bbe9d]
+
+. 가입이 완료될 때까지 기다립니다
++
+image::Deploying.Azure.AVD.Azure_Marketplace-9a2ef.png[배포 .Azure.AVD.Azure 마켓플레이스 9a2ef]
+
+. 가입이 완료되면 "지금 계정 구성"을 클릭합니다
++
+image::Deploying.Azure.AVD.Azure_Marketplace-38a10.png[Deploying.Azure.AVD.Azure Marketplace 38a10 을 참조하십시오]
+
+. 사용자 조직을 대신하여 사용 권한 및 동의를 수락합니다
++
+image::Deploying.Azure.AVD.Azure_Marketplace-b914e.png[Deploying.Azure.AVD.Azure Marketplace b914e 를 참조하십시오]
+
+. 기본 연락처 정보를 입력합니다
++
+image::Deploying.Azure.AVD.Azure_Marketplace-f9650.png[Azure.AVD.Azure Marketplace f9650 배포]
+
+. VDS 관리자 계정을 등록합니다
++
+image::Deploying.Azure.AVD.Azure_Marketplace-4f802.png[배포 .Azure.AVD.Azure 마켓플레이스 4f802]
+
+. 항목을 확인하고 "등록"을 클릭합니다.
++
+image::Deploying.Azure.AVD.Azure_Marketplace-8a6d6.png[Deploying.Azure.AVD.Azure Marketplace 8a6d6 을 참조하십시오]
+
+. 배포 마법사를 시작합니다. link:Deploying.Azure.AVD.Deploying_AVD_in_Azure_v6.html["Avd 배포 마법사 설명서 링크"]
++
+image::Deploying.Azure.AVD.Azure_Marketplace-6bb58.png[Deploying.Azure.AVD.Azure Marketplace 6bb58 을 참조하십시오]
+
+
+
+
+
+== 일반적인 문제 해결
+
+
+
+=== Azure AD 프로필을 가져오지 못했습니다
+
+이 일반적인 오류 메시지는 실제 문제가 무엇인지 알려 주지 않습니다. 사용자가 이 메시지를 보는 이유는 쿠키와 관련이 있기 때문에 사용자가 브라우저에서 타사 쿠키를 차단한 경우 발생할 수 있습니다. 이 설정은 Google Chrome에서 시크릿 모드에 있을 때 기본적으로 활성화됩니다. 타사 쿠키를 다시 활성화하면 마켓플레이스를 통해 VDS 주문을 진행할 수 있습니다.
+
+사용자는 각 브라우저의 설정 섹션을 통해 이 문제를 해결할 수 있습니다. 각 브라우저의 특정 위치는 다음과 같습니다.
+
+* Chrome: 이러한 설정은 개인 정보 보호 및 보안 섹션에 있습니다
+* Edge/Edge Chromium: 이 설정은 개인 정보 보호 섹션에 있습니다
+* Firefox: 이러한 설정은 개인 정보 보호 및 보안 섹션에 있습니다
+* Internet Explorer: 이러한 설정은 신뢰할 수 있는 사이트 섹션에 있습니다
+
+
+참고: 기업 네트워크(VPN 등)에 있는 경우 조직에서 브라우저에 이러한 컨트롤을 적용했을 수 있습니다. 다른 브라우저를 통해 타사 쿠키가 여전히 활성화되어 있는지 확인할 수 있습니다. 그렇지 않은 경우 시스템 관리자에게 문의하십시오.
+
+
+
+=== VDS에 액세스할 수 없습니다
+
+사용자가 액세스할 수 있는 웹 사이트에 대한 조직의 통제인 마켓플레이스 구매에 대한 장벽을 제시할 수 있는 또 다른 요소가 있습니다. 안타깝게도 이 문제는 사용자에게 명확하지 않은 경우가 많으며 사용자가 진행 방법을 잘 모를 수도 있습니다.
+
+이러한 현상은 다음과 같은 여러 가지 방법으로 나타날 수 있습니다.
+
+* 조직에서 특정 웹 사이트에 대한 액세스를 명시적으로 허용하지 않습니다
+* 조직에서 명시적으로 허용된 웹 사이트를 제외한 모든 웹 사이트에 대한 액세스를 허용하지 않습니다
+* 사용자가 처음 액세스할 때 모든 웹 사이트를 격리합니다(공통 Cisco Umbrella/OpenDNS 기능).
+
+
+사용자는 회사 네트워크 외부 또는 모바일 장치에서 동일한 프로세스를 시도하여 이 문제를 테스트할 수 있습니다. 이 방법으로 문제가 해결되고 계속 진행할 수 있는 경우 회사에서 제어하는 웹 브라우저 설정이 됩니다. 이 서비스 구입과 향후 이 서비스 업데이트에 대한 액세스를 허용하려면 시스템 관리자에게 문의하십시오.

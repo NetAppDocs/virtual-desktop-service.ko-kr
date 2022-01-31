@@ -1,0 +1,10 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.delete_backup-f8c61.png[Management.command center.operations.delete 백업 f8c61]
+
+image::Management.command_center.operations.delete_backup-dabbb.png[Management.command center.operations.delete 백업 dabbb]

@@ -1,0 +1,8 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.remove_vds_software-204f4.png[Management.command center.operations.VDS 소프트웨어 204f4를 제거합니다]

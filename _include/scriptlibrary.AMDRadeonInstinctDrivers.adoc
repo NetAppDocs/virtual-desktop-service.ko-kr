@@ -1,0 +1,14 @@
+= AMD Radeon 본능적인 드라이버 개요
+
+
+
+
+== AMD Radeon 본능적인 드라이버 개요
+
+이 스크립트 패키지는 초콜릿 패키지 관리자를 사용하여 _AMD Radeon 본능적인 드라이버_를 설치/제거합니다 (https://chocolatey.org/)[] 를 눌러 구축을 수행합니다. VM을 만들 때 VDS에서 초콜릿을 배포하지만 이 스크립트가 누락된 경우 초콜릿을 사전 요구 사항으로 확인하고 설치합니다.
+
+
+
+=== 작업 추가 대화 상자 창 스크린샷
+
+image::scriptlibrary.activity.InstallAMDRadeonInstinctDrivers.png[scriptlibrary.activity.InstallAMDRadeInstinctDrivers를 참조하십시오]

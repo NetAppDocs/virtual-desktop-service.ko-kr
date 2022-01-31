@@ -1,0 +1,14 @@
+---
+sidebar: sidebar 
+permalink: video_gemini.html 
+summary: NetApp VDS Gemini 데모 
+keywords:  
+---
+= NetApp VDS Gemini 데모
+
+
+
+
+== 개요
+
+iframe src='//players.brightcove.net/260701648001/H1gEPI1kz_default/index.html?videoId=6182654694001' allowfullscreen frameborder=0></iframe>

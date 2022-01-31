@@ -1,0 +1,8 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.generate_email_reports-72145.png[Management.command center.operations.전자 메일 보고서 72145를 생성합니다]

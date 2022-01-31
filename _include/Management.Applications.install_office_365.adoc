@@ -1,0 +1,112 @@
+= 수동 단계 개요
+
+
+
+
+== 수동 단계 개요
+
+라이선스 규칙을 사용하면 관리자가 단순히 Microsoft Office를 다운로드하기만 하면 사용자 계정이 로그인되지 않고 공유 터미널 서버에 설치하여 예상대로 여러 사용자가 사용할 수 있습니다. 대신 관리자는 특정 프로세스를 따라 공유 컴퓨터 활성화 플래그가 활성화된 Office Pro Plus를 설치해야 합니다.
+
+
+
+=== 프로세스 단계 요약
+
+. 먼저 에서 Office 배포 도구를 다운로드합니다 https://www.microsoft.com/en-us/download/details.aspx?id=49117[]
+. Office 구성 도구로 이동합니다. https://config.office.com/deploymentsettings[].
+
+
+
+NOTE: 이 가이드는 최소 필수 및 공유 컴퓨터 활성화 이외의 옵션을 건너뜁니다. 다른 옵션이 필요한 경우 여기 에서 Microsoft 가이드를 통해 자세한 내용을 확인할 수 있습니다. https://docs.microsoft.com/en-us/deployoffice/deploy-office-365-proplus-from-the-cloud)[]
+
+. 배포에 적합한 아키텍처 선택 – 32비트(예: 32비트 버전의 Office가 필요한 이전 Office 플러그인)를 사용해야 하는 특별한 이유가 없는 경우 64비트를 사용하는 것이 좋습니다.
++
+image:office1.png[""]
+
+. 원하는 Office 앱 및 버전을 선택합니다. 참고: Office Pro Plus만 공유 컴퓨터 정품 인증에 지원됩니다. 사용 중인 Office 버전(Office 365 Pro Plus, Office 365 E3)에 관계없이 Office 365 E5, Microsoft 365 Business, Microsoft 365 E3, Microsoft 365 E5)에서도 Office 365 Pro Plus를 계속 설치할 수 있습니다.
++
+image:office2.png[""]
+
+. 원하는 언어를 선택하고 다음 을 클릭하여 계속 진행합니다.
++
+image:office3.png[""]
+
+. “설치 옵션”에서 “작업 표시줄에 아이콘 고정”을 선택 취소하는 것이 좋습니다.
++
+image:office4.png[""]
+
+. 이 단계는 제품 활성화를 공유 컴퓨터로 설정하는 가장 중요한 단계입니다. 관리자는 사용자 환경의 이점을 위해 EULA에 자동으로 동의하는 토글을 클릭할 수도 있습니다.
++
+image:office5.png[""]
+
+. 페이지 맨 위로 돌아가 내보내기 를 클릭합니다.
++
+image:office6.png[""]
+
+. 현재 설정 유지 를 선택하고 확인 을 클릭하여 계속 진행합니다.
++
+image:office7.png[""]
+
+. 계약 조건에 동의하고 설치 파일의 이름을 유지하거나 변경한 다음 내보내기 를 클릭하여 계속 진행합니다. 이 가이드에서는 기본 "구성" 이름을 유지한다고 가정합니다.
++
+image:office8.png[""]
+
+. “Export(내보내기)”를 클릭하면 “Configuration.xml”에 대한 다운로드가 시작됩니다.
+. 앞서 다운로드한 officedeploymenttool EXE /self extracting 파일(officedeploymenttool_11901-20022.exe 이 파일을 작성할 때 파일 버전입니다)을 실행하고 새 폴더에 압축을 풉니다(이 예에서는 "C:\Office"가 사용된다고 가정함). Configuration.xml 파일을 같은 디렉터리에 복사합니다(이미 추출된 샘플 파일을 덮어씁니다).
+. 그런 다음 관리자 권한으로 명령 프롬프트를 열고 디렉터리를 “C:\Office”로 변경합니다(“CD\Office”실행).
+. 그런 다음 "setup.exe /download Configuration.xml"(10단계에서 내보낸 XML 파일과 일치하도록 "Configuration.xml" 변경)을 실행하고 아무 것도 발생하지 않는 것처럼 보일지는 신경 쓰지 마십시오. 이 단계는 다소 시간이 걸릴 수 있습니다.
+. 마지막으로 "setup.exe /configure Configuration.xml"을 실행합니다(다시 한 번 파일 이름에 맞게 XML 파일 이름 조정).
+
+
+
+
+== 지원되지 않는 자동 배포입니다
+
+
+WARNING: 이 자동화 프로세스는 사용자 지정 PS1과 사전 구축된 XML을 기반으로 합니다. NetApp은 해당 기능이 작동할 것이라는 보장이나 대상 시스템에 미치는 영향을 전혀 미치지 않는다는 점에서 지원되지 않습니다. PS1은 NetApp에서 호스팅되며, 언제든지 변경/사라질 수 있습니다. 이 방법을 사용자 고유의 자동화된 프로세스를 구축 및 호스팅하기 위한 템플릿으로 사용하는 것이 좋습니다. 이 프로세스는 2019년 8월 30일 Azure에서 Windows Server 2016 Datacenter 10.0.14393 및 Windows 10 Enterprise for Virtual Desktop 10.0.18362에서 검증되었습니다.
+
+
+
+=== 프로세스 단계 요약
+
+. 명령을 실행하여 Hosted.ps1을 다운로드하고 실행합니다
+. PS1은 호스팅된 Office 배포 구성 .xml(이 XML에 사용되는 Office 구성 도구 설정의 스크린샷 위치)을 다운로드합니다.
+. PS1은 .xml을 참조하여 ProPlus 설치를 실행합니다
+. PS1은 앱 게시를 위해 Microsoft Office 바로 가기를 단일 폴더로 복사합니다
+
+
+
+
+=== 사용자 지정 단계
+
+. 에서 호스팅되는 PS1을 다운로드하고 편집합니다 http://getAVD.com/proplus_minus_onedrive.ps1[]
++
+.. 위에서 설명한 고유한 XML 파일을 만들어 고유 URL에 업로드합니다
+.. "$download" 변수를 편집하여 사용자 고유의 구성 XML 파일을 가리키도록 합니다
+.. "$officeapps" 변수를 편집하여 구성 XML 파일에 의해 설치된 모든 바로 가기를 포함합니다
++
+image:office9.png[""]
+
+
+
+. 편집한 PS1 파일을 자신의 호스팅 URL에 업로드합니다
+. 스크립트된 이벤트 스크립트를 편집하여 사용자 지정 및 자체 호스팅 PS1(3.1단계)을 다운로드하고 실행합니다. 아래)
+
+
+
+
+=== 스크립트 이벤트 단계
+
+이는 정상적인 앱 설치 스크립트 이벤트 와 동일한 워크플로우를 따릅니다. 이 지침에서는 응용 프로그램 관리 계획의 단계에 따라 초콜릿 초콜릿이 이미 설치되어 있다고 가정합니다. 쇼콜라티에를 사용한 Office 365 ProPlus 자동 설치
+
+O365 ProPlus를 설치하려면 다음 설정으로 새 스크립트를 만듭니다.
+
+. 스크립트 파일이 없습니다
+. powershell.exe 으로 실행합니다
+. 인수(선택 사항): Set-ExecutionPolicy Bypass-Scope Process-Force; IEX((New-Object System.Net.WebClient).DownloadString(‘http://getAVD.com/proplus_minus_onedrive.ps1’)
+. 를 편집합니다 http://getAVD.com/proplus_minus_onedrive.ps1[] 자신의 호스팅된 PS1 파일의 URL로 바꿉니다.
++
+image:office10.png[""]
+
+
+
+스크립트가 저장되면 다음 단계는 해당 스크립트를 트리거와 연결하는 것입니다. 이 경우 VDS에서 응용 프로그램 설치가 요청될 때 스크립트를 트리거합니다. 자세한 내용은 애플리케이션 관리 가이드를 참조하십시오.

@@ -1,0 +1,116 @@
+= 개요
+
+
+
+
+== 개요
+
+Virtual Desktop Service 배포 기술을 사용하면 기본 인프라에 따라 다양한 스토리지 옵션을 사용할 수 있습니다. 이 가이드에서는 배포 후 변경 방법을 설명합니다.
+
+가상 데스크톱 성능 다양한 주요 리소스에 따라 달라지지만, 스토리지 성능은 주요 변수 중 하나입니다. 요구사항이 변화하고 워크로드가 진화함에 따라 스토리지 인프라를 변경해야 하는 경우가 많습니다. 이러한 기술은 일반적으로 최종 사용자 컴퓨팅 환경에 가장 뛰어난 성능 프로필을 제공하기 때문에 거의 모든 경우에 파일 서버 플랫폼에서 NetApp 스토리지 기술(예: Azure NetApp Files, NetApp Cloud Volumes Service in Google 또는 NetApp Cloud Volumes ONTAP in AWS)으로 마이그레이션하는 작업이 수반됩니다.
+
+
+
+=== 새로운 스토리지 계층 생성
+
+이 가이드에서는 다양한 클라우드 및 HCI 인프라 공급자와 관련된 다양한 잠재적 스토리지 서비스 덕분에 새로운 스토리지 서비스가 이미 구축되어 있고 SMB 경로가 알려진 것으로 가정합니다.
+
+
+
+=== 스토리지 폴더를 생성합니다
+
+. 새 스토리지 서비스에서 다음 세 개의 폴더를 생성합니다.
++
+** /데이터
+** /Home 을 선택합니다
+** /Pro 를 선택합니다
++
+image:storage1.png[""]
+
+
+
+. 폴더 권한을 설정합니다
++
+.. 폴더 속성에서 _ 보안, > 고급 > 상속 사용 안 함 _ 을 선택합니다
++
+image:storage2.png[""]
+
+.. 나머지 설정을 배포 자동화에 의해 원래 생성된 원래 스토리지 계층의 설정과 일치하도록 조정합니다.
+
+
+
+
+
+
+=== 데이터 이동
+
+디렉터리, 데이터, 파일 및 보안 설정은 다양한 방법으로 이동할 수 있습니다. 다음 로봇 복사 구문은 필요한 변경 사항을 달성합니다. 운영 환경에 맞게 경로를 변경해야 합니다.
+
+ robocopy c:\data\zucd \\uyy-1c37.deskapps.mobi\zucd-data /xd ~snapshot /MIR /CopyAll /R:1 /W:1 /tee /log:C:\temp\roboitD.txt
+
+
+=== 전환 시 SMB 경로를 리디렉션하는 중입니다
+
+컷오버가 필요한 시간이 되면 일부 변경으로 VDS 환경 전체의 모든 스토리지 기능이 리디렉션됩니다.
+
+
+
+==== GPO를 업데이트합니다
+
+. Users GPO(이름 _<company-code>-users_)를 새 공유 경로로 업데이트해야 합니다. 사용자 구성 > Windows 설정 > 기본 설정 > 드라이브 맵 _ 을(를) 선택합니다
++
+image:storage3.png[""]
+
+. H:_, _ 을(를) 마우스 오른쪽 버튼으로 클릭하고 속성 > 편집 > 동작: 바꾸기 _ 를 선택한 후 새 경로를 입력합니다
++
+image:storage4.png[""]
+
+. Classic 또는 Hybrid AD를 사용하면 회사 OU의 ADUC에 정의된 공유가 업데이트됩니다. 이 내용은 VDS 폴더 관리에 반영됩니다.
++
+image:storage5.png[""]
+
+
+
+
+
+==== FSLogix 프로필 경로를 업데이트합니다
+
+. 원래 파일 서버 및 기타 프로비저닝된 세션 호스트에서 Regedit를 엽니다.
++
+
+NOTE: 원하는 경우 GPO 정책을 통해 설정할 수도 있습니다.
+
+. 새 값으로 _VHDLocations_값을 편집합니다. 아래 스크린샷과 같이 새 SMB 경로와 _pro/profilecontainers_가 있어야 합니다.
++
+image:storage6.png[""]
+
+
+
+
+
+==== 홈 디렉토리에 대한 폴더 리디렉션 설정을 업데이트합니다
+
+. 그룹 정책 관리를 열고 DC=domain, DC=mobi/Cloud Workspace/Cloud Workspace Companies/<company-code>/<company-code>- 데스크톱 사용자에 연결된 사용자 GPO를 선택합니다.
+. User Configuration > Policies > Windows Settings > Folder Redirection 아래에서 폴더 리디렉션 경로를 편집합니다.
+. Desktop 및 Documents만 업데이트해야 하며 경로는 Home 볼륨의 새 SMB 경로 마운트 지점과 일치해야 합니다.
++
+image:storage7.png[""]
+
+
+
+
+
+==== Command Center로 VDS SQL 데이터베이스를 업데이트합니다
+
+CWMGR1에는 VDS 데이터베이스를 대량 업데이트할 수 있는 Command Center라는 도우미 유틸리티 응용 프로그램이 포함되어 있습니다.
+
+.최종 데이터베이스 업데이트 방법:
+. CWMGR1에 연결하고 CommandCenter.exe 을 탐색하고 실행합니다
++
+image:storage10.png[""]
+
+. Operations_탭으로 이동하고 _Load Data_를 클릭하여 회사 코드 드롭다운을 채우고 회사 코드를 선택한 다음 스토리지 계층의 새 스토리지 경로를 입력한 다음 _Execute Command_를 클릭합니다.
++
+image:storage11.png[""]
+
+

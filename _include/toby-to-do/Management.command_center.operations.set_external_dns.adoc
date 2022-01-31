@@ -1,0 +1,8 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.set_external_dns-abf19.png[Management.command center.operations.se t 외부 DNS abf19]

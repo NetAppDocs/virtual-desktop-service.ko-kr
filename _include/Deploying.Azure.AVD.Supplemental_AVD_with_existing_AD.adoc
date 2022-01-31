@@ -1,0 +1,58 @@
+= 개요
+
+
+
+
+== 개요
+
+VDS Setup(VDS 설정)은 새 배포를 기존 AD 구조에 연결할 수 있습니다. 이 지침은 해당 옵션에 대해 자세히 설명합니다. 이 문서는 독립 실행형 문서가 아니라 에서 다룬 새 AD 옵션 대신 사용할 수 있는 자세한 설명입니다 link:Deploying.Azure.AVD.Deploying_AVD_in_Azure.html["Avd 배포 가이드"]
+
+
+
+== Active Directory 유형입니다
+
+다음 섹션에서는 VDS 배포에 대한 Active Directory 배포 유형을 정의합니다. 이 가이드에서는 이미 존재하는 AD 구조를 활용하는 기존 Windows Server Active Directory를 선택합니다.
+
+
+
+== 기존 AD 네트워크
+
+VDS 설정은 기존 AD 구조와 Azure AD 간의 연결을 나타낼 수 있는 vNets 목록을 표시합니다. 선택한 VNET에는 Azure에서 구성한 Azure 호스팅 DC가 있어야 합니다. 또한 VNET에는 Azure 호스팅 DC를 가리키는 사용자 지정 DNS 설정이 있습니다.
+
+image:existingDNS.png[""]
+
+
+
+== 기존 Active Directory 도메인 이름입니다
+
+사용할 기존 도메인 이름을 입력합니다. 참고: Active Directory 모듈의 Azure Portal에 있는 도메인은 DNS 문제를 일으킬 수 있으므로 사용하지 마십시오. 이 방법의 주요 예는 사용자가 데스크톱 내에서 해당 웹 사이트(<yourdomain>.com)에 액세스할 수 없다는 것입니다.
+
+
+
+== 기존 AD 사용자 이름 및 암호
+
+기존 AD 구조를 사용하여 배포를 촉진하는 데 필요한 자격 증명을 제공하는 방법에는 세 가지가 있습니다.
+
+. Active Directory 도메인 관리자 사용자 이름 및 암호를 제공합니다
++
+이 방법은 배포를 용이하게 하는 데 사용되는 도메인 관리자 자격 증명을 제공하는 가장 쉬운 방법입니다.
+
++
+
+NOTE: 이 계정은 일회성 목적으로 만들 수 있으며 배포 프로세스가 완료되면 삭제할 수 있습니다.
+
+. 계정 일치 필수 권한을 생성합니다
++
+이 방법은 고객 관리자가 여기에서 권한 구조를 수동으로 생성한 후 여기에 CloudWorkspaceSVC 계정에 대한 자격 증명을 입력하고 계속 진행하는 것입니다.
+
+. 수동 배포 프로세스
++
+최소 권한 계정 보안 주체를 사용하여 AD 액세스를 구성하는 데 도움이 필요하면 NetApp VDS 지원에 문의하십시오.
+
+
+
+
+
+== 다음 단계
+
+이 문서에서는 기존 AD 환경에 배포할 수 있는 고유한 단계를 설명합니다. 이 단계가 완료되면 표준 배포 가이드로 돌아갈 수 있습니다 link:Deploying.Azure.AVD.Deploying_AVD_in_Azure.html#active-directory-type["여기"].

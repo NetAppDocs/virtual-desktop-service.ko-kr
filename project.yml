@@ -1,0 +1,200 @@
+---
+settings:
+  name: Virtual Desktop Service
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: ko-kr,us-en,ja-jp,zh-cn
+sidebar:
+  entries:
+  - title: Virtual Desktop Service 설명서
+    url: "/index.html"
+  - title: VDS를 사용한 배포
+    entries:
+    - title: Azure를 지원합니다
+      entries:
+      - title: Azure 가상 데스크톱
+        entries:
+        - title: Azure에서 AVD 배포
+          url: "/Deploying.Azure.AVD.Deploying_AVD_in_Azure.html"
+        - title: Supplemental - 기존 AD의 AVD
+          url: "/Deploying.Azure.AVD.Supplemental_AVD_with_existing_AD.html"
+        - title: VDS v5.4 AVD(구성 요소 및 권한)
+          url: "/Deploying.Azure.AVD.vds_v5.4_components_and_permissions.html"
+        - title: VDS v5.4 사전 요구 사항(AVD)
+          url: "/Deploying.Azure.AVD.vds_v5.4_prerequisites.html"
+        - title: VDS v6.0 전제 조건(AVD)
+          url: "/Deploying.Azure.AVD.vds_v6.0_prerequisites.html"
+    - title: 구글
+      entries:
+      - title: Google에서 RDS 배포
+        url: "/Deploying.GCP.RDS.deploying_rds_in_gcp.html"
+      - title: VDS v5.4 사전 요구 사항(RDS/GCP)
+        url: "/Deploying.GCP.vds_v5.4_prerequisites.html"
+  - title: 아키텍처
+    entries:
+    - title: 데이터 계층 변경
+      url: "/Architectural.change_data_layer.html"
+      entries:
+      - title: Azure 파일
+        url: "/Architectural.change_data_layer.Azure_Files.html"
+    - title: VDS로 데이터 마이그레이션
+      url: "/Architectual.migrate_data_into_vds.html"
+    - title: AVD v1을 v2로 업그레이드합니다
+      url: Architectual.upgrade_AVD_v1_to_v2.html
+    - title: SSL 인증서를 갱신합니다
+      url: "/Architectural.Wildcard_SSL_certificate_renewal_process.html"
+    - title: VDS 분해 안내서
+      url: "/Architectural.AVD_teardown_guide.html"
+  - title: 관리
+    entries:
+    - title: 적합합니다
+      entries:
+      - title: 컬렉션 프로비저닝
+        url: "/Management.Deployments.provisioning_collections.html"
+      - title: VDS 논리적 계층 개요
+        url: "/Management.Deployments.logical_hierarchy_overview.html"
+    - title: 응용 프로그램
+      entries:
+      - title: RDS용 앱 소유 권한
+        url: "/Management.Applications.application_entitlement_workflow.html"
+      - title: AVD에 대한 앱 소유 권한
+        url: "/Management.Applications.AVD_application_entitlement_workflow.html"
+    - title: 스크립트 이벤트
+      entries:
+      - title: Scribed 이벤트 개요
+        url: "/Management.Scripted_Events.scripted_events.html"
+    - title: Command Center를 클릭합니다
+      entries:
+      - title: 관리 Command Center 개요
+        url: "/Management.command_center.overview.html"
+      - title: 운영
+        entries:
+        - title: Gallery에 템플릿 복사
+          url: "/Management.command_center.operations.copy_template_to_gallery.html"
+    - title: 비용 최적화 구성
+      url: "/Management.Cost_Optimization.workload_schedule.html"
+    - title: 사용자 관리
+      entries:
+      - title: 사용자 계정 관리
+        url: "/Management.User_Administration.manage_user_accounts.html"
+      - title: 폴더 및 권한 관리
+        url: "/Management.User_Administration.manage_folders_and_permissions.html"
+      - title: 응용 프로그램 액세스 관리
+        url: "/Management.Applications.application_entitlement_workflow.html"
+      - title: 사용자 암호를 재설정합니다
+        url: "/Management.User_Administration.reset_user_password.html"
+      - title: MFA를 구성합니다
+        url: "/Management.User_Administration.multi-factor_authentication.html"
+    - title: 시스템 관리
+      entries:
+      - title: 도메인 관리자 계정을 생성합니다
+        url: "/Management.System_Administration.create_domain_admin_account.html"
+      - title: 타사 액세스 제공
+        url: "/Management.System_Administration.provide_3rd_party_access.html"
+      - title: 백업을 구성합니다
+        url: "/Management.System_Administration.configure_backup.html"
+      - title: 가상 머신의 클론을 생성합니다
+        url: "/Management.System_Administration.clone_virtual_machines.html"
+      - title: 디스크 공간 자동 추가
+        url: "/Management.System_Administration.auto_add_disk_space.html"
+      - title: Azure 키 저장소
+        url: "/Management.System_Administration.azure_key_vault.html"
+      - title: 바이러스 백신 구성
+        url: "/Management.System_Administration.configure_antivirus.html"
+      - title: 매핑된 드라이브 추가 및 이동
+        url: "/Management.System_Administration.adding_moving_mapped_drives.html"
+  - title: 문제 해결
+    entries:
+    - title: VDS 로그를 검토합니다
+      url: "/Troubleshooting.reviewing_vds_logs.html"
+    - title: 인터넷 연결 품질
+      url: "/Troubleshooting.internet_connection_quality.html"
+    - title: 사용자 배경화면을 활성화합니다
+      url: "/Troubleshooting.enable_user_wallpaper.html"
+    - title: 인쇄 문제
+      url: "/Troubleshooting.printing_issues.html"
+    - title: Azure vCPU 코어 할당량
+      url: "/Troubleshooting.azure_vcpu_core_quota.html"
+    - title: 사용자 계정 잠금을 해제합니다
+      url: "/Troubleshooting.unlocking_user_accounts.html"
+    - title: 일반 VM 성능
+      url: "/Troubleshooting.general_vm_performance.html"
+    - title: Azure용 DNS Forwarding은 SSO를 추가합니다
+      url: "/Troubleshooting.dns_forwarding_for_azure_aadds_sso.html"
+    - title: 응용 프로그램 문제
+      url: "/Troubleshooting.application_issues.html"
+  - title: 참조하십시오
+    entries:
+    - title: 릴리스 정보
+      entries:
+      - title: VDS v6.0 릴리스 정보
+        url: "/Reference.Release_Notes.vds_v6.0_release_notes.html"
+      - title: VDS v5.4 릴리스 정보
+        url: "/Reference.Release_Notes.vds_v5.4_release_notes.html"
+      - title: VDS Windows 클라이언트 릴리스 정보
+        url: "/Reference.Release_Notes.vds_windows_client_release_notes.html"
+      - title: 이전 버전
+        entries:
+        - title: VDS v5.3 릴리스 정보
+          url: "/Reference.Release_Notes.vds_v5.3_release_notes.html"
+        - title: CWMS v5.2 릴리스 정보
+          url: "/Reference.Release_Notes.cwms_v5.2_release_notes.html"
+        - title: CWS v5.1 릴리스 노트
+          url: "/Reference.Release_Notes.cws_v5.1_release_notes.html"
+        - title: CWS v5.0 릴리스 정보
+          url: "/Reference.Release_Notes.cws_v5.0_release_notes.html"
+    - title: 최종 사용자 액세스
+      url: "/Reference.end_user_access.html"
+    - title: VDS는 환경을 변경합니다
+      url: "/Reference.vds_change_environments.html"
+    - title: 스크립트 라이브러리 문서
+      entries:
+      - title: Adobe Reader DC
+        url: "/scriptlibrary.AdobeReader.html"
+      - title: AMD Radeon 본능적인 드라이버
+        url: "/scriptlibrary.AMDRadeonInstinctDrivers.html"
+      - title: Ezeep Print 앱
+        url: "/scriptlibrary.EzeepPrintApp.html"
+      - title: Google Chrome
+        url: "/scriptlibrary.GoogleChrome.html"
+      - title: Microsoft Edge Chromium
+        url: "/scriptlibrary.MicrosoftEdgeChromium.html"
+      - title: Microsoft Office 365
+        url: "/scriptlibrary.MicrosoftOffice365.html"
+      - title: Microsoft One 드라이브
+        url: "/scriptlibrary.MicrosoftOneDrive.html"
+      - title: Microsoft 팀
+        url: "/scriptlibrary.MicrosoftTeams.html"
+      - title: AVD를 위한 Microsoft 팀
+        url: "/scriptlibrary.MicrosoftTeamsAVD.html"
+      - title: NVIDIA CUDA 드라이버
+        url: "/scriptlibrary.NvidiaCudaDrivers.html"
+      - title: NVIDIA Grid 드라이버
+        url: "/scriptlibrary.NvidiaGridDrivers.html"
+      - title: Avd 화면 캡처 보호
+        url: "/scriptlibrary.AVDScreenCaptureProtection.html"
+      - title: AVD 확대/축소
+        url: "/scriptlibrary.ZoomVDI-AVD.html"
+    - title: 고급
+      entries:
+      - title: FSLogix 프로필 축소
+        url: "/Advanced.fslogix_profile_shrink.html"
+  - title: NetApp VDS v5.4 비디오
+    entries:
+    - title: NetApp TV 콘텐츠
+      url: "/video_content_netapptv.html"
+    - title: AVD 또는 RDS를 배포합니다
+      url: "/video_azure_AVDRDS_deploy_54.html"
+    - title: Azure에서 AVD 호스트 풀을 추가합니다
+      url: "/video_azure_AVD_hostpool_54.html"
+    - title: AVD 사용자 및 앱 그룹을 관리합니다
+      url: "/video_azure_AVD_users_appgroups_54.html"
+    - title: 리소스 관리 및 비용 최소화
+      url: "/video_azure_AVDRDS_optimize_resources_54.html"
+    - title: AVD 및 RDS에 대한 애플리케이션 관리 자동화
+      url: "/video_VDS_day_in_the_life.html"
+    - title: v1 AVD 호스트 풀을 v2로 업그레이드합니다
+      url: "/Architectual.upgrade_AVD_v1_to_v2.html"

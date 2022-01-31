@@ -1,0 +1,8 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.backups_run_all_scheduled-be912.png[Management.command center.operations.backups는 예약된 모든 be912를 실행합니다]

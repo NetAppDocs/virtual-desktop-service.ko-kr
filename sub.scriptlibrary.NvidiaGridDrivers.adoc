@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: scriptlibrary.NvidiaGridDrivers.html 
+summary: 스크립트 설명서 - Nvidia 그리드 드라이버 
+keywords:  
+---
+= 스크립트 이벤트 설명서 - Nvidia 그리드 드라이버
+
+
+
+
+== 글로벌 스크립트 개요
+
+NetApp VDS에는 VDS 환경에서 직접 사용하거나 중복하여 사용자 지정 스크립트 이벤트의 구성 요소로 사용할 수 있는 사전 정의된 스크립트 기반 이벤트 라이브러리가 포함되어 있습니다.
+
+이 응용 프로그램의 경우 이 문서에서는 설치/활성화 및 제거/비활성화 작업을 모두 다룹니다.
+
+
+
+== 글로벌 스크립트 사용
+
+이 이벤트와 같은 스크립트 이벤트가 미리 채워지고 "글로벌" 필터 확인란을 선택하면 해당 이벤트가 표시됩니다.
+
+이와 같은 Global Scripted Events는 읽기 전용입니다. 그대로 사용하거나 "클론" 기능을 사용하여 편집 및 사용할 고객 복사본을 생성할 수 있습니다.
+
+클론 버튼은 Scriped Events 페이지의 작업 메뉴에 있습니다.
+
+image::scriptlibrary.overview-2ccb2.png[scriptlibrary.overview 2ccb2]
+
+
+
+== NVIDIA GRID 드라이버 개요
+
+이 스크립트 패키지는 초콜릿 패키지 관리자를 사용하여 _Nvidia GRID Drivers_를 설치/제거합니다 (https://chocolatey.org/)[] 를 눌러 구축을 수행합니다. VM을 만들 때 VDS에서 초콜릿을 배포하지만 이 스크립트가 누락된 경우 초콜릿을 사전 요구 사항으로 확인하고 설치합니다.
+
+
+
+=== 작업 추가 대화 상자 창 스크린샷
+
+image::scriptlibrary.activity.InstallNvidiaGridDrivers.png[scriptlibrary.activity.InstallcipidiaGridDrivers를 참조하십시오]
+
+
+
+=== 수동 활동을 추가합니다
+
+리포지토리의 스크립트에서 작업을 수행하기 위해서는 해당 스크립트를 선택한 트리거와 연결하기 위한 작업을 만들어야 합니다. 이 예에서는 VDS 관리자가 수동으로 스크립트를 트리거할 때 작업이 실행됩니다.
+
+VDS 스크립팅된 이벤트는 _Create Server_와 같이 _Manual_event 유형 대신 사용할 수 있는 다양한 유형의 활동 트리거를 제공합니다. Create Server _ 을(를) 사용하면 VDS에서 새로 생성된 모든 VM에서 이 스크립트를 실행할 수 있습니다. _Create Server_ 및 기타 트리거는 문서화되어 있으며 탐색할 수 있습니다 link:Management.Scripted_Events.scripted_events.html["여기"].
+
+.작업을 생성하고 이 스크립트를 작업에 연결하려면:
+. VDS에서 스크립트된 이벤트 섹션으로 이동합니다
+. Activities_에서 _ + Add Activity _ 를 클릭합니다
+. 열린 대화 상자 창에서 다음 정보를 입력합니다.
++
+** * 이름: * 이 활동의 이름을 지정합니다
+** * 설명: * 선택적으로 설명을 입력합니다
+** * 배포 * 드롭다운에서 원하는 배포를 선택합니다
+** * 스크립트: * 드롭다운에서 설치(또는 제거) 스크립트를 선택합니다. 이는 클론 복제 및 사용자 지정한 글로벌 스크립트 또는 고객 스크립트일 수 있습니다.
+** 인수: * 공란으로 남겨 둡니다
+** 사용 확인란: * 확인란을 선택합니다
+** * 이벤트 유형: * 드롭다운에서 '수동'을 선택합니다
+** Target Type: * '서버' 라디오 버튼을 선택합니다
+** 관리되는 서버: * 이 제거를 받아야 하는 각 VM의 확인란을 선택합니다.
+
+
+

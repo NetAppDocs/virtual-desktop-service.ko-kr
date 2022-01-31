@@ -1,0 +1,106 @@
+---
+sidebar: sidebar 
+permalink: Management.System_Administration.adding_moving_mapped_drives.html 
+summary: 매핑된 드라이브 추가 및 이동 
+keywords:  
+---
+= 매핑된 드라이브 추가 및 이동
+
+
+
+
+== 개요
+
+기본적으로 최종 사용자 세션에 표시되는 공유 폴더는 세 개입니다. 이러한 폴더는 정의된 스토리지 계층에서 찾을 수 있습니다. 파일 서버(TSD1 또는 D1) 또는 Azure Files, Azure NetApp Files, NetApp CVO, NetApp CVS와 같은 스토리지 서비스에 있을 수 있습니다.
+
+이 문서에서는 명확한 이해를 돕기 위해 회사 코드 "NECA"를 사용하는 고객을 예로 소개합니다. 이 예제에서는 NECATSD1이라는 단일 TDS1 서버가 구축되었다고 가정합니다. 폴더를 다른 VM("NECAD1"이라는 이름)으로 이동하는 프로세스를 진행할 것입니다. 이 전략은 다음 예와 같이 동일한 시스템의 파티션 간 또는 다른 시스템으로 이동하는 데 사용할 수 있습니다.
+
+폴더 시작 위치:
+
+* 데이터: NECATSD1\C:\data\NECA\(TSD1은 첫 번째 터미널 서버이며 데이터 서버로도 작동함을 의미)
+* FTP: NECATSD1\C:\FTP\NECA\
+* 홈: NECATSD1\C:\HOME\NECA\
+
+
+폴더 종료 위치:
+
+* 데이터: NECAD1\G:\data\NECA\(D1은 첫 번째 데이터 서버임을 의미)
+* FTP: 동일한 프로세스가 적용되며 세 배 이상 설명할 필요가 없습니다
+* 가정: 동일한 프로세스가 적용되며 세 배 이상 설명할 필요가 없습니다
+
+
+
+
+== NECAD1에서 G:에 대한 디스크를 추가합니다
+
+. E: 드라이브에 공유 폴더를 배치하려면 하이퍼바이저(예 Azure Management Portal)을 사용하여 초기화한 다음 포맷합니다
++
+image:mapped1.png[""]
+
+. 기존 폴더(NECATSD1, C:\) 경로를 새 위치(NECAD1, G:\)로 복사합니다.
+. 원래 위치에서 새 위치로 폴더를 복사합니다.
++
+image:mapped2.png[""]
+
+
+
+
+
+== 원본 폴더 공유에서 정보 수집(NECATSD1, C:\DATA\NECA\)
+
+. 원래 위치의 폴더와 정확히 동일한 경로를 사용하여 새 폴더를 공유합니다.
+. 새 NECAD1, G:\data\ 폴더를 열면 회사 코드 "NECA"라는 이름의 폴더가 이 예에 표시됩니다.
++
+image:mapped3.png[""]
+
+. 원본 폴더 공유의 보안 권한을 확인합니다.
++
+image:mapped4.png[""]
+
+. 다음은 일반적인 설정이지만 보존해야 하는 기존 사용자 정의가 있는 경우 원래 설정을 복사하는 것이 중요합니다. 다른 모든 사용자/그룹 권한은 새 폴더 공유에서 제거해야 합니다
++
+** 시스템: 모든 권한이 허용됩니다
+** LocalClientDHPAccess(로컬 컴퓨터): 모든 권한이 허용됩니다
+** ClientDHPAccess (도메인): 모든 권한이 허용됩니다
+** NECA - 도메인에 있는 모든 사용자: "모든 권한"을 제외한 모든 권한이 허용됩니다
+
+
+
+
+
+
+== 공유 경로 및 보안 권한을 새 공유 폴더에 복제합니다
+
+. 새 위치(NECAD1, G:\data\NECA\)로 돌아가서 동일한 네트워크 경로(시스템 제외)로 NECA 폴더를 공유합니다(예: "NECA-DATA$").
++
+image:mapped5.png[""]
+
+. 사용자 보안을 위해 모든 사용자를 추가하려면 해당 권한을 일치시킬 수 있도록 설정합니다.
++
+image:mapped6.png[""]
+
+. 이미 있을 수 있는 다른 사용자/그룹 권한을 제거합니다.
++
+image:mapped7.png[""]
+
+
+
+
+
+== 그룹 정책 편집(폴더가 새 컴퓨터로 이동된 경우에만)
+
+. 그런 다음 그룹 정책 관리 편집기에서 드라이브 맵을 편집합니다. Azure AD 도메인 서비스의 경우 매핑은 다음 위치에 있습니다.
++
+ “Cloud Workspace Users > User Configuration > Preferences > Windows Settings> Drive Maps”
++
+image:mapped8.png[""]
+
+. 그룹 정책이 업데이트되면 다음에 각 사용자가 연결할 때 새 위치를 가리키는 매핑된 드라이브가 표시됩니다.
+. 이때 NECATSD1, C:\에서 원래 폴더를 삭제할 수 있습니다.
+
+
+
+
+== 문제 해결
+
+최종 사용자가 빨간색 X가 있는 매핑된 드라이브를 볼 경우 드라이브를 마우스 오른쪽 버튼으로 클릭하고 DISCONNECT를 선택합니다. 로그아웃한 후 드라이브에 다시 로그인하면 올바르게 표시됩니다.image:mapped9.png[""]

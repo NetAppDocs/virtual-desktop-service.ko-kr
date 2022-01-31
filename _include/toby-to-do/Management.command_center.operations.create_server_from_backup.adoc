@@ -1,0 +1,20 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.create_server_from_backup-cac47.png[Management.command center.operations.backup cac47에서 서버를 생성합니다]
+
+image::Management.command_center.operations.create_server_from_backup-eabc4.png[Management.command center.operations.backup eabc4에서 서버를 생성합니다]
+
+image::Management.command_center.operations.create_server_from_backup-14061.png[Management.command center.operations.backup 14061에서 서버를 생성합니다]
+
+image::Management.command_center.operations.create_server_from_backup-c7d6b.png[Management.command center.operations.backup c7d6b에서 서버를 생성합니다]
+
+image::Management.command_center.operations.create_server_from_backup-a487e.png[Management.command center.operations.backup a487e에서 서버를 생성합니다]
+
+image::Management.command_center.operations.create_server_from_backup-51ac2.png[Management.command center.operations.backup 51ac2에서 서버를 생성합니다]
+
+image::Management.command_center.operations.create_server_from_backup-b0fa0.png[Management.command center.operations.backup b0fa0에서 서버를 생성합니다]

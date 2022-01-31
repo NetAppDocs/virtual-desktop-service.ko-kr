@@ -1,0 +1,121 @@
+= 개요
+
+
+
+
+== 개요
+
+Azure AVD(Virtual Desktop) 환경에서 애플리케이션 액세스는 앱 그룹 멤버십에 의해 관리됩니다.
+
+
+NOTE: 이 워크플로는 AVD 구축에만 적용됩니다. RDS 응용 프로그램 권한 설명서는 를 참조하십시오 link:Management.Applications.application_entitlement_workflow.html["RDS용 애플리케이션 자격 워크플로우"]
+
+
+TIP: Avd는 잘 문서화된 서비스이며 많은 서비스가 있습니다 link:https://docs.microsoft.com/en-us/azure/virtual-desktop/manage-app-groups["공용 리소스 를 참조하십시오"]. VDS는 AVD가 작동하는 표준 방식을 중첩하지 않습니다. 이 문서는 VDS가 모든 AVD 구축 환경에서 발견되는 표준 개념에 어떻게 접근하는지 설명하기 위해 작성되었습니다.
+
+
+TIP: 를 검토합니다 link:Management.Deployments.logical_hierarchy_overview.html["VDS 논리적 계층 개요"] 문서는 이 문서를 검토하기 전이나 검토하는 동안 유용할 수 있습니다.
+
+
+
+=== 최종 사용자 보기
+
+Azure 가상 데스크톱에서는 각 최종 사용자에게 AVD 관리자가 RemoteApp 및/또는 데스크톱에 대한 액세스 권한이 할당됩니다. 이 작업은 VDS의 앱 그룹 할당을 통해 수행됩니다.
+
+* RemoteApp * 는 세션 호스트에서 원격으로 실행되지만 데스크톱 컨텍스트 없이 로컬 장치에 표시되는 응용 프로그램을 의미합니다. 일반적으로 "스트리밍 앱"이라고 하는 이 애플리케이션은 로컬 디바이스의 로컬 애플리케이션처럼 보이지만 보안 컨텍스트와 세션 호스트의 스토리지 및 컴퓨팅 계층에서 실행됩니다.
+
+* Desktop * 은 세션 호스트에서 실행되고 일반적으로 전체 화면 창에서 로컬 장치에 표시되는 전체 Windows 환경을 나타냅니다. 일반적으로 "원격 데스크톱"이라고 하는 이 데스크톱 자체에는 사용자가 데스크톱 세션 창 내에서 시작할 수 있는 세션 호스트에 설치된 모든 응용 프로그램이 포함됩니다.
+
+로그인하면 최종 사용자에게 관리자가 할당한 리소스가 표시됩니다. 다음은 AVD 클라이언트로 로그인할 때 최종 사용자가 볼 수 있는 보기의 예입니다. 이것은 보다 복잡한 예이며, 종종 최종 사용자는 Dingle 데스크톱 또는 RemoteApp만 할당하게 됩니다. 최종 사용자는 이러한 리소스를 두 번 클릭하여 해당 애플리케이션/데스크톱을 시작할 수 있습니다.
+
+image::Management.Deployments.vds_sites-0e49c.png[Management.Deployments.VDS 사이트 0e49c]
+
+이 보다 복잡한 예에서 이 사용자는 서로 다른 두 개의 데스크톱 세션과 4개의 스트리밍 애플리케이션에 액세스할 수 있습니다.
+
+* * 사용 가능한 데스크탑 *
++
+** NVIDIA GPU 데스크탑
+** 공유 AVD 풀 데스크톱
+** 작동 2 풀 데스크탑
+
+
+* * 사용 가능한 RemoteApps *
++
+** AutoCAD 2021
+** Revit 2021
+** Microsoft Edge를 참조하십시오
+** 메모장
+
+
+
+
+이러한 애플리케이션과 데스크톱은 다양한 세션 호스트, AVD 작업 공간에 호스팅되며 다른 Azure 영역에서 호스팅될 수도 있습니다.
+
+다음은 각 리소스가 호스팅되는 위치와 최종 사용자에게 리소스를 할당하는 방법을 보여 주는 다이어그램입니다.
+
+image::Management.Deployments.vds_sites-0e880.png[관리.배포.VDS 사이트 0e880]
+
+위에서 설명한 것처럼 이 최종 사용자가 사용할 수 있는 다양한 리소스는 서로 다른 세션 호스트, 서로 다른 호스트 풀에서 호스팅되며, 서로 다른 AVD 작업 공간의 여러 IT 조직에서 관리할 수 있습니다. 이 예에는 표시되지 않지만 VDS 사이트 기능을 사용하여 다른 Azure 지역 및/또는 구독에서도 이러한 리소스를 호스팅할 수 있습니다.
+
+
+
+=== 데스크톱 액세스 제공
+
+기본적으로 모든 호스트 풀은 Windows 데스크톱 환경에 대한 액세스를 할당하는 데 사용되는 단일 앱 그룹으로 시작됩니다. 이 세션 호스트에 설치된 모든 애플리케이션은 이 앱 그룹에 할당된 최종 사용자가 액세스할 수 있습니다.
+
+.VDS의 사용자에 대해 데스크톱 리소스를 활성화하려면 다음을 수행합니다.
+. 작업 공간 > AVD > 호스트 풀 > 앱 그룹 페이지로 이동하고 "데스크톱" 리소스에 대한 앱 그룹을 클릭합니다.
++
+image::Management.Applications.AVD_application_entitlement_workflow-349fe.png[관리.응용 프로그램.AVD 응용 프로그램 권한 워크플로 349fe]
+
+. 앱 그룹 내에서 편집 을 클릭합니다
++
+image::Management.Applications.AVD_application_entitlement_workflow-3bcfc.png[Management.Applications.AVD 응용 프로그램 사용 권한 워크플로 3bcfc]
+
+. 편집 대화 상자에서 사용자 및/또는 그룹별로 이 앱 그룹에 사용자를 추가하거나 제거할 수 있습니다.
++
+image::Management.Applications.AVD_application_entitlement_workflow-07ff0.png[Management.Applications.AVD 응용 프로그램 사용 권한 워크플로 07ff0]
+
+
+
+
+
+=== RemoteApp 액세스 제공
+
+RemoteApps에 대한 액세스 권한을 프로비저닝하려면 호스트 풀 내에 새 앱 그룹을 생성해야 합니다. 생성된 후에는 해당 앱을 이 앱 그룹에 할당해야 합니다.
+
+
+NOTE: 이러한 세션 호스트의 모든 애플리케이션은 이 호스트 풀의 "데스크톱" AppGroup에 할당된 모든 사용자가 사용할 수 있습니다. 앱에 대한 액세스 권한을 제공하기 위해 RemoteApp 앱 그룹을 통해 액세스를 프로비저닝할 필요가 없습니다. RemoteApp 앱 그룹은 로컬 장치에서 스트리밍 앱으로 AS-If로 실행되는 앱에 대한 액세스를 활성화하는 데만 필요합니다.
+
+
+
+==== 새 앱 그룹을 생성합니다
+
+. 작업 공간 > AVD > 호스트 풀 > 앱 그룹 페이지로 이동하고 _ + 앱 그룹 추가 _ 버튼을 클릭합니다
++
+image::Management.Applications.AVD_application_entitlement_workflow-d33da.png[관리.응용 프로그램.AVD 응용 프로그램 권한 워크플로 d33da]
+
+. 이 앱 그룹의 이름, 작업 공간 및 대화명을 입력합니다. 할당할 사용자 및/또는 그룹을 선택하고 _Save_를 클릭합니다
++
+image::Management.Applications.AVD_application_entitlement_workflow-242eb.png[Management.Applications.AVD 응용 프로그램 권한 워크플로 242eb]
+
+
+
+
+
+==== 응용 프로그램을 앱 그룹에 추가합니다
+
+. 작업 공간 > AVD > 호스트 풀 > 앱 그룹 페이지로 이동하고 "RemoteApp" 리소스에 대한 앱 그룹을 클릭합니다.
++
+image::Management.Applications.AVD_application_entitlement_workflow-3dcde.png[Management.Applications.AVD 응용 프로그램 자격 워크플로 3dcde]
+
+. 앱 그룹 내에서 편집 을 클릭합니다
++
+image::Management.Applications.AVD_application_entitlement_workflow-27a41.png[관리.응용 프로그램.AVD 응용 프로그램 사용 권한 워크플로 27a41]
+
+. "Remote Apps(원격 앱)" 섹션까지 아래로 스크롤합니다. VDS가 스트리밍에 사용할 수 있는 앱을 표시하기 위해 세션 호스트를 직접 쿼리하므로 이 섹션을 채우는 데 시간이 걸릴 수 있습니다.
++
+image::Management.Applications.AVD_application_entitlement_workflow-1e9f2.png[관리.응용 프로그램.AVD 응용 프로그램 사용 권한 워크플로 1e9f2]
+
+. 이 앱 그룹의 사용자가 RemoteApp 리소스로 액세스할 수 있는 앱을 검색하고 선택합니다.
+

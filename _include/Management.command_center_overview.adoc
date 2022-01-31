@@ -1,0 +1,60 @@
+= 개요
+
+
+
+
+== 개요
+
+Command Center는 배포의 CWMGR1 플랫폼 서버에서 실행되는 실행 파일입니다. CWMGR1 VM에 연결하고 해당 VM에서 로컬로 실행하여 액세스할 수 있습니다.
+
+이 응용 프로그램은 문제 해결, 진단 및 고급 관리 기능을 위해 설계되었습니다. 이 애플리케이션은 주로 NetApp의 내부 개발 및 지원 팀에서 사용되지만 일부 기능은 고객 관리자가 사용하는 경우도 있습니다. 이 설명서는 선택 기능의 사용을 지원하기 위해 제공됩니다. 이러한 명령은 NetApp 지원 팀과 협력하여 주의하여 사용해야 합니다.
+
+
+
+== Command Center를 실행하는 중입니다
+
+.Command Center 응용 프로그램을 실행하려면:
+. VDS > 배포 > 플랫폼 서버_페이지에서 서버에 연결 _Actions_아이콘을 클릭하고 "Connect"를 선택합니다.
++
+image::Management.command_center_overview-68087.png[Management.command 센터 개요 68087]
+
+. 자격 증명을 묻는 메시지가 표시되면 도메인 관리자 자격 증명을 입력합니다
++
+.. 사용자는 "CW-Infrastructure" 보안 그룹의 구성원이어야 합니다. 일관성을 위해 사용자를 _AD > Cloud Workspace > Cloud Workspace Tech Users > Groups _ 의 "Level 3 Technician" 그룹에 가입하도록 하여 이 멤버십을 추가하는 것이 좋습니다
++
+image::Management.command_center_overview-1c42d.png[Management.command 센터 개요 1c42d]
+
+
+
+. Command Center _ 의 바탕 화면 아이콘을 찾아 실행합니다
++
+image::Management.command_center_overview-3c860.png[Management.command 센터 개요 3c860]
+
++
+.. 고급 탭을 활성화하려면 "-showadvancedtab" 스위치를 사용하여 응용 프로그램을 시작합니다.
+
+
+
+
+
+
+=== 작업 탭
+
+image::Management.command_center_overview-b614e.png[Management.command 센터 개요 b614e]
+
+Command * (명령 *) 메뉴에서 작업 목록(아래 목록)을 선택할 수 있습니다.
+
+명령을 선택하면 * 데이터 로드 * 버튼의 배포 데이터로 데이터를 채울 수 있습니다. 데이터 로드 버튼은 이전에 선택한 데이터(예 드롭다운에서 특정 VM을 선택한 후 사용 가능한 백업 날짜 목록 로드)
+
+image::Management.command_center_overview-85417.png[Management.command 센터 개요 85417]
+
+명령에서 항목을 선택한 후 * 명령 실행 * 을 클릭하면 선택한 프로세스가 실행됩니다.
+
+로그를 검토하려면 * 모든 로그 보기 * 버튼을 클릭합니다. 원시 텍스트 파일이 열리고 맨 아래에 최신 항목이 표시됩니다.
+
+
+
+==== 명령 목록
+
+* link:Management.command_center.operations.copy_template_to_gallery.html["Gallery에 템플릿 복사"]
+

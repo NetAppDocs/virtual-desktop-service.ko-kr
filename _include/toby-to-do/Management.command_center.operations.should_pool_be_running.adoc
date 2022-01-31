@@ -1,0 +1,8 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.should_pool_be_running-d7849.png[Management.command center.operations.pool에서 d7849를 실행 중이어야 합니다]

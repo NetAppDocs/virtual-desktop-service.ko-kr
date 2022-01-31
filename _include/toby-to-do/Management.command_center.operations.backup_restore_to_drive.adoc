@@ -1,0 +1,14 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.backup_restore_to_drive-ea361.png[Management.command center.operations.backup을 드라이브 ea361로 복원합니다]
+
+image::Management.command_center.operations.backup_restore_to_drive-7ab14.png[Management.command center.operations.backup을 드라이브 7ab14로 복원합니다]
+
+image::Management.command_center.operations.backup_restore_to_drive-0e5fa.png[Management.command center.operations.backup을 드라이브 0e5fa로 복원합니다]
+
+image::Management.command_center.operations.backup_restore_to_drive-231c2.png[Management.command center.operations.backup을 드라이브 231c2로 복원합니다]

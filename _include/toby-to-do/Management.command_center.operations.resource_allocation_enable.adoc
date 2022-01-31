@@ -1,0 +1,8 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.resource_allocation_enable-97401.png[Management.command center.operations.resource allocation enable 97401]

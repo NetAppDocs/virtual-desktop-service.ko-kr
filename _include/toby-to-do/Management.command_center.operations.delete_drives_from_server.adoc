@@ -1,0 +1,8 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.delete_drives_from_server-fd4b6.png[Management.command center.operations.delete 서버 fd4b6의 드라이브]

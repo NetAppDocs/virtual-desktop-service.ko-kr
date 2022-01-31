@@ -1,0 +1,8 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.load_server_resource_report_data-7c205.png[Management.command center.operations.load server 리소스 보고서 data 7c205]

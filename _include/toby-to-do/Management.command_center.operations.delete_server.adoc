@@ -1,0 +1,8 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.delete_server-09320.png[Management.command center.operations.delete 서버 09320]

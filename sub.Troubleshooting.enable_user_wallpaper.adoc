@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: Troubleshooting.enable_user_wallpaper.html 
+summary: 사용자 배경화면을 활성화하는 방법 
+keywords:  
+---
+= 사용자 세션에 대해 바탕 화면 배경 무늬를 활성화합니다
+
+
+
+
+== 개요
+
+기본적으로 원격 세션은 성능을 향상시키기 위해 배경 무늬 디스플레이를 사용하지 않도록 설정되어 있습니다. 그 결과 사용자가 종종 사용자 지정하기를 원하는 검은색 배경화면이 나타납니다. 이 설정은 간단한 GPO 편집으로 변경할 수 있습니다
+
+
+
+=== 지침:
+
+. 플랫폼 서버에 로그인합니다(예 CWMGR1) Level3.tech 계정 사용
+. 그룹 정책 관리 콘솔을 엽니다
+. RDSH GPO("회사 코드" RDSH 로 표시됨)를 찾습니다(예 “xyz1 RDSH”) “xyz1 RDSH” GPO를 마우스 오른쪽 단추로 클릭하고 편집을 선택합니다
++
+.. Azure AD 도메인 서비스에서 GPO를 "ADDC" 컴퓨터 > 클라우드 작업 영역 컴퓨터"라고 합니다.
+
+
+. 정책:컴퓨터 구성 > 정책 > 관리 템플릿 > Windows 구성 요소 > 원격 데스크톱 서비스 > 원격 데스크톱 세션 호스트 > 원격 세션 환경 > 원격 데스크톱 배경 무늬 제거 를 사용 안 함 으로 설정합니다
+
+
+image:wallpaper1.png[""]
+image:wallpaper2.png[""]
+image:wallpaper3.png[""]

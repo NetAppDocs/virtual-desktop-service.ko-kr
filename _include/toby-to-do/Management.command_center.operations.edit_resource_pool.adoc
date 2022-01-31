@@ -1,0 +1,18 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.edit_resource_pool-4bc36.png[Management.command center.operations.edit 리소스 풀 4bc36을 편집합니다]
+
+image::Management.command_center.operations.edit_resource_pool-e15e5.png[Management.command center.operations.edit 리소스 풀 e15e5를 편집합니다]
+
+image::Management.command_center.operations.edit_resource_pool-6c466.png[Management.command center.operations.edit 리소스 풀 6c466을 편집합니다]
+
+image::Management.command_center.operations.edit_resource_pool-40dbd.png[Management.command center.operations.edit 리소스 풀 40dbd를 편집합니다]
+
+image::Management.command_center.operations.edit_resource_pool-bebd9.png[Management.command center.operations.edit 리소스 풀 bbd9]
+
+image::Management.command_center.operations.edit_resource_pool-de40f.png[Management.command center.operations.edit 리소스 풀 de40f]

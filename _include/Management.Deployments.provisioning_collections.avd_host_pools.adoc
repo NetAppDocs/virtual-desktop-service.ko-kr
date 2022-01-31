@@ -1,0 +1,36 @@
+= Avd 세션 호스트 업데이트 프로세스
+
+
+
+
+=== Avd 세션 호스트 업데이트 프로세스
+
+VDS는 Provisioning Collections 및 * Add Session Host * 기능을 사용하여 AVD 호스트 풀의 세션 호스트를 쉽게 업데이트할 수 있는 방법을 제공합니다. 이 프로세스는 최종 사용자에게 영향을 주지 않고 이전 이미지 반복을 기반으로 후속 이미지 업데이트를 반복적으로 수행할 수 있습니다.
+
+.AVD 세션 호스트 업데이트 프로세스는 다음과 같습니다.
+. 새로운 VDI Provisioning Collection을 구축하고 위의 지침에 따라 컬렉션을 사용자 지정하고 검증합니다.
++
+.. 일반적으로 이 프로비저닝 컬렉션은 이전 VM 템플릿에 구축되어 "Open, Save As" 프로세스를 에뮬레이션합니다.
+
+
+. Provisioning Collection이 확인되면 _Workspace > AVD > Host Pools_페이지로 이동하여 Host Pool의 이름을 클릭합니다
+. Host Pool > Session Hosts_page 내에서 * + Add Session Host * 를 클릭합니다
++
+image::Management.Deployments.provisioning_collections-9ed95.png[Management.Deployments.provisioning 컬렉션 9ed95]
+
+. 최신 * VM 템플릿 * 을 선택합니다. 요구 사항에 따라 * Machine Size * 및 * Storage Type * 을 적절하게 선택합니다.
+. 필요한 세션 호스트의 총 수와 동일한 * 인스턴스 수 * 를 입력합니다. 일반적으로 이 번호는 호스트 풀에 현재 있는 번호와 같지만 숫자는 선택할 수 있습니다.
++
+.. 이 새 호스트가 온라인 상태가 되면 호스트 풀에 현재 있는 세션 호스트가 결국 중지됩니다. 이 호스트 풀의 전체 워크로드를 지원하기에 충분한 * 인스턴스 수 * 를 계획합니다.
+
+
+. Save * 를 클릭하면 선택한 VM 템플릿을 기반으로 세션 호스트가 구축되고 10-15분 이내(하이퍼바이저에 따라 다름)에 온라인으로 전환됩니다.
+. 새 호스트가 온라인 상태가 되면 기본 설정은 * Discallow New Sessions *(새 세션 허용 안 함 *)로 유지됩니다. 각 세션 호스트에 대해 * Allow New Sessions * 토글을 사용하여 새 사용자 세션을 수신할 수 있는 호스트를 관리할 수 있습니다. 충분한 새 호스트가 구축되고 기능이 확인되면 새 호스트와 이전 호스트 모두에서 이 설정을 관리하여 모든 새 세션을 새 호스트로 라우팅할 수 있습니다. 새 세션 허용 * 이 * 비활성화 * 로 설정된 기존 호스트는 기존 사용자 세션을 계속 실행하고 호스팅할 수 있습니다.
++
+image::Management.Deployments.provisioning_collections-be47e.png[Management.Deployments.provisioning 컬렉션 b47e]
+
+. 사용자가 이전 호스트에서 로그오프하고 기존 호스트에 새 사용자 세션이 가입되지 않은 상태에서 * Actions * 아이콘을 클릭하고 * delete * 를 선택하면 * Sessions=0 * 이 삭제되는 이전 호스트를 삭제할 수 있습니다.
++
+image::Management.Deployments.provisioning_collections-cefb9.png[Management.Deployments.provisioning 컬렉션 cefb9]
+
+

@@ -1,0 +1,20 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.create_server_from_template-83e84.png[Management.command center.operations.template 83e84에서 서버를 생성합니다]
+
+image::Management.command_center.operations.create_server_from_template-82622.png[Management.command center.operations.template 82622에서 서버를 생성합니다]
+
+image::Management.command_center.operations.create_server_from_template-83e84.png[Management.command center.operations.template 83e84에서 서버를 생성합니다]
+
+image::Management.command_center.operations.create_server_from_template-211d7.png[Management.command center.operations.template 211d7에서 서버를 생성합니다]
+
+image::Management.command_center.operations.create_server_from_template-644c1.png[Management.command center.operations.template 644c1에서 서버를 생성합니다]
+
+image::Management.command_center.operations.create_server_from_template-4a22f.png[Management.command center.operations.template 4a22f에서 서버를 생성합니다]
+
+image::Management.command_center.operations.create_server_from_template-70fa8.png[Management.command center.operations.template 70fa8에서 서버를 생성합니다]

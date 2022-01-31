@@ -1,0 +1,23 @@
+= Microsoft Office 365 개요
+
+
+
+
+== Microsoft Office 365 개요
+
+이 스크립트 패키지는 초콜릿 패키지 관리자를 사용하여 _Microsoft Office_를 설치/제거합니다 (https://chocolatey.org/)[] 를 눌러 구축을 수행합니다. VM을 만들 때 VDS에서 초콜릿을 배포하지만 이 스크립트가 누락된 경우 초콜릿을 사전 요구 사항으로 확인하고 설치합니다.
+
+
+WARNING: 이 Microsoft Office 365 설치 스크립트에는 Microsoft 팀 또는 Microsoft One Drive가 포함되어 있지 않습니다. 이러한 스크립트는 독립 실행형 자동화 스크립트로 포함되어 있으므로 일부 배포에서는 이러한 애플리케이션이 필요하지 않으므로 보다 유연하게 사용할 수 있습니다. 이 배포는 복사 및 편집하여 포함하거나 다른 배포는 변경할 수 있습니다 link:https://docs.microsoft.com/en-us/deployoffice/overview-office-deployment-tool["Office 배포 도구"] 설정) VDS에서 스크립트를 복제하고 InstallMicrosoftOffice365.ps1을 편집하여 XML 구성 파일에 다른 값을 입력합니다.
+
+
+
+=== 기본 바로 가기 경로
+
+이 응용 프로그램의 기본 바로 가기 경로는 아래에 입력되며 바로 가기는 다음과 같습니다: \\folders\Microsoft Office
+
+
+
+=== 작업 추가 대화 상자 창 스크린샷
+
+image::scriptlibrary.activity.InstallMicrosoftOffice365.png[scriptlibrary.activity.InstallMicrosoftOffice365 를 참조하십시오]

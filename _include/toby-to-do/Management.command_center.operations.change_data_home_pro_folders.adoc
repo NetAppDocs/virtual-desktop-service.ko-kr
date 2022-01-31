@@ -1,0 +1,10 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.change_data_home_pro_folders-6606b.png[Management.command center.operations.change 데이터 홈 pro 폴더 6606b]
+
+image::Management.command_center.operations.change_data_home_pro_folders-8b088.png[Management.command center.operations.change data home pro 폴더 8b088]

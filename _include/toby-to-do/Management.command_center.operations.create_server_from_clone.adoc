@@ -1,0 +1,16 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.create_server_from_clone-098a1.png[Management.command center.operations.clone 098a1에서 서버를 생성합니다]
+
+image::Management.command_center.operations.create_server_from_clone-2b8e0.png[Management.command center.operations.clone 2b8e0에서 서버를 생성합니다]
+
+image::Management.command_center.operations.create_server_from_clone-b252d.png[Management.command center.operations.clone b252d에서 서버를 생성합니다]
+
+image::Management.command_center.operations.create_server_from_clone-3b909.png[Management.command center.operations.clone 3b909에서 서버를 생성합니다]
+
+image::Management.command_center.operations.create_server_from_clone-68dc9.png[Management.command center.operations.clone 68dc9에서 서버를 생성합니다]

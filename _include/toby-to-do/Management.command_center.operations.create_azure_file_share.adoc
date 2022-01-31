@@ -1,0 +1,8 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.create_azure_file_share-4eabe.png[Management.command center.operations.create Azure 파일 공유 4eabe]

@@ -1,0 +1,8 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.run_resource_allocation-664d2.png[Management.command center.operations.ru n 리소스 할당 664d2]

@@ -1,0 +1,8 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.delete_datacenter_site-6df98.png[Management.command center.operations.delete 데이터센터 사이트 6df98]

@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: Troubleshooting.azure_vcpu_core_quota.html 
+summary: Azure vCPU 코어 할당량 문제를 해결하기 위한 단계별 가이드 
+keywords:  
+---
+= Azure vCPU 코어 할당량
+
+
+
+
+== 현재 할당량을 봅니다
+
+. Azure 콘솔에 로그인하고 구독 모듈로 이동한 다음 할당량 을 클릭합니다. 그런 다음 providers(공급자) 드롭다운에서 All providers(모든 공급자) 를 선택하고 맨 오른쪽 드롭다운 메뉴에서 Show all(모두 표시) 을 선택한 다음 Cloud Workspace가 배포되는 Azure 영역을 선택합니다.
++
+image:quota1.png[""]
+
+. 그러면 얼마나 많이 소비하는지 사용 가능한 할당량. 아래 이미지에서 CloudJumper는 BS VM 제품군에 사용 가능한 CPU 350개 중 42개의 CPU를 사용합니다. 할당량 늘리기
++
+image:quota2.png[""]
+
+. 할당량을 늘리려면 요청 증가 를 클릭하고 늘릴 항목을 지정합니다(계산/CPU 시간의 99%).
++
+image:quota3.png[""]
+
+. Cloud Workspace가 구축된 지역과 할당량을 늘리고자 하는 VM 제품군을 선택합니다.
++
+image:quota4.png[""]
+
+. 연락처 정보를 입력하고 만들기 를 클릭하여 Microsoft에 요청을 제출합니다. 이러한 증가에는 대개 속도가 매우 빠릅니다.
+

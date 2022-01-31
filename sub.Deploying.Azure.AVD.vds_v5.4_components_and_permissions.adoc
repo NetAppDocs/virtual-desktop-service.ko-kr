@@ -1,0 +1,503 @@
+---
+sidebar: sidebar 
+permalink: Deploying.Azure.AVD.vds_v5.4_components_and_permissions.html 
+summary: VDS 구성 요소 및 권한 
+keywords:  
+---
+= VDS 구성 요소 및 권한
+
+
+
+
+== Avd 및 VDS 보안 엔터티 및 서비스
+
+Azure Virtual Desktop(AVD)은 자동 작업을 수행하려면 Azure AD 및 로컬 Active Directory의 보안 계정 및 구성 요소가 필요합니다. NetApp의 VDS(Virtual Desktop Service)는 구축 프로세스 중에 관리자가 AVD 환경을 제어할 수 있도록 구성 요소 및 보안 설정을 생성합니다. 이 문서에서는 두 환경 모두에서 관련된 VDS 계정, 구성 요소 및 보안 설정을 설명합니다.
+
+배포 자동화 프로세스의 구성 요소 및 권한은 주로 최종 배포 환경의 구성 요소와 다릅니다. 따라서 이 문서는 배포 자동화 섹션과 배포된 환경 섹션의 두 가지 주요 섹션으로 구성됩니다.
+
+image:Reference Architecture AVD v1.jpg["너비 = 75%"]
+
+
+
+== Avd 배포 자동화 구성 요소 및 권한
+
+VDS 배포는 여러 Azure 및 NetApp 구성 요소와 보안 권한을 활용하여 배포 및 작업 공간을 모두 구현합니다.
+
+
+
+== VDS 배포 서비스
+
+
+
+=== 엔터프라이즈 애플리케이션
+
+VDS는 테넌트의 Azure AD 도메인에서 엔터프라이즈 응용 프로그램 및 응용 프로그램 등록을 활용합니다. 엔터프라이즈 응용 프로그램은 Azure Resource Manager, Azure Graph 및 (AVD Fall Release를 사용하는 경우) AVD API 끝점에 대한 호출을 위한 전달자입니다. 이 끝점은 연결된 서비스 대표자에게 부여된 위임 역할 및 권한을 사용하여 Azure AD 인스턴스 보안 컨텍스트의 AVD API 끝점입니다. 앱 등록은 VDS를 통해 테넌트에 대한 AVD 서비스의 초기화 상태에 따라 생성될 수 있습니다.
+
+이러한 VM을 생성 및 관리하기 위해 VDS는 Azure Subscription에 다음과 같은 몇 가지 지원 구성 요소를 생성합니다.
+
+
+
+==== 클라우드 작업 공간
+
+이것은 초기 엔터프라이즈 응용 프로그램 관리자가 VDS 설치 마법사의 배포 프로세스 중에 동의하며 사용됩니다.
+
+Cloud Workspace Enterprise Application은 VDS 설정 프로세스 중에 특정 권한 집합을 요청합니다. 이러한 권한은 다음과 같습니다.
+
+* 로그인한 사용자로 디렉터리에 액세스(위임됨)
+* 디렉토리 데이터 읽기 및 쓰기(위임됨)
+* 로그인 및 사용자 프로필 읽기(위임됨)
+* 로그인(위임됨)
+* 사용자의 기본 프로필 보기(위임됨)
+* 조직 사용자로 Azure Service Management 액세스(위임됨)
+
+
+
+
+==== Cloud Workspace API를 참조하십시오
+
+Azure PaaS 기능에 대한 일반 관리 통화를 처리합니다. Azure PaaS 기능의 예로는 Azure Compute, Azure Backup, Azure Files 등이 있습니다. 이 서비스 담당자는 초기 배포 중에 대상 Azure 구독에 대한 소유자 권한과 지속적인 관리를 위한 참가자 권한이 필요합니다(참고: Azure Files를 사용하려면 Azure File 객체에 대한 사용자별 권한을 설정하려면 가입 소유자 권한이 필요합니다.
+
+Cloud Workspace API Enterprise Application은 VDS 설정 프로세스 중에 특정 권한 집합을 요청합니다. 이러한 권한은 다음과 같습니다.
+
+* 구독자(또는 Azure 파일이 사용되는 경우 구독 소유자)
+* Azure AD 그래프
++
+** 모든 응용 프로그램 읽기 및 쓰기(응용 프로그램)
+** 이 앱이 만들거나 소유하는 앱 관리(응용 프로그램)
+** 디바이스 읽기 및 쓰기(애플리케이션)
+** 로그인한 사용자로 디렉터리에 액세스(위임됨)
+** 디렉토리 데이터 읽기(애플리케이션)
+** 디렉토리 데이터 읽기(위임됨)
+** 디렉토리 데이터 읽기 및 쓰기(애플리케이션)
+** 디렉토리 데이터 읽기 및 쓰기(위임됨)
+** 도메인 읽기 및 쓰기(응용 프로그램)
+** 모든 그룹 읽기(위임됨)
+** 모든 그룹 읽기 및 쓰기(위임됨)
+** 모든 숨겨진 멤버십 읽기(응용 프로그램)
+** 숨겨진 구성원 읽기(위임됨)
+** 로그인 및 사용자 프로필 읽기(위임됨)
+** 모든 사용자의 전체 프로필 읽기(위임됨)
+** 모든 사용자의 기본 프로필 읽기(위임됨)
+
+
+* Azure 서비스 관리
++
+** 조직 사용자로 Azure Service Management 액세스(위임됨)
+
+
+
+
+
+
+=== NetApp VDS
+
+NetApp VDS 구성 요소는 VDS 컨트롤 플레인을 통해 AVD 역할, 서비스 및 리소스의 배포 및 구성을 자동화하는 데 사용됩니다.
+
+
+
+=== 사용자 지정 역할
+
+Automation Contributor 역할은 최소한의 권한을 가진 방법을 통해 배포를 용이하게 하기 위해 생성됩니다. CWMGR1 VM은 이 역할을 통해 Azure 자동화 계정에 액세스할 수 있습니다.
+
+
+
+=== 자동화 계정
+
+자동화 계정은 구축 중에 생성되며 프로비저닝 프로세스 중에 필요한 구성 요소입니다. 자동화 계정에는 변수, 자격 증명, 모듈 및 원하는 상태 설정이 포함되어 있으며 키 볼트를 참조합니다.
+
+
+
+==== 원하는 상태 구성
+
+CWMGR1의 구성을 빌드하는 데 사용되는 방법입니다. 구성 파일은 VM에 다운로드되고 VM의 로컬 구성 관리자를 통해 적용됩니다. 구성 요소의 예는 다음과 같습니다.
+
+* Windows 기능 설치
+* 소프트웨어 설치 중
+* 소프트웨어 구성을 적용하는 중입니다
+* 적절한 권한 집합이 적용되었는지 확인합니다
+* Let's Encrypt 인증서 적용
+* DNS 레코드가 올바른지 확인합니다
+* CWMGR1이 도메인에 가입되어 있는지 확인합니다
+
+
+
+
+==== 모듈:
+
+* ActiveDirectoryDsc: Active Directory의 배포 및 구성을 위한 원하는 상태 구성 리소스입니다. 이러한 리소스를 사용하여 새 도메인, 자식 도메인 및 고가용성 도메인 컨트롤러를 구성하고 도메인 간 트러스트를 설정하고 사용자, 그룹 및 OU를 관리할 수 있습니다.
+* AZ.Accounts: Azure 모듈의 자격 증명 및 공통 구성 요소를 관리하는 데 사용되는 Microsoft 제공 모듈입니다
+* AZ.Automation: Azure Automation commandlet을 위한 Microsoft 제공 모듈입니다
+* Az.Compute:A Azure Compute commandlet용 Microsoft 제공 모듈입니다
+* AZ.KeyVault: Azure Key Vault commandlet용 Microsoft 제공 모듈입니다
+* AZ.Resources: Azure Resource Manager commandlet을 위한 Microsoft 제공 모듈입니다
+* cChoco: Chocolatey를 사용하여 패키지를 다운로드하고 설치하기 위한 원하는 상태 구성 리소스입니다
+* cjAz: NetApp이 작성한 이 모듈은 Azure 자동화 모듈에 자동화 도구를 제공합니다
+* cjAzACS: NetApp이 만든 이 모듈에는 사용자 환경 자동화 기능과 PowerShell 프로세스가 포함되어 있으며, 사용자가 작성한 컨텍스트 내에서 실행됩니다.
+* cjAzBuild: NetApp이 만든 이 모듈에는 시스템 컨텍스트에서 실행되는 빌드 및 유지 관리 자동화 및 PowerShell 프로세스가 포함되어 있습니다.
+* cNtfsAccessControl: NTFS 액세스 제어 관리에 필요한 상태 구성 리소스입니다
+* ComputerManagementDsc: 가상 메모리, 이벤트 로그, 시간대 및 전원 설정과 같은 항목을 구성할 뿐만 아니라 도메인 가입 및 일정 작업 등의 컴퓨터 관리 작업을 허용하는 원하는 상태 구성 리소스입니다.
+* cUserRightsAssignment: 로그온 권한 및 권한과 같은 사용자 권한을 관리할 수 있는 원하는 상태 구성 리소스입니다
+* NetworkingDsc: 네트워킹에 필요한 상태 구성 리소스입니다
+* xCertificate: Windows Server에서 인증서 관리를 간소화하기 위해 필요한 상태 구성 리소스입니다.
+* xDnsServer: Windows Server DNS 서버의 구성 및 관리에 필요한 상태 구성 리소스입니다
+* xNetworking: 네트워킹과 관련하여 원하는 상태 구성 리소스입니다.
+* link:https://github.com/PowerShell/xRemoteDesktopAdmin["xRemoteDesktopAdmin"]: 이 모듈은 로컬 또는 원격 컴퓨터에서 원격 데스크톱 설정 및 Windows 방화벽을 구성하기 위해 원하는 상태 구성 리소스가 포함된 리포지토리를 사용합니다.
+* xRemoteDesktopSessionHost: 원격 데스크톱 세션 호스트(RDSH) 인스턴스의 생성 및 구성을 지원하는 원하는 상태 구성 리소스(xRDSessionDeployment, xRDSessionCollection, xRDSessionCollectionConfiguration 및 xRDRemoteApp
+* xSmbShare: SMB 공유를 구성 및 관리하기 위한 원하는 상태 구성 리소스입니다
+* xSystemSecurity: UAC 및 IE Esc를 관리하기 위해 필요한 상태 구성 리소스
+
+
+
+NOTE: 또한 Azure Virtual Desktop은 엔터프라이즈 애플리케이션 및 Azure Virtual Desktop 및 Azure Virtual Desktop Client에 대한 앱 등록, AVD 테넌트, AVD 호스트 풀, AVD 앱 그룹 및 AVD 등록 가상 머신을 비롯한 Azure 구성 요소도 설치합니다. VDS Automation 구성 요소가 이러한 구성 요소를 관리하는 동안 AVD는 기본 구성 및 속성 집합을 제어하므로 자세한 내용은 AVD 설명서를 참조하십시오.
+
+
+
+=== 하이브리드 AD 구성 요소
+
+사내 또는 퍼블릭 클라우드에서 실행되는 기존 AD와 원활하게 통합하려면 기존 AD 환경에 추가 구성 요소 및 권한이 필요합니다.
+
+
+
+==== 도메인 컨트롤러
+
+기존 도메인 컨트롤러는 AD Connect 및/또는 사이트 간 VPN(또는 Azure ExpressRoute)을 통해 AVD 배포에 통합될 수 있습니다.
+
+
+
+==== AD 연결
+
+AVD PaaS 서비스를 통해 성공적인 사용자 인증을 지원하기 위해 AD 연결을 사용하여 Azure AD와 도메인 컨트롤러를 동기화할 수 있습니다.
+
+
+
+==== 보안 그룹
+
+VDS는 CW-Infrastructure라는 Active Directory 보안 그룹을 사용하여 도메인 연결 및 GPO 정책 첨부 등의 Active Directory 종속 작업을 자동화하는 데 필요한 권한을 포함합니다.
+
+
+
+==== 서비스 계정
+
+VDS는 VDS Windows 서비스 및 IIS 응용 프로그램 서비스의 ID로 사용되는 CloudworkspaceSVC라는 Active Directory 서비스 계정을 사용합니다. 이 계정은 비대화형 계정이며(RDP 로그인을 허용하지 않음) CW-Infrastructure 계정의 기본 구성원입니다
+
+
+
+==== VPN 또는 ExpressRoute를 선택합니다
+
+사이트 간 VPN 또는 Azure ExpressRoute를 사용하여 Azure VM을 기존 도메인에 직접 연결할 수 있습니다. 이 구성은 프로젝트 요구 사항에 따라 필요할 때 사용할 수 있는 선택적 구성입니다.
+
+
+
+==== 로컬 AD 권한 위임
+
+NetApp은 하이브리드 AD 프로세스를 간소화할 수 있는 옵션 툴을 제공합니다. NetApp의 선택적 툴을 사용하는 경우 다음을 수행해야 합니다.
+
+* 워크스테이션 OS가 아닌 서버 OS에서 실행합니다
+* 도메인에 가입되거나 도메인 컨트롤러인 서버에서 실행합니다
+* 툴을 실행하는 서버(도메인 컨트롤러에서 실행되지 않는 경우)와 도메인 컨트롤러 모두에 PowerShell 5.0 이상이 설치되어 있어야 합니다
+* 도메인 관리자 권한이 있는 사용자가 실행하거나 로컬 관리자 권한이 있고 도메인 관리자 자격 증명을 제공할 수 있는 사용자(RunAs와 함께 사용)가 실행해야 합니다.
+
+
+수동으로 생성하든 NetApp 툴로 적용하든 필요한 사용 권한은 다음과 같습니다.
+
+* CW - 인프라 그룹
++
+** Cloud Workspace Infrastructure(* CW-Infrastructure*) 보안 그룹에는 Cloud Workspace OU 수준 및 모든 하위 개체에 대한 모든 권한이 부여됩니다
+** 배포 코드>.cloudworkspace.app DNS Zone – CW-Infrastructure 그룹에 CreateChild, DeleteChild, ListChildren, ReadProperty, DeleteTree가 부여되었습니다. ExtendedRight, Delete, GenericWrite 가 있습니다
+** DNS 서버 – CW 인프라 그룹에 ReadProperty, GenericExecute 권한이 부여되었습니다
+** 생성된 VM(CWMGR1, AVD 세션 VM)에 대한 로컬 관리자 액세스(관리되는 AVD 시스템의 그룹 정책에 의해 수행)
+
+
+* CW-CWMGRAccess 그룹 이 그룹은 모든 템플릿, 단일 서버, 새로운 기본 Active Directory 템플릿에 대해 CWMGR1에 대한 로컬 관리 권한을 제공합니다. 기본 제공 그룹 서버 운영자 원격 데스크톱 사용자 및 네트워크 구성 운영자를 활용합니다.
+
+
+
+
+== Avd 환경 구성 요소 및 권한
+
+배포 자동화 프로세스가 완료되면 배포 및 작업 영역의 지속적인 사용 및 관리가 아래에 정의된 대로 별도의 구성 요소와 사용 권한이 필요합니다. 위의 구성 요소와 사용 권한 중 다수는 여전히 관련이 있지만 이 섹션은 배포된 의 구조를 정의하는 데 중점을 둡니다.
+
+VDS 배포 및 작업 공간의 구성 요소는 다음과 같은 여러 논리 범주로 구성할 수 있습니다.
+
+* 최종 사용자 클라이언트
+* VDS 컨트롤 플레인 구성 요소
+* Microsoft Azure AVD-PaaS 구성 요소
+* VDS 플랫폼 구성 요소
+* Azure 테넌트의 VDS 작업 영역 구성 요소입니다
+* 하이브리드 AD 구성 요소
+
+
+
+
+=== 최종 사용자 클라이언트
+
+사용자는 AVD 데스크톱 및/또는 다양한 엔드포인트 유형에 연결할 수 있습니다. Microsoft는 Windows, macOS, Android 및 iOS용 클라이언트 응용 프로그램을 게시했습니다. 또한 웹 클라이언트를 클라이언트 없이 액세스할 수 있습니다.
+
+AVD에 대한 엔드포인트 클라이언트를 게시한 Linux 씬 클라이언트 공급업체도 있습니다. 이러한 항목은 에 나와 있습니다 https://docs.microsoft.com/en-us/azure/virtual-desktop/linux-overview[]
+
+
+
+=== VDS 컨트롤 플레인 구성 요소
+
+
+
+==== VDS REST API
+
+VDS는 완전 문서화된 REST API를 기반으로 구축되므로 웹 앱에서 사용할 수 있는 모든 작업은 API를 통해서도 사용할 수 있습니다. API 설명서는 다음과 같습니다. https://api.cloudworkspace.com/5.4/swagger/ui/index#[]
+
+
+
+==== VDS 웹 앱입니다
+
+VDS 관리자는 VDS 웹 앱을 통해 ADS 응용 프로그램을 상호 작용할 수 있습니다. 이 웹 포털은 다음과 같습니다. https://manage.cloudworkspace.com[]
+
+
+
+==== 컨트롤 플레인 데이터베이스
+
+VDS 데이터 및 설정은 NetApp에서 호스팅 및 관리하는 제어 플레인 SQL 데이터베이스에 저장됩니다.
+
+
+
+==== VDS 통신
+
+
+
+=== Azure 테넌트 구성 요소입니다
+
+VDS 배포 자동화는 VM, 네트워크 서브넷, 네트워크 보안 그룹 및 Azure 파일 컨테이너 또는 Azure NetApp Files 용량 풀을 비롯한 다른 AVD 구성 요소를 포함하는 단일 Azure 리소스 그룹을 생성합니다. 참고 – 기본값은 단일 리소스 그룹이지만 필요한 경우 VDS에는 추가 리소스 그룹에 리소스를 생성할 수 있는 도구가 있습니다.
+
+
+
+==== Microsoft Azure AVD-PaaS 구성 요소
+
+
+
+===== Avd REST API
+
+Microsoft AVD는 API를 통해 관리할 수 있습니다. VDS는 이러한 API를 광범위하게 활용하여 AVD 환경을 자동화하고 관리합니다. 문서 위치: https://docs.microsoft.com/en-us/rest/api/desktopvirtualization/[]
+
+
+
+===== 세션 브로커
+
+브로커는 사용자에 대해 승인된 리소스를 확인하고 사용자와 게이트웨이 간의 연결을 조정합니다.
+
+
+
+===== Azure 진단
+
+Azure 진단은 AVD 구축을 지원하도록 특별히 제작되었습니다.
+
+
+
+===== Avd 웹 클라이언트
+
+Microsoft는 사용자가 로컬에 설치된 클라이언트 없이 AVD 리소스에 연결할 수 있는 웹 클라이언트를 제공합니다.
+
+
+
+===== 세션 게이트웨이
+
+로컬로 설치된 RD 클라이언트는 게이트웨이에 연결하여 AVD 환경과 안전하게 통신합니다.
+
+
+
+==== VDS 플랫폼 구성 요소
+
+
+
+===== CWMGR1
+
+CMWGR1은 각 배포에 대한 VDS 제어 VM입니다. 기본적으로 이 VM은 대상 Azure 구독에서 Windows 2019 Server VM으로 생성됩니다. CWMGR1에 설치된 VDS 및 타사 구성 요소 목록은 로컬 배포 섹션을 참조하십시오.
+
+AVD VM을 Active Directory 도메인에 연결해야 합니다. 이 프로세스를 용이하게 하고 VDS 환경 관리를 위한 자동화 도구를 제공하기 위해 위에서 설명한 CWMGR1 VM에 여러 구성 요소가 설치되며 AD 인스턴스에 여러 구성 요소가 추가됩니다. 구성 요소는 다음과 같습니다.
+
+* * Windows 서비스 * - VDS는 Windows 서비스를 사용하여 배포 내에서 자동화 및 관리 작업을 수행합니다.
++
+** * CW Automation Service * 는 각 AVD 구축 시 CWMGR1에 배포된 Windows 서비스로서, 해당 환경에서 사용자 대면 자동화 작업을 많이 수행합니다. 이 서비스는 * CloudWorkspaceSVC * AD 계정으로 실행됩니다.
+** * CW VM Automation Service * 는 가상 머신 관리 기능을 수행하는 각 AVD 구축 시 CWMGR1에 구축된 Windows 서비스입니다. 이 서비스는 * CloudWorkspaceSVC * AD 계정으로 실행됩니다.
+** * CW 에이전트 서비스 * 는 CWMGR1을 포함하여 VDS 관리 하에 각 가상 머신에 배포된 Windows 서비스입니다. 이 서비스는 가상 시스템의 * LocalSystem * 컨텍스트에서 실행됩니다.
+** * CWManagerX API * 는 각 AVD 배포의 CWMGR1에 설치된 IIS 앱 풀 기반 수신기입니다. 이는 글로벌 컨트롤 플레인에서 들어오는 인바운드 요청을 처리하며 * CloudWorkspaceSVC * AD 계정으로 실행됩니다.
+
+
+* * SQL Server 2017 Express * – VDS는 CWMGR1 VM에 SQL Server Express 인스턴스를 만들어 자동화 구성 요소에서 생성된 메타데이터를 관리합니다.
+* * IIS(인터넷 정보 서비스) * – CWMGR1에서 IIS를 활성화하여 CWManagerX 및 CWApps IIS 응용 프로그램을 호스팅합니다(RDS RemoteApp 기능이 활성화된 경우에만). VDS를 사용하려면 IIS 버전 7.5 이상이 필요합니다.
+* * HTML5 포털(옵션) * – VDS는 Spark Gateway 서비스를 설치하여 배포 및 VDS 웹 응용 프로그램에서 VM에 HTML5 액세스를 제공합니다. 이 응용 프로그램은 Java 기반 응용 프로그램이며 이 액세스 방법을 원하지 않는 경우 비활성화 및 제거할 수 있습니다.
+* * RD 게이트웨이(옵션) * – VDS는 CWMGR1에서 RD 게이트웨이 역할을 활성화하여 RDS 수집 기반 리소스 풀에 대한 RDP 액세스를 제공합니다. 이 역할은 AVD 역방향 연결 액세스만 원하는 경우 비활성화/제거할 수 있습니다.
+* * RD 웹(옵션) * – VDS는 RD 웹 역할을 활성화하고 CWApps IIS 웹 응용 프로그램을 만듭니다. AVD 액세스만 원하는 경우 이 역할을 비활성화할 수 있습니다.
+* * DC 구성 * – 배포 및 VDS 사이트별 구성 및 고급 구성 작업을 수행하는 데 사용되는 Windows 응용 프로그램입니다.
+* * 테스트 VDC 도구 * – 가상 머신 및 클라이언트 레벨 구성 변경에 대한 직접 작업 실행을 지원하는 Windows 애플리케이션으로, 문제 해결을 위해 API 또는 웹 애플리케이션 작업을 수정해야 하는 드문 경우에 사용됩니다.
+* * Let's Encrypt 와일드카드 인증서(선택 사항) * – VDS에서 생성 및 관리 – TLS를 통한 HTTPS 트래픽이 필요한 모든 VM은 야간에 인증서로 업데이트됩니다. 또한 갱신은 자동화된 작업으로 처리됩니다(인증서는 90일이므로 갱신은 바로 전에 시작됩니다). 고객은 원하는 경우 자신만의 와일드카드 인증서를 제공할 수 있습니다. VDS는 또한 자동화 작업을 지원하기 위해 여러 Active Directory 구성 요소가 필요합니다. 이 설계 의도는 자동화된 관리를 위한 환경을 지원하는 동시에 최소한의 AD 구성 요소 및 권한 추가를 활용하는 것입니다. 이러한 구성 요소는 다음과 같습니다.
+* * Cloud Workspace OU(Organizational Unit) * – 이 조직 단위는 필수 하위 구성 요소에 대한 기본 AD 컨테이너 역할을 합니다. CW-Infrastructure 및 Client DHP Access 그룹에 대한 사용 권한은 이 수준과 하위 구성 요소에서 설정됩니다. 이 OU에 만든 하위 OU에 대해서는 부록 A를 참조하십시오.
+* * Cloud Workspace Infrastructure Group(CW-Infrastructure) * 은 VDS 서비스 계정(* CloudWorkspaceSVC *)에 필요한 위임된 권한을 할당할 수 있도록 로컬 AD에서 생성된 보안 그룹입니다.
+* * 클라이언트 DHP 액세스 그룹(ClientDHPAccess) * 은 VDS가 회사 공유, 사용자 홈 및 프로필 데이터가 상주하는 위치를 제어할 수 있도록 로컬 AD에 생성된 보안 그룹입니다.
+* * CloudWorkspaceSVC * 서비스 계정(Cloud Workspace Infrastructure Group 회원)
+* * 배포 코드>.cloudworkspace.app domain * 용 DNS 존(이 도메인은 세션 호스트 VM의 자동 생성된 DNS 이름을 관리함) – 배포 구성을 통해 생성됩니다.
+* * Cloud Workspace 조직 단위의 다양한 하위 OU에 연결된 NetApp 고유 GPO *. 이러한 GPO는 다음과 같습니다.
++
+** * Cloud Workspace GPO(Cloud Workspace OU에 연결) * – CW-Infrastructure 그룹의 구성원에 대한 액세스 프로토콜과 메서드를 정의합니다. 또한 AVD 세션 호스트의 로컬 Administrators 그룹에 그룹을 추가합니다.
+** * Cloud Workspace 방화벽 GPO * (전용 고객 서버, 원격 데스크톱 및 스테이징 OU에 연결) - 플랫폼 서버에서 세션 호스트와의 연결을 확인하고 격리하는 정책을 만듭니다.
+** * Cloud Workspace RDS * (전용 고객 서버, 원격 데스크톱 및 스테이징 OU) - 세션 품질, 안정성, 연결 해제 시간 제한에 대한 정책 설정 제한. RDS 세션의 경우 TS 라이선스 서버 값이 정의됩니다.
+** * Cloud Workspace Companies * (기본적으로 연결되지 않음) – 관리 도구 및 영역에 대한 액세스를 방지하여 사용자 세션/작업 영역을 "잠금"하는 GPO(옵션)입니다. 제한된 활동 작업 공간을 제공하도록 연결/활성화할 수 있습니다.
+
+
+
+
+
+NOTE: 요청 시 기본 그룹 정책 설정 구성을 제공할 수 있습니다.
+
+
+
+==== VDS 작업 영역 구성 요소
+
+
+
+===== 데이터 계층
+
+
+
+====== Azure NetApp Files
+
+VDS 설정에서 Azure NetApp Files를 데이터 계층 옵션으로 선택하면 Azure NetApp Files 용량 풀 및 관련 볼륨이 생성됩니다. 볼륨은 사용자 프로필(FSLogix 컨테이너 사용), 사용자 개인 폴더 및 기업 데이터 공유 폴더에 대한 공유 파일 스토리지를 호스팅합니다.
+
+
+
+====== Azure 파일
+
+CWS 설정에서 Azure 파일을 데이터 계층 옵션으로 선택한 경우 Azure 파일 공유 및 연결된 Azure 저장소 계정이 생성됩니다. Azure File Share는 사용자 프로필(FSLogix 컨테이너 사용), 사용자 개인 폴더 및 회사 데이터 공유 폴더에 대한 공유 파일 스토리지를 호스팅합니다.
+
+
+
+====== 관리 디스크가 있는 파일 서버입니다
+
+VDS 설정에서 파일 서버를 데이터 계층 옵션으로 선택한 경우 Windows Server VM이 관리되는 디스크로 생성됩니다. 파일 서버는 사용자 프로필(FSLogix 컨테이너 사용), 사용자 개인 폴더 및 기업 데이터 공유 폴더에 대한 공유 파일 스토리지를 호스팅합니다.
+
+
+
+===== Azure 네트워킹
+
+
+
+====== Azure 가상 네트워크
+
+VDS는 Azure 가상 네트워크 및 지원 서브넷을 생성합니다. VDS는 CWMGR1, AVD 호스트 컴퓨터, Azure 도메인 컨트롤러 및 서브넷 간 피어링을 위한 별도의 서브넷이 필요합니다. AD 컨트롤러 서브넷은 일반적으로 이미 존재하므로 VDS가 배포된 서브넷은 기존 서브넷을 통해 살펴봐야 합니다.
+
+
+
+====== 네트워크 보안 그룹
+
+CWMGR1 VM에 대한 액세스를 제어하기 위해 네트워크 보안 그룹이 생성됩니다.
+
+* 테넌트: 세션 호스트 및 데이터 VM에서 사용할 IP 주소를 포함합니다
+* 서비스: PaaS 서비스에서 사용할 IP 주소 포함(예: Azure NetApp Files)
+* 플랫폼: NetApp 플랫폼 VM(CWMGR1 및 모든 게이트웨이 서버)으로 사용할 IP 주소를 포함합니다.
+* Directory(디렉터리): Active Directory VM으로 사용할 IP 주소를 포함합니다
+
+
+
+
+===== Azure AD
+
+VDS 자동화 및 오케스트레이션은 가상 시스템을 대상 Active Directory 인스턴스에 배포한 다음 시스템을 지정된 호스트 풀에 연결합니다. Avd 가상 시스템은 AD 구조(조직 단위, 그룹 정책, 로컬 컴퓨터 관리자 권한 등)와 AVD 구조(호스트 풀, 작업 영역 앱 그룹 구성원)의 구성원 모두 컴퓨터 수준에서 관리되며 Azure AD 엔터티 및 권한에 의해 관리됩니다. VDS는 AVD 작업에 대한 VDS Enterprise Application/Azure Service Principal 및 로컬 AD 및 로컬 컴퓨터 작업에 대한 로컬 AD 서비스 계정(CloudWorkspaceSVC)을 사용하여 이 “이중 제어” 환경을 처리합니다.
+
+AVD 가상 머신을 생성하고 AVD 호스트 풀에 추가하는 구체적인 단계는 다음과 같습니다.
+
+* Azure 템플릿에서 가상 머신 생성 AVD와 연결된 Azure 구독에 표시(Azure Service Principal 권한 사용)
+* VDS 배포 중에 지정된 Azure VNET를 사용하여 새 가상 머신에 대한 DNS 주소 확인/구성(로컬 AD 권한 필요(위의 모든 권한을 CW-Infrastructure에 위임함) 표준 VDS 명명 체계 *_{companycode}TS{sequencenumber}_ * 를 사용하여 가상 머신 이름을 설정합니다. 예: XYZTS3. (로컬 AD 권한 필요(사내에서 만든 OU 구조(원격 데스크톱/회사 코드/공유)(위와 동일한 권한/그룹 설명)
+* 지정된 AD(Active Directory Organizational Unit)에 가상 컴퓨터를 배치합니다(OU 구조에 위임된 권한 필요(위의 수동 프로세스 중에 지정됨)).
+* 내부 AD DNS 디렉터리를 새 컴퓨터 이름/IP 주소로 업데이트(로컬 AD 권한 필요)
+* 새 가상 시스템을 로컬 AD 도메인에 연결(로컬 AD 권한 필요)
+* VDS 로컬 데이터베이스를 새 서버 정보로 업데이트(추가 권한이 필요하지 않음)
+* 지정된 AVD 호스트 풀에 VM 연결(AVD 서비스 담당자 권한 필요)
+* 새 가상 머신에 초콜릿 구성 요소를 설치합니다( * CloudWorkspaceSVC * 계정에 대한 로컬 컴퓨터 관리 권한 필요).
+* AVD 인스턴스에 대해 FSLogix 구성 요소 설치(로컬 AD의 AVD OU에 대한 로컬 컴퓨터 관리 권한 필요)
+* AD Windows 방화벽 GPO를 업데이트하여 새 VM에 대한 트래픽을 허용합니다(AVD OU 및 연결된 가상 시스템과 관련된 정책에 대해 AD GPO 생성/수정 필요). 로컬 AD의 AVD OU에 AD GPO 정책을 생성/수정해야 합니다. VDS를 통해 VM을 관리하지 않는 경우 설치 후 기능을 끌 수 있습니다.)
+* 새 가상 머신에 "새 연결 허용" 플래그 설정(Azure Service Principal 권한 필요)
+
+
+
+
+====== Azure AD에 VM을 가입하는 중입니다
+
+Azure 테넌트의 가상 시스템은 도메인에 가입해야 하지만 VM은 Azure AD에 직접 가입할 수 없습니다. 따라서 VDS는 VDS 플랫폼에서 도메인 컨트롤러 역할을 배포한 다음 AD Connect를 사용하여 해당 DC를 Azure AD와 동기화합니다. 대체 구성 옵션에는 AADDS(Azure AD Domain Services) 사용, AD Connect를 사용한 하이브리드 DC(사내 또는 기타 VM)로 동기화, 사이트 간 VPN 또는 Azure ExpressRoute를 통한 하이브리드 DC에 VM 직접 연결 등이 있습니다.
+
+
+
+===== Avd 호스트 풀
+
+호스트 풀은 Azure Virtual Desktop 환경 내에서 하나 이상의 동일한 가상 머신(VM)의 모음입니다. 각 호스트 풀에는 사용자가 실제 데스크톱에서와 같이 상호 작용할 수 있는 앱 그룹이 포함될 수 있습니다.
+
+
+
+====== 세션 호스트입니다
+
+호스트 풀 내에서 하나 이상의 동일한 가상 시스템이 있습니다. 이 호스트 풀에 연결되는 이러한 사용자 세션은 AVD 로드 밸런싱 장치 서비스에 의해 로드 밸런싱됩니다.
+
+
+
+====== 앱 그룹
+
+기본적으로 배포 시 _Desktop users_app 그룹이 만들어집니다. 이 앱 그룹 내의 모든 사용자에게 전체 Windows 데스크톱 환경이 제공됩니다. 또한 앱 그룹을 생성하여 스트리밍 앱 서비스를 제공할 수 있습니다.
+
+
+
+===== 로그 분석 작업 영역
+
+Log Analytics 작업 영역은 배포, DSC 프로세스 및 기타 서비스의 로그를 저장하기 위해 생성됩니다. 배포 후에는 이 기능을 삭제할 수 있지만 다른 기능을 사용할 수 있으므로 권장하지 않습니다. 로그는 기본적으로 30일 동안 보관되며, 보존 비용이 청구되지 않습니다.
+
+
+
+===== 가용성 세트
+
+Availability Set는 배포 프로세스의 일부로 설정되어 공유 VM(공유 AVD 호스트 풀, RDS 리소스 풀)을 장애 도메인 간에 분리할 수 있습니다. 원하는 경우 구축 후 삭제할 수 있지만 공유 VM에 대한 추가 내결함성을 제공하는 옵션을 비활성화할 수 있습니다.
+
+
+
+===== Azure 복구 볼트
+
+복구 서비스 저장소는 배포 중에 VDS Automation에 의해 생성됩니다. 배포 프로세스 중에 Azure Backup이 CWMGR1에 적용되므로 이 기능은 기본적으로 활성화되어 있습니다. 이 기능은 원하는 경우 비활성화 및 제거할 수 있지만 환경에서 Azure Backup이 활성화된 경우 다시 생성됩니다.
+
+
+
+===== Azure 키 볼트
+
+Azure Key Vault는 배포 프로세스 중에 생성되며 배포 중에 Azure Automation 계정이 사용하는 인증서, API 키 및 자격 증명을 저장하는 데 사용됩니다.
+
+
+
+== 부록 A – 기본 Cloud Workspace 조직 구성 단위 구조
+
+* 클라우드 작업 공간
++
+** Cloud Workspace 회사
+** Cloud Workspace 서버
++
+*** 전용 고객 서버
+*** 검토할 수 있습니다
+
+
+
+
+* CWMGR 서버
+* 게이트웨이 서버
+* FTP 서버
+* 템플릿 VM
++
+** 원격 데스크탑
+** 스테이징
++
+*** Cloud Workspace 서비스 계정
+
+
+** 클라이언트 서비스 계정
+** 인프라 서비스 계정
++
+*** Cloud Workspace 기술 사용자
+
+
+** 그룹
+** 기술 3 정비사
+
+
+

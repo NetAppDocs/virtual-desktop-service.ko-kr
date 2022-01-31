@@ -1,0 +1,8 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.add_cloud_workspace_to_company-5c011.png[Management.command center.operations.회사 5c011에 클라우드 작업 영역을 추가합니다]

@@ -1,0 +1,35 @@
+= Gallery 개요에 템플릿 복사
+
+
+
+
+== Gallery 개요에 템플릿 복사
+
+image::Management.command_center.operations.copy_template_to_gallery-67ea4.png[Management.command center.operations.copy 템플릿을 갤러리 67ea4에 복사합니다]
+
+VDI 프로비저닝 수집이 완료되면 이미지가 Azure에 이미지로 저장되고 동일한 VDS 사이트 내에 배포될 수 있습니다. 동일한 가입 내에서 다른 Azure 영역에 이미지를 배포할 수 있도록 "Gallery에 템플릿 복사" 기능이 사용됩니다. 이 작업을 수행하면 VM 이미지가 공유 갤러리에 복사되고 선택한 모든 영역에 복제됩니다.
+
+image::Management.command_center.operations.copy_template_to_gallery-ed821.png[Management.command center.operations.template 을 갤러리 ed821에 복사합니다]
+
+
+
+== VDS 드롭다운의 VM 템플릿 가용성
+
+복제가 완료되면 새 VM을 배포할 때 VM 템플릿을 선택하기 위한 이미지가 VDS의 드롭다운에 표시됩니다. 공유 이미지는 복사할 때 선택한 영역에 배포할 수 있습니다.
+
+image::Management.command_center.operations.copy_template_to_gallery-04bd8.png[Management.command center.operations.template을 갤러리 04bd8에 복사합니다]
+
+공유 갤러리에 저장된 VM 이미지는 버전이 Azure Portal 내의 이미지 버전과 일치하는 "-x.x.x" 형식으로 추가됩니다.
+
+image::Management.command_center.operations.copy_template_to_gallery-ee598.png[Management.command center.operations.template 을 갤러리 ee598에 복사합니다]
+
+
+NOTE: 이미지 복제는 이미지 크기에 따라 시간이 걸릴 수 있으며 버전(예:)을 클릭하여 상태를 확인할 수 있습니다 위 스크린샷에서 강조 표시된 대로 "Name" 열에 #1.0.0#).
+
+
+
+== 지역별 상이
+
+배포는 이미지가 복제된 영역에만 수행할 수 있습니다. Azure 포털에서 다음과 같이 #1.x.x# 및 _Update Replication_을 클릭하여 확인할 수 있습니다.
+
+image::Management.command_center.operations.copy_template_to_gallery-9b63a.png[Management.command center.operations.template을 갤러리 9b63a에 복사합니다]

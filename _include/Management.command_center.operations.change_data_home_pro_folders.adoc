@@ -1,0 +1,28 @@
+= Data/Pro/Home Folders 개요 변경
+
+
+
+
+== Data/Pro/Home Folders 개요 변경
+
+image::Management.command_center.operations.change_data_home_pro_folders-678cd.png[Management.command center.operations.change 데이터 홈 pro 폴더 678cd]
+
+데이터, 프로파일 및 사용자 홈 폴더의 저장 위치는 Active Directory에서 관리합니다. Command Center에는 이러한 위치를 변경하기 위한 작업이 포함되어 있습니다.
+
+image::Management.command_center.operations.copy_template_to_gallery-ed821.png[Management.command center.operations.template 을 갤러리 ed821에 복사합니다]
+
+
+
+== 리소스 풀 선택
+
+리소스 풀 선택 항목이 비어 있으면 설정이 전체적으로 적용됩니다.
+
+특정 리소스 풀(일명 호스트 풀)을 선택하면 해당 리소스 풀에 대해 사용자의 프로필 경로를 개별적으로 정의할 수 있습니다
+
+image::Management.command_center.operations.change_data_home_pro_folders-3ac43.png[] []
+
+
+
+== Windows Server입니다
+
+스토리지 서비스(예 Azure NetApp Files)가 저장 위치로 선택됩니다.

@@ -1,0 +1,111 @@
+---
+sidebar: sidebar 
+permalink: index.html 
+summary: Virtual Desktop Service 설명서 포털에 오신 것을 환영합니다. 
+keywords:  
+---
+= Virtual Desktop Service Documentation(가상 데스크탑 서비스 설명서
+
+
+
+
+== 개요
+
+NetApp의 VDS(가상 데스크톱 서비스)는 가상 데스크톱을 퍼블릭 클라우드에서 구축 및 관리하고 VDI(가상 데스크톱 인프라)를 관리하기 위한 유연한 소프트웨어 서비스로 제공하거나 완전히 관리되는 VDI as a Service 플랫폼으로 제공하는 복잡한 과정을 해결합니다. 가상 데스크톱 서비스를 사용하면 클라우드에 데스크톱을 구축하는 데 몇 시간 안에 배포하는 데 2-3일이 걸리는 수백 개의 작업이 필요 없게 됩니다.
+
+
+
+=== 가상 데스크톱 서비스의 이점:
+
+* * 인프라 비용 절감 *
++
+NetApp의 사용자 지정 가능한 리소스 예약 시스템은 인프라 지출을 최대 50%까지 최적화합니다.
+
+* 위험 감소 *
++
+Azure AVD(Virtual Desktop)에 대한 Microsoft 모범 사례 표준과 같은 클라우드 모범 사례에 따라 논리적 워크플로우에 데스크톱을 배포합니다.
+
+* * 맞춤형 자동화 *
++
+현재 스크립트를 활용하는 이벤트 중심 자동화 및 오케스트레이션 엔진을 통해 관리를 매우 쉽게 일반 IT 관리자가 클라우드 데스크톱을 관리할 수 있습니다.
+
+* * 멀티 클라우드 *
++
+단일 그래픽 사용자 인터페이스를 통해 AWS, Azure, Google 전반에서 여러 테넌트를 제어할 수 있습니다.
+
+* * 유연한 제어 *
++
+단일 포털로 비즈니스 유연성을 극대화하여 기술 스택의 모든 계층을 제어할 수 있습니다.
+
+
+
+자세한 내용: https://cloud.netapp.com/virtual-desktop-service[]
+
+
+
+== 지원을 받는 중입니다
+
+이메일 지원: VDSsupport@netapp.com
+
+전화 지원: 844.645.6789
+
+link:https://cloudjumper.zendesk.com["VDS Support Portal(VDS 지원 포털)"]
+
+일반 지원 업무 시간: 월-금, 오전 7:00-오후 7:00(중부 표준시).
+
+* 근무 시간 이후(통화 중) 지원은 전화로 제공됩니다.
+
+
+
+
+== 추가 리소스
+
+
+
+=== 비용 계산기
+
+
+
+==== Azure를 지원합니다
+
+* https://manage.vds.netapp.com/azure-cost-estimator[]
+
+
+
+
+==== Google 클라우드
+
+* https://manage.vds.netapp.com/google-cost-estimator[]
+
+
+
+
+=== 다운로드
+
+
+
+==== RDS(원격 데스크톱 서비스) 클라이언트
+
+* link:https://bin.vdsclient.app/v5client/cwc-win-setup.exe["Windows용 VDS RDS 클라이언트"]
+* link:https://login.cloudworkspace.com/["VDS 웹 클라이언트"]
+* link:https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-clients["Microsoft RD 클라이언트"]
+
+
+
+
+==== Azure AVD(Virtual Desktop) 클라이언트
+
+* link:https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-windows-7-10["Windows 클라이언트용 Microsoft AVD"]
+* link:https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-web["Microsoft AVD 웹 클라이언트"]
+* link:https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-android["Android 클라이언트용 Microsoft AVD"]
+* link:https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-macos["macOS 클라이언트용 Microsoft AVD"]
+* link:https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-ios["iOS 클라이언트용 Microsoft AVD"]
+
+
+
+
+==== 기타 다운로드
+
+* link:https://cloudjumper.com/wp-content/uploads/2019/12/RemoteScanEnterpriseUser.zip["RemoteScan 클라이언트"]
+* link:https://bin.vdsclient.app/v5client/cwc-designer-win-setup.exe["VDS RDS Windows 클라이언트 디자이너"]
+

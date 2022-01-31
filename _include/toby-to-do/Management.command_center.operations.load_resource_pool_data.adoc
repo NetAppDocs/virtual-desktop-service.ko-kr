@@ -1,0 +1,14 @@
+= 개요
+
+
+
+
+== 개요
+
+image::Management.command_center.operations.load_resource_pool_data-e7092.png[Management.command center.operations.load 리소스 풀 데이터 e7092]
+
+image::Management.command_center.operations.load_resource_pool_data-c9810.png[Management.command center.operations.load 리소스 풀 데이터 c9810]
+
+image::Management.command_center.operations.load_resource_pool_data-cb3a8.png[Management.command center.operations.load 리소스 풀 데이터 cb3a8]
+
+image::Management.command_center.operations.load_resource_pool_data-6ae0e.png[Management.command center.operations.load 리소스 풀 데이터 6ae0e]

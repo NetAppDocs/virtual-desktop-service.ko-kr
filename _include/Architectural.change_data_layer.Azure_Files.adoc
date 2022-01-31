@@ -1,0 +1,178 @@
+= 개요
+
+
+
+
+== 개요
+
+Virtual Desktop Service 배포 기술은 기본 인프라에 따라 다양한 스토리지 옵션을 제공합니다. 이 가이드에서는 배포 후 Azure 파일 사용을 변경하는 방법에 대해 설명합니다.
+
+
+
+=== 필수 구성 요소
+
+* AD Connect가 설치 및 설정되었습니다
+* Azure 글로벌 관리자 계정
+* AZFilesHybrid PowerShell 모듈 https://github.com/Azure-Samples/azure-files-samples/releases[]
+* AZ PowerShell 모듈
+* ActiveDirectory PowerShell 모듈
+
+
+
+
+=== 새 스토리지 계층을 생성합니다
+
+. 글로벌 관리자 계정으로 Azure에 로그인합니다
+. 작업 영역과 동일한 위치 및 리소스 그룹에 새 스토리지 계정을 생성합니다
++
+image:Architectural.ChangeDataLayer.AzureFiles1.png[""]
+
+. 저장소 계정 아래에 데이터, 홈 및 pro 파일 공유를 생성합니다
++
+image:Architectural.ChangeDataLayer.AzureFiles2.png[""]
+
+
+
+
+
+=== Active Directory를 설정합니다
+
+. Cloud Workspace > Cloud Worksapce Service Accounts OU 아래에 "Storage Account"라는 새 조직 단위를 만듭니다
++
+image:Architectural.ChangeDataLayer.AzureFiles3.png[""]
+
+. AD DS 인증 활성화(PowerShell을 사용하여 수행해야 함) https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-enable[]
++
+.. DomainAccountType은 "serviceLogonAccount"여야 합니다.
+.. OraganizationalUnitDistinguishedName은 이전 단계에서 만든 OU의 고유 이름입니다(예: "'OU=스토리지 계정, OU=클라우드 작업 공간 서비스 계정, OU=클라우드 작업 공간, DC=TrainingKrishG, DC=onmicrosoft, DC=com").
+
+
+
+
+
+
+=== 공유에 대한 역할을 설정합니다
+
+. Azure 포털에서 "스토리지 파일 데이터 SMB 공유 상승된 기여자" 역할을 CloudWorkspaceSVC 및 Level3 기술자에게 제공합니다
++
+image:Architectural.ChangeDataLayer.AzureFiles4.png[""]
+
+. ""<회사 코드> - 모든 사용자" 그룹에 "스토리지 파일 데이터 SMB 공유 참가자" 역할을 부여합니다
++
+image:Architectural.ChangeDataLayer.AzureFiles5.png[""]
+
+
+
+
+
+=== 디렉터리를 만듭니다
+
+. 회사 코드를 이름으로 사용하여 각 공유(데이터, 홈, 프로)에 디렉토리를 만듭니다(이 예에서는 회사 코드가 ""kift""임).
++
+image:Architectural.ChangeDataLayer.AzureFiles6.png[""]
+
+. pro 공유의 <company code> 디렉토리에 "'ProfileContainers'" 디렉토리를 만듭니다
++
+image:Architectural.ChangeDataLayer.AzureFiles7.png[""]
+
+
+
+
+
+=== NTFS 권한을 설정합니다
+
+. 공유에 연결합니다
++
+.. Azure 포털의 저장소 계정 아래에서 공유로 이동하고 점 3개를 클릭한 다음 연결을 클릭합니다
++
+image:Architectural.ChangeDataLayer.AzureFiles8.png[""]
+
+.. 인증 방법에 대해 Active Directory 를 선택하고 코드의 오른쪽 아래 모서리에 있는 클립보드로 복사 아이콘을 클릭합니다
++
+image:Architectural.ChangeDataLayer.AzureFiles9.png[""]
+
+.. Level3 Technician 그룹의 구성원인 계정을 사용하여 CWMGR1 서버에 로그인합니다
+.. PowerShell에서 복사된 코드를 실행하여 드라이브를 매핑합니다
+.. 각 공유에 대해 서로 다른 드라이브 문자를 선택하는 동안 각 공유에 대해 동일한 작업을 수행합니다
+
+
+. 회사 코드> 디렉터리에서 상속을 사용하지 않도록 설정합니다
+. 시스템과 AD 그룹 ClientDHPAccess는 <company code> 디렉토리에 대한 모든 권한을 가지고 있어야 합니다
+. 도메인 컴퓨터는 의 ProfileContainers 디렉터리와 pro 공유의 <company code> 디렉터리에 대한 모든 권한이 있어야 합니다
+. 회사 코드> - 모든 사용자 AD 그룹은 홈 및 pro 공유의 <company code> 디렉토리에 목록 폴더/읽기 데이터 권한을 가지고 있어야 합니다
+. 회사 코드> - 모든 사용자 AD 그룹에는 데이터 공유의 디렉토리에 대한 아래의 특별 권한이 있어야 합니다
++
+image:Architectural.ChangeDataLayer.AzureFiles10.png[""]
+
+. 회사 코드> - 모든 사용자 AD 그룹에는 ProfileContainers 디렉터리에 대한 수정 권한이 있어야 합니다
+
+
+
+
+=== 그룹 정책 개체를 업데이트합니다
+
+. Cloud Workspace > Cloud Workspace Companies > <회사 코드>> <회사 코드> - 데스크톱 사용자 아래에 있는 GPO <회사 코드> 사용자를 업데이트합니다
++
+.. 새 홈 공유를 가리키도록 홈 드라이브 매핑을 변경합니다
++
+image:Architectural.ChangeDataLayer.AzureFiles11.png[""]
+
+.. 바탕 화면 및 문서의 홈 공유를 가리키도록 폴더 리디렉션을 변경합니다
++
+image:Architectural.ChangeDataLayer.AzureFiles12.png[""]
+
++
+image:Architectural.ChangeDataLayer.AzureFiles13.png[""]
+
+
+
+
+
+
+
+=== Active Directory 사용자 및 컴퓨터에서 공유를 업데이트합니다
+
+. 기존 AD 또는 하이브리드 AD를 사용하는 경우 회사 코드 OU의 공유를 새 위치로 업데이트해야 합니다
++
+image:Architectural.ChangeDataLayer.AzureFiles14.png[""]
+
+
+
+
+
+=== VDS에서 데이터/홈/프로 경로를 업데이트합니다
+
+. Level3 Technician 그룹에 계정을 사용하여 CWMGR1에 로그인하고 Command Center를 실행합니다
+. 명령 드롭다운에서 데이터/홈/프로 폴더 변경 을 선택합니다
+. 데이터 로드 단추를 클릭한 다음 드롭다운에서 올바른 회사 코드가 선택되어 있는지 확인합니다
+. 데이터, 홈 및 Pro 위치에 대한 새 패티를 입력합니다
+. Windows Server로 설정 상자의 선택을 취소합니다
+. Execute Command 버튼을 클릭합니다
++
+image:Architectural.ChangeDataLayer.AzureFiles15.png[""]
+
+
+
+
+
+=== FSLogix 프로필 경로를 업데이트합니다
+
+. 세션 호스트에서 레지스트리 임시 를 엽니다
+. HKLM\SOFTWARE\FSLogix\Profiles에서 VHDLocations 항목을 새 ProfileContainers 디렉터리에 대한 UNC 경로로 편집합니다
++
+image:Architectural.ChangeDataLayer.AzureFiles16.png[""]
+
+
+
+
+
+=== 백업을 구성합니다
+
+. 새 공유에 대한 백업 정책을 설정하고 구성하는 것이 좋습니다
+. 동일한 리소스 그룹에 새 복구 서비스 볼트를 작성합니다
+. 볼트로 이동하고 시작하기에서 백업을 선택합니다
+. 워크로드가 실행 중인 경우 Azure를 선택하고 백업할 내용에 대해 Azure 파일 공유를 선택한 다음 Backukp 를 클릭합니다
+. 공유를 생성하는 데 사용되는 스토리지 계정을 선택합니다
+. 백업할 공유를 추가합니다
+. 필요에 맞는 백업 정책을 편집 및 생성합니다
+

@@ -1,0 +1,14 @@
+---
+sidebar: sidebar 
+permalink: video_azure_AVDRDS_deploy_54.html 
+summary: NetApp VDS v5.4를 사용하여 AVD 또는 RDS를 Azure에 배포합니다 
+keywords:  
+---
+= NetApp VDS v5.4를 사용하여 AVD 또는 RDS를 Azure에 배포합니다
+
+
+
+
+== 개요
+
+video::Gp2DzWBc0Go[youtube, ]

@@ -1,0 +1,23 @@
+= Microsoft 팀은 AVD 개요를 설명합니다
+
+
+
+
+== Microsoft 팀은 AVD 개요를 설명합니다
+
+이 스크립트 패키지는 쇼콜라티 패키지 관리자를 사용하여 Microsoft 팀 AVD_를 설치/제거합니다 (https://chocolatey.org/)[] 를 눌러 구축을 수행합니다. VM을 만들 때 VDS에서 초콜릿을 배포하지만 이 스크립트가 누락된 경우 초콜릿을 사전 요구 사항으로 확인하고 설치합니다.
+
+
+WARNING: 이 Microsoft Teams 설치는 Azure의 AVD에 특정한 사용자 정의 및 구성 요소가 있는 AVD 환경에 구축되도록 특별히 구성됩니다. link:scriptlibrary.MicrosoftTeams.html["다른 Microsoft 팀 스크립트"] RDS 배포용으로 제공됩니다.
+
+
+
+=== 기본 바로 가기 경로
+
+이 응용 프로그램의 기본 바로 가기 경로는 아래에 입력되며 바로 가기는 다음과 같습니다: `\\shortcut\Microsoft teams AVD.LNK'
+
+
+
+=== 작업 추가 대화 상자 창 스크린샷
+
+image::scriptlibrary.activity.InstallMicrosoftTeamsAVD.png[scriptlibrary.activity.InstallMicrosoftTeamsAVD]
