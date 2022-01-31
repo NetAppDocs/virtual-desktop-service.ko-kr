@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head class="at-element-marker">
+  <title>스크립팅된 이벤트 설명서 - Microsoft OneDrive</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="스크립팅된 이벤트 설명서 - Microsoft OneDrive" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ko-kr/virtual-desktop-service/scriptlibrary.MicrosoftOneDrive.html" />
+	<meta property="og:description" content="스크립트 설명서 - Microsoft OneDrive" />
+  <meta property="og:image" content="https://docs.netapp.com/ko-kr/virtual-desktop-service/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/>
+  
+  <meta name="description" content="스크립트 설명서 - Microsoft OneDrive">
+  <meta name="keywords" content=" ">
+  
+  
+
+  <!-- Icons -->
+  <link rel="icon" href="/ko-kr/virtual-desktop-service/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed -->
+  
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/virtual-desktop-service/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/ko-kr/virtual-desktop-service/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/virtual-desktop-service/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/virtual-desktop-service/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/ko-kr/virtual-desktop-service/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/ko-kr/virtual-desktop-service/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/ko-kr/virtual-desktop-service/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/ko-kr/virtual-desktop-service/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/ko-kr/virtual-desktop-service/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/ko-kr/virtual-desktop-service/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/virtual-desktop-service/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/virtual-desktop-service/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/ko-kr/virtual-desktop-service/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ko-kr/virtual-desktop-service/css/tabbed-blocks.css" type="text/css">
+  <link rel="stylesheet" href='/ko-kr/virtual-desktop-service/css/product-family.css' type="text/css">
+  
+
+  
+  <link rel='stylesheet' href='/ko-kr/virtual-desktop-service/css/na-feature.css' type='text/css'>
+  
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/ko-kr/virtual-desktop-service/js/na-search.js'></script>
+  
+
+  
+  <script src='/ko-kr/virtual-desktop-service/js/na-pagenav.js'></script>
+  
+
+  <link rel='stylesheet' href='/ko-kr/virtual-desktop-service/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/virtual-desktop-service/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/ko-kr/virtual-desktop-service/js/na-utility.js'></script>
+  <script src='/ko-kr/virtual-desktop-service/js/clouddocs.js'></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    var head = document.getElementsByTagName('head')[0];
+    var adobe = document.createElement("script");
+    adobe.type = "text/javascript";
+    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+    head.appendChild(adobe);
+  }
+  </script>
+  <script src='/ko-kr/virtual-desktop-service/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/ko-kr/virtual-desktop-service/js/toc.js'></script>
+  <script src='/ko-kr/virtual-desktop-service/js/customscripts.js'></script>
+
+  <script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+  <script src='/ko-kr/virtual-desktop-service/js/version-dropdown.js'></script>
+  <script src='/ko-kr/virtual-desktop-service/js/product-family.js'></script>
+  <script src='/ko-kr/virtual-desktop-service/js/FileSaver.min.js'></script>
+  <script src='/ko-kr/virtual-desktop-service/js/jszip-utils.min.js'></script>
+  <script src='/ko-kr/virtual-desktop-service/js/jszip.min.js'></script>
+  <script src='/ko-kr/virtual-desktop-service/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">제품 및 솔루션</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">지원 및 교육</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">커뮤니티</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">블로그</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">고객 성공 사례</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">연락처</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">연락처</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/ko-kr/virtual-desktop-service/search.html"
+          data-type="widget" 
+          data-placeholder="설명서 검색" 
+          data-no-results-found="{query}에 대한 결과를 찾을 수 없음" 
+          data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
+          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
+          data-results-found="{hitCount}개의 결과를 찾음"  
+          data-sk-es-pf-indexes=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">한국어</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ko-kr/virtual-desktop-service/scriptlibrary.MicrosoftOneDrive.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/virtual-desktop-service/scriptlibrary.MicrosoftOneDrive.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/virtual-desktop-service/scriptlibrary.MicrosoftOneDrive.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/virtual-desktop-service/scriptlibrary.MicrosoftOneDrive.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                </li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>사용 가능한 PDF<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        <a target="_blank" href="/ko-kr/virtual-desktop-service/pdfs/fullsite-sidebar/Virtual_Desktop_Service_Documentation_가상_데스크탑_서비스_설명서.pdf" >
+          <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>이 문서 사이트의 PDF</a>
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/VDS를_사용한_배포.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            VDS를 사용한 배포
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/Azure를_지원합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            Azure를 지원합니다
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/Azure_가상_데스크톱.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            Azure 가상 데스크톱
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/구글.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            구글
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/아키텍처.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            아키텍처
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/데이터_계층_변경.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            데이터 계층 변경
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/관리.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            관리
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/적합합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            적합합니다
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/응용_프로그램.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            응용 프로그램
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/스크립트_이벤트.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            스크립트 이벤트
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/Command_Center를_클릭합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            Command Center를 클릭합니다
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/운영.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            운영
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/사용자_관리.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            사용자 관리
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/시스템_관리.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            시스템 관리
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/문제_해결.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            문제 해결
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/참조하십시오.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            참조하십시오
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/릴리스_정보.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            릴리스 정보
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/이전_버전.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            이전 버전
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/스크립트_라이브러리_문서.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            스크립트 라이브러리 문서
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/ko-kr/virtual-desktop-service/pdfs/pages/scriptlibrary.MicrosoftOneDrive.pdf" >
+    <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/고급.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            고급
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/NetApp_VDS_v5_4_비디오.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            NetApp VDS v5.4 비디오
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/ko-kr/virtual-desktop-service/images/pdf-zip.png" width="16" height="16"/>
+      <pre>별도의 PDF 문서 모음<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="sidebar-nav-container">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/index.html">
+        Virtual Desktop Service 설명서
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> VDS를 사용한 배포</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Azure를 지원합니다</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Azure 가상 데스크톱</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Deploying.Azure.AVD.Deploying_AVD_in_Azure.html">
+        Azure에서 AVD 배포
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Deploying.Azure.AVD.Supplemental_AVD_with_existing_AD.html">
+        Supplemental - 기존 AD의 AVD
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Deploying.Azure.AVD.vds_v5.4_components_and_permissions.html">
+        VDS v5.4 AVD(구성 요소 및 권한)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Deploying.Azure.AVD.vds_v5.4_prerequisites.html">
+        VDS v5.4 사전 요구 사항(AVD)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Deploying.Azure.AVD.vds_v6.0_prerequisites.html">
+        VDS v6.0 전제 조건(AVD)
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 구글</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Deploying.GCP.RDS.deploying_rds_in_gcp.html">
+        Google에서 RDS 배포
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Deploying.GCP.vds_v5.4_prerequisites.html">
+        VDS v5.4 사전 요구 사항(RDS/GCP)
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 아키텍처</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ko-kr/virtual-desktop-service/Architectural.change_data_layer.html">
+        <div class="na-navbar-padding"> 데이터 계층 변경</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Architectural.change_data_layer.Azure_Files.html">
+        Azure 파일
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Architectual.migrate_data_into_vds.html">
+        VDS로 데이터 마이그레이션
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Architectual.upgrade_AVD_v1_to_v2.html">
+        AVD v1을 v2로 업그레이드합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Architectural.Wildcard_SSL_certificate_renewal_process.html">
+        SSL 인증서를 갱신합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Architectural.AVD_teardown_guide.html">
+        VDS 분해 안내서
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 관리</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 적합합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.Deployments.provisioning_collections.html">
+        컬렉션 프로비저닝
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.Deployments.logical_hierarchy_overview.html">
+        VDS 논리적 계층 개요
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 응용 프로그램</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.Applications.application_entitlement_workflow.html">
+        RDS용 앱 소유 권한
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.Applications.AVD_application_entitlement_workflow.html">
+        AVD에 대한 앱 소유 권한
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 스크립트 이벤트</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.Scripted_Events.scripted_events.html">
+        Scribed 이벤트 개요
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Command Center를 클릭합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.command_center.overview.html">
+        관리 Command Center 개요
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 운영</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.command_center.operations.copy_template_to_gallery.html">
+        Gallery에 템플릿 복사
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.Cost_Optimization.workload_schedule.html">
+        비용 최적화 구성
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 사용자 관리</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.User_Administration.manage_user_accounts.html">
+        사용자 계정 관리
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.User_Administration.manage_folders_and_permissions.html">
+        폴더 및 권한 관리
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.Applications.application_entitlement_workflow.html">
+        응용 프로그램 액세스 관리
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.User_Administration.reset_user_password.html">
+        사용자 암호를 재설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.User_Administration.multi-factor_authentication.html">
+        MFA를 구성합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 시스템 관리</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.System_Administration.create_domain_admin_account.html">
+        도메인 관리자 계정을 생성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.System_Administration.provide_3rd_party_access.html">
+        타사 액세스 제공
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.System_Administration.configure_backup.html">
+        백업을 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.System_Administration.clone_virtual_machines.html">
+        가상 머신의 클론을 생성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.System_Administration.auto_add_disk_space.html">
+        디스크 공간 자동 추가
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.System_Administration.azure_key_vault.html">
+        Azure 키 저장소
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.System_Administration.configure_antivirus.html">
+        바이러스 백신 구성
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.System_Administration.adding_moving_mapped_drives.html">
+        매핑된 드라이브 추가 및 이동
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 문제 해결</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Troubleshooting.reviewing_vds_logs.html">
+        VDS 로그를 검토합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Troubleshooting.internet_connection_quality.html">
+        인터넷 연결 품질
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Troubleshooting.enable_user_wallpaper.html">
+        사용자 배경화면을 활성화합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Troubleshooting.printing_issues.html">
+        인쇄 문제
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Troubleshooting.azure_vcpu_core_quota.html">
+        Azure vCPU 코어 할당량
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Troubleshooting.unlocking_user_accounts.html">
+        사용자 계정 잠금을 해제합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Troubleshooting.general_vm_performance.html">
+        일반 VM 성능
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Troubleshooting.dns_forwarding_for_azure_aadds_sso.html">
+        Azure용 DNS Forwarding은 SSO를 추가합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Troubleshooting.application_issues.html">
+        응용 프로그램 문제
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 참조하십시오</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 릴리스 정보</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Reference.Release_Notes.vds_v6.0_release_notes.html">
+        VDS v6.0 릴리스 정보
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Reference.Release_Notes.vds_v5.4_release_notes.html">
+        VDS v5.4 릴리스 정보
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Reference.Release_Notes.vds_windows_client_release_notes.html">
+        VDS Windows 클라이언트 릴리스 정보
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 이전 버전</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Reference.Release_Notes.vds_v5.3_release_notes.html">
+        VDS v5.3 릴리스 정보
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Reference.Release_Notes.cwms_v5.2_release_notes.html">
+        CWMS v5.2 릴리스 정보
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Reference.Release_Notes.cws_v5.1_release_notes.html">
+        CWS v5.1 릴리스 노트
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Reference.Release_Notes.cws_v5.0_release_notes.html">
+        CWS v5.0 릴리스 정보
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Reference.end_user_access.html">
+        최종 사용자 액세스
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Reference.vds_change_environments.html">
+        VDS는 환경을 변경합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 스크립트 라이브러리 문서</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.AdobeReader.html">
+        Adobe Reader DC
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.AMDRadeonInstinctDrivers.html">
+        AMD Radeon 본능적인 드라이버
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.EzeepPrintApp.html">
+        Ezeep Print 앱
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.GoogleChrome.html">
+        Google Chrome
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.MicrosoftEdgeChromium.html">
+        Microsoft Edge Chromium
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.MicrosoftOffice365.html">
+        Microsoft Office 365
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.MicrosoftOneDrive.html">
+        Microsoft One 드라이브
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.MicrosoftTeams.html">
+        Microsoft 팀
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.MicrosoftTeamsAVD.html">
+        AVD를 위한 Microsoft 팀
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.NvidiaCudaDrivers.html">
+        NVIDIA CUDA 드라이버
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.NvidiaGridDrivers.html">
+        NVIDIA Grid 드라이버
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.AVDScreenCaptureProtection.html">
+        Avd 화면 캡처 보호
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.ZoomVDI-AVD.html">
+        AVD 확대/축소
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 고급</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Advanced.fslogix_profile_shrink.html">
+        FSLogix 프로필 축소
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> NetApp VDS v5.4 비디오</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/video_content_netapptv.html">
+        NetApp TV 콘텐츠
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/video_azure_AVDRDS_deploy_54.html">
+        AVD 또는 RDS를 배포합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/video_azure_AVD_hostpool_54.html">
+        Azure에서 AVD 호스트 풀을 추가합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/video_azure_AVD_users_appgroups_54.html">
+        AVD 사용자 및 앱 그룹을 관리합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/video_azure_AVDRDS_optimize_resources_54.html">
+        리소스 관리 및 비용 최소화
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/video_VDS_day_in_the_life.html">
+        AVD 및 RDS에 대한 애플리케이션 관리 자동화
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Architectual.upgrade_AVD_v1_to_v2.html">
+        v1 AVD 호스트 풀을 v2로 업그레이드합니다
+      </a></li></ul></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container -->
+    <article class="page-content">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://www.netapp.com">홈</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">설명서</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/ko-kr/virtual-desktop-service/">Virtual&nbsp;Desktop&nbsp;Service</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          스크립팅된 이벤트 설명서 - Microsoft OneDrive
+        </li>
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> 본 한국어 번역은 사용자 편의를 위해 제공되는 기계 번역입니다. 영어 버전과 한국어 버전이 서로 어긋나는 경우에는 언제나 영어 버전이 우선합니다. </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">스크립팅된 이벤트 설명서 - Microsoft OneDrive</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2022-01-31 15:56:21 +0000">01/31/2022</time>
+    
+  
+
+<span>기여자
+  <a target="_blank" href="https://github.com/tvanroo">
+    <img  class="avatar avatar-small"
+          alt="tvanroo"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/29737083?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+</span>
+
+
+</p>
+
+
+<div class="sect1">
+<h2 id="글로벌-스크립트-개요">글로벌 스크립트 개요</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>NetApp VDS에는 VDS 환경에서 직접 사용하거나 중복하여 사용자 지정 스크립트 이벤트의 구성 요소로 사용할 수 있는 사전 정의된 스크립트 기반 이벤트 라이브러리가 포함되어 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>이 응용 프로그램의 경우 이 문서에서는 설치/활성화 및 제거/비활성화 작업을 모두 다룹니다.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="글로벌-스크립트-사용">글로벌 스크립트 사용</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>이 이벤트와 같은 스크립트 이벤트가 미리 채워지고 "글로벌" 필터 확인란을 선택하면 해당 이벤트가 표시됩니다.</p>
+</div>
+<div class="paragraph">
+<p>이와 같은 Global Scripted Events는 읽기 전용입니다. 그대로 사용하거나 "클론" 기능을 사용하여 편집 및 사용할 고객 복사본을 생성할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>클론 버튼은 Scriped Events 페이지의 작업 메뉴에 있습니다.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="scriptlibrary.overview-2ccb2.png" alt="scriptlibrary.overview 2ccb2">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="microsoft-onedrive-개요">Microsoft OneDrive 개요</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>이 스크립트 패키지는 초콜릿 패키지 관리자를 사용하여 _Microsoft OneDrive_를 설치/제거합니다 (<a href="https://chocolatey.org/)" class="bare">https://chocolatey.org/)</a> 를 눌러 구축을 수행합니다. VM을 만들 때 VDS에서 초콜릿을 배포하지만 이 스크립트가 누락된 경우 초콜릿을 사전 요구 사항으로 확인하고 설치합니다.</p>
+</div>
+<div class="sect2">
+<h3 id="기본-바로-가기-경로">기본 바로 가기 경로</h3>
+<div class="paragraph">
+<p>이 응용 프로그램의 기본 바로 가기 경로는 아래에 입력되며 바로 가기는 다음과 같습니다: `\\shortcuts\OneDrive.lnk'</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="작업-추가-대화-상자-창-스크린샷">작업 추가 대화 상자 창 스크린샷</h3>
+<div class="imageblock">
+<div class="content">
+<img src="scriptlibrary.activity.InstallMicrosoftOneDrive.png" alt="scriptlibrary.activity.InstallMicrosoftOneDrive 를 참조하십시오">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="애플리케이션-설치제거-작업을-추가합니다">애플리케이션 설치/제거 작업을 추가합니다</h3>
+<div class="paragraph">
+<p>리포지토리의 스크립트에서 작업을 수행하기 위해서는 해당 스크립트를 선택한 트리거와 연결하기 위한 작업을 만들어야 합니다. 이 예에서는 vDS의 _Workspace &gt; Applications_PAGE에서 앱을 작업 공간에 추가하거나 작업 영역에서 제거할 때 이 응용 프로그램을 설치/제거합니다.</p>
+</div>
+<div class="paragraph">
+<p>vDS 스크립트 이벤트는 <em>Application Install</em>(또는 <em>Application Uninstall</em>) 이벤트 유형의 대안으로 사용할 수 있는 <em>Create Server_와 같은 다양한 유형의 활동 트리거를 제공합니다. Create Server _ 을(를) 사용하면 VDS에서 새로 생성된 모든 VM에 대해 이 앱 설치를 실행할 수 있습니다. _Create Server</em> 및 기타 트리거는 문서화되어 있으며 탐색할 수 있습니다 <a href="Management.Scripted_Events.scripted_events.html">"여기"</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/virtual-desktop-service/images/note.svg" alt="참고">
+</td>
+<td class="content">
+이 응용 프로그램은 VDS 응용 프로그램 라이브러리에 있어야 합니다. 여기 <a href="Management.Applications.application_entitlement_workflow.html#add-applications-to-the-app-catalog">"섹션을 참조하십시오"</a> RDS의 앱 소유 권한 문서에서 라이브러리에 앱을 추가하는 방법에 대해 설명합니다.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">활동을 생성하고 이 스크립트를 작업에 연결하려면:</div>
+<ol class="arabic">
+<li>
+<p>VDS에서 _Scripted Events_섹션으로 이동합니다</p>
+</li>
+<li>
+<p>Activities_에서 _ + Add Activity _ 를 클릭합니다</p>
+</li>
+<li>
+<p>열린 대화 상자 창에서 다음 정보를 입력합니다.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>* 이름: * 이 활동의 이름을 지정합니다</p>
+</li>
+<li>
+<p>* 설명: * 선택적으로 설명을 입력합니다</p>
+</li>
+<li>
+<p>* 배포 * 드롭다운에서 원하는 배포를 선택합니다</p>
+</li>
+<li>
+<p>* 스크립트: * 드롭다운에서 설치(또는 제거) 스크립트를 선택합니다. 이는 클론 복제 및 사용자 지정한 글로벌 스크립트 또는 고객 스크립트일 수 있습니다.</p>
+</li>
+<li>
+<p>인수: * 공란으로 남겨 둡니다</p>
+</li>
+<li>
+<p>사용 확인란: * 확인란을 선택합니다</p>
+</li>
+<li>
+<p>이벤트 유형: * 드롭다운에서 '응용 프로그램 설치'(또는 응용 프로그램 제거)를 선택합니다</p>
+</li>
+<li>
+<p>* 응용 프로그램: * 드롭다운에서 이 응용 프로그램을 선택합니다</p>
+</li>
+<li>
+<p>* 바로 가기 경로: * 이 응용 프로그램의 기본 바로 가기 경로를 입력합니다(위에 표시됨).</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/virtual-desktop-service/issues/new?body=Page%3A%20[스크립팅된 이벤트 설명서 - Microsoft OneDrive](https://docs.netapp.com/ko-kr/virtual-desktop-service/scriptlibrary.MicrosoftOneDrive.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/virtual-desktop-service/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/virtual-desktop-service/blob/main/sub.scriptlibrary.MicrosoftOneDrive.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/virtual-desktop-service/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/virtual-desktop-service/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">이 페이지의 내용</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div style="clear: both"></div><!-- Main needs to have height -->
+</div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+
+</ul>
+</div>
+<div class="n-footer__social-links">
+<ul class="n-footer__social-link-list">
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
+<span class="n-footer__social-link-text">blog</span>
+<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+  <title>blog@</title>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#blog"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
+<span class="n-footer__social-link-text">community</span>
+<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+<title>community@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#comments"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
+<span class="n-footer__social-link-text">twitter</span>
+<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+<title>twitter@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#twitter"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
+<span class="n-footer__social-link-text">facebook</span>
+<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+<title>facebook@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#facebook"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+<span class="n-footer__social-link-text">linkedin</span>
+<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+<title>linkedin@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#linkedin"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+<span class="n-footer__social-link-text">youtube</span>
+<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+<title>youtube@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#youtube"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+<span class="n-footer__social-link-text">slideshare</span>
+<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+<title>slideshare@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#slideshare"></use>
+</svg>
+
+</a>
+</li>
+</ul>
+</div>
+
+</div>
+<div class="n-footer__bottom-right">
+  <p class="n-footer__fine-print">웹 사이트에 대한 피드백이 있으십니까?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">의견을 공유해 주십시오</a>
+  <a href="https://docs.netapp.com/ko-kr/announcements/" class="n-footer__copyright">공지 사항</a>
+  </p>
+</div>
+</div>
+</div>
+</footer>
+
+      </div>
+
+      <!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ko-kr/virtual-desktop-service/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ko-kr/virtual-desktop-service/js/prism.js'></script>
+      <script type="text/javascript" src='/ko-kr/virtual-desktop-service/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ko-kr/virtual-desktop-service/js/www-ntap.js'></script>
+    <script src='/ko-kr/virtual-desktop-service/js/tabbed-blocks.js'></script>
+  </body>
+
+  
+</html>

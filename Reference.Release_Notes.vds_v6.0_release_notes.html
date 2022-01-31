@@ -1,0 +1,2307 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head class="at-element-marker">
+  <title>Virtual Desktop Service – v6.0 릴리즈 노트</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Virtual Desktop Service – v6.0 릴리즈 노트" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ko-kr/virtual-desktop-service/Reference.Release_Notes.vds_v6.0_release_notes.html" />
+	<meta property="og:description" content="NetApp VDS 릴리즈 노트 v6.0" />
+  <meta property="og:image" content="https://docs.netapp.com/ko-kr/virtual-desktop-service/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/>
+  
+  <meta name="description" content="NetApp VDS 릴리즈 노트 v6.0">
+  <meta name="keywords" content=" ">
+  
+  
+
+  <!-- Icons -->
+  <link rel="icon" href="/ko-kr/virtual-desktop-service/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed -->
+  
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/virtual-desktop-service/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/ko-kr/virtual-desktop-service/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/virtual-desktop-service/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/virtual-desktop-service/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/ko-kr/virtual-desktop-service/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/ko-kr/virtual-desktop-service/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/ko-kr/virtual-desktop-service/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/ko-kr/virtual-desktop-service/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/ko-kr/virtual-desktop-service/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/ko-kr/virtual-desktop-service/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/virtual-desktop-service/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/virtual-desktop-service/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/ko-kr/virtual-desktop-service/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ko-kr/virtual-desktop-service/css/tabbed-blocks.css" type="text/css">
+  <link rel="stylesheet" href='/ko-kr/virtual-desktop-service/css/product-family.css' type="text/css">
+  
+
+  
+  <link rel='stylesheet' href='/ko-kr/virtual-desktop-service/css/na-feature.css' type='text/css'>
+  
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/ko-kr/virtual-desktop-service/js/na-search.js'></script>
+  
+
+  
+  <script src='/ko-kr/virtual-desktop-service/js/na-pagenav.js'></script>
+  
+
+  <link rel='stylesheet' href='/ko-kr/virtual-desktop-service/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/virtual-desktop-service/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/ko-kr/virtual-desktop-service/js/na-utility.js'></script>
+  <script src='/ko-kr/virtual-desktop-service/js/clouddocs.js'></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    var head = document.getElementsByTagName('head')[0];
+    var adobe = document.createElement("script");
+    adobe.type = "text/javascript";
+    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+    head.appendChild(adobe);
+  }
+  </script>
+  <script src='/ko-kr/virtual-desktop-service/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/ko-kr/virtual-desktop-service/js/toc.js'></script>
+  <script src='/ko-kr/virtual-desktop-service/js/customscripts.js'></script>
+
+  <script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+  <script src='/ko-kr/virtual-desktop-service/js/version-dropdown.js'></script>
+  <script src='/ko-kr/virtual-desktop-service/js/product-family.js'></script>
+  <script src='/ko-kr/virtual-desktop-service/js/FileSaver.min.js'></script>
+  <script src='/ko-kr/virtual-desktop-service/js/jszip-utils.min.js'></script>
+  <script src='/ko-kr/virtual-desktop-service/js/jszip.min.js'></script>
+  <script src='/ko-kr/virtual-desktop-service/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">제품 및 솔루션</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">지원 및 교육</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">커뮤니티</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">블로그</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">고객 성공 사례</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">연락처</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">연락처</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/ko-kr/virtual-desktop-service/search.html"
+          data-type="widget" 
+          data-placeholder="설명서 검색" 
+          data-no-results-found="{query}에 대한 결과를 찾을 수 없음" 
+          data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
+          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
+          data-results-found="{hitCount}개의 결과를 찾음"  
+          data-sk-es-pf-indexes=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">한국어</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ko-kr/virtual-desktop-service/Reference.Release_Notes.vds_v6.0_release_notes.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/virtual-desktop-service/Reference.Release_Notes.vds_v6.0_release_notes.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/virtual-desktop-service/Reference.Release_Notes.vds_v6.0_release_notes.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/virtual-desktop-service/Reference.Release_Notes.vds_v6.0_release_notes.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                </li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>사용 가능한 PDF<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        <a target="_blank" href="/ko-kr/virtual-desktop-service/pdfs/fullsite-sidebar/Virtual_Desktop_Service_Documentation_가상_데스크탑_서비스_설명서.pdf" >
+          <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>이 문서 사이트의 PDF</a>
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/VDS를_사용한_배포.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            VDS를 사용한 배포
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/Azure를_지원합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            Azure를 지원합니다
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/Azure_가상_데스크톱.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            Azure 가상 데스크톱
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/구글.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            구글
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/아키텍처.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            아키텍처
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/데이터_계층_변경.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            데이터 계층 변경
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/관리.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            관리
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/적합합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            적합합니다
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/응용_프로그램.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            응용 프로그램
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/스크립트_이벤트.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            스크립트 이벤트
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/Command_Center를_클릭합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            Command Center를 클릭합니다
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/운영.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            운영
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/사용자_관리.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            사용자 관리
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/시스템_관리.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            시스템 관리
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/문제_해결.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            문제 해결
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/참조하십시오.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            참조하십시오
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/릴리스_정보.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            릴리스 정보
+          </a>
+          
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/ko-kr/virtual-desktop-service/pdfs/pages/Reference.Release_Notes.vds_v6.0_release_notes.pdf" >
+    <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/이전_버전.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            이전 버전
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/스크립트_라이브러리_문서.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            스크립트 라이브러리 문서
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/고급.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            고급
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/virtual-desktop-service/pdfs/sidebar/NetApp_VDS_v5_4_비디오.pdf" 
+            
+          >
+            <img src="/ko-kr/virtual-desktop-service/images/pdf.png" width="16" height="16"/>
+            NetApp VDS v5.4 비디오
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/ko-kr/virtual-desktop-service/images/pdf-zip.png" width="16" height="16"/>
+      <pre>별도의 PDF 문서 모음<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="sidebar-nav-container">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/index.html">
+        Virtual Desktop Service 설명서
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> VDS를 사용한 배포</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Azure를 지원합니다</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Azure 가상 데스크톱</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Deploying.Azure.AVD.Deploying_AVD_in_Azure.html">
+        Azure에서 AVD 배포
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Deploying.Azure.AVD.Supplemental_AVD_with_existing_AD.html">
+        Supplemental - 기존 AD의 AVD
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Deploying.Azure.AVD.vds_v5.4_components_and_permissions.html">
+        VDS v5.4 AVD(구성 요소 및 권한)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Deploying.Azure.AVD.vds_v5.4_prerequisites.html">
+        VDS v5.4 사전 요구 사항(AVD)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Deploying.Azure.AVD.vds_v6.0_prerequisites.html">
+        VDS v6.0 전제 조건(AVD)
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 구글</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Deploying.GCP.RDS.deploying_rds_in_gcp.html">
+        Google에서 RDS 배포
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Deploying.GCP.vds_v5.4_prerequisites.html">
+        VDS v5.4 사전 요구 사항(RDS/GCP)
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 아키텍처</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ko-kr/virtual-desktop-service/Architectural.change_data_layer.html">
+        <div class="na-navbar-padding"> 데이터 계층 변경</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Architectural.change_data_layer.Azure_Files.html">
+        Azure 파일
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Architectual.migrate_data_into_vds.html">
+        VDS로 데이터 마이그레이션
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Architectual.upgrade_AVD_v1_to_v2.html">
+        AVD v1을 v2로 업그레이드합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Architectural.Wildcard_SSL_certificate_renewal_process.html">
+        SSL 인증서를 갱신합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Architectural.AVD_teardown_guide.html">
+        VDS 분해 안내서
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 관리</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 적합합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.Deployments.provisioning_collections.html">
+        컬렉션 프로비저닝
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.Deployments.logical_hierarchy_overview.html">
+        VDS 논리적 계층 개요
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 응용 프로그램</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.Applications.application_entitlement_workflow.html">
+        RDS용 앱 소유 권한
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.Applications.AVD_application_entitlement_workflow.html">
+        AVD에 대한 앱 소유 권한
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 스크립트 이벤트</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.Scripted_Events.scripted_events.html">
+        Scribed 이벤트 개요
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Command Center를 클릭합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.command_center.overview.html">
+        관리 Command Center 개요
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 운영</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.command_center.operations.copy_template_to_gallery.html">
+        Gallery에 템플릿 복사
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.Cost_Optimization.workload_schedule.html">
+        비용 최적화 구성
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 사용자 관리</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.User_Administration.manage_user_accounts.html">
+        사용자 계정 관리
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.User_Administration.manage_folders_and_permissions.html">
+        폴더 및 권한 관리
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.Applications.application_entitlement_workflow.html">
+        응용 프로그램 액세스 관리
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.User_Administration.reset_user_password.html">
+        사용자 암호를 재설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.User_Administration.multi-factor_authentication.html">
+        MFA를 구성합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 시스템 관리</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.System_Administration.create_domain_admin_account.html">
+        도메인 관리자 계정을 생성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.System_Administration.provide_3rd_party_access.html">
+        타사 액세스 제공
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.System_Administration.configure_backup.html">
+        백업을 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.System_Administration.clone_virtual_machines.html">
+        가상 머신의 클론을 생성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.System_Administration.auto_add_disk_space.html">
+        디스크 공간 자동 추가
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.System_Administration.azure_key_vault.html">
+        Azure 키 저장소
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.System_Administration.configure_antivirus.html">
+        바이러스 백신 구성
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Management.System_Administration.adding_moving_mapped_drives.html">
+        매핑된 드라이브 추가 및 이동
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 문제 해결</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Troubleshooting.reviewing_vds_logs.html">
+        VDS 로그를 검토합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Troubleshooting.internet_connection_quality.html">
+        인터넷 연결 품질
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Troubleshooting.enable_user_wallpaper.html">
+        사용자 배경화면을 활성화합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Troubleshooting.printing_issues.html">
+        인쇄 문제
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Troubleshooting.azure_vcpu_core_quota.html">
+        Azure vCPU 코어 할당량
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Troubleshooting.unlocking_user_accounts.html">
+        사용자 계정 잠금을 해제합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Troubleshooting.general_vm_performance.html">
+        일반 VM 성능
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Troubleshooting.dns_forwarding_for_azure_aadds_sso.html">
+        Azure용 DNS Forwarding은 SSO를 추가합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Troubleshooting.application_issues.html">
+        응용 프로그램 문제
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 참조하십시오</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 릴리스 정보</div>
+      </a>
+      <ul><li class="  active "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Reference.Release_Notes.vds_v6.0_release_notes.html">
+        VDS v6.0 릴리스 정보
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Reference.Release_Notes.vds_v5.4_release_notes.html">
+        VDS v5.4 릴리스 정보
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Reference.Release_Notes.vds_windows_client_release_notes.html">
+        VDS Windows 클라이언트 릴리스 정보
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 이전 버전</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Reference.Release_Notes.vds_v5.3_release_notes.html">
+        VDS v5.3 릴리스 정보
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Reference.Release_Notes.cwms_v5.2_release_notes.html">
+        CWMS v5.2 릴리스 정보
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Reference.Release_Notes.cws_v5.1_release_notes.html">
+        CWS v5.1 릴리스 노트
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Reference.Release_Notes.cws_v5.0_release_notes.html">
+        CWS v5.0 릴리스 정보
+      </a></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Reference.end_user_access.html">
+        최종 사용자 액세스
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Reference.vds_change_environments.html">
+        VDS는 환경을 변경합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 스크립트 라이브러리 문서</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.AdobeReader.html">
+        Adobe Reader DC
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.AMDRadeonInstinctDrivers.html">
+        AMD Radeon 본능적인 드라이버
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.EzeepPrintApp.html">
+        Ezeep Print 앱
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.GoogleChrome.html">
+        Google Chrome
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.MicrosoftEdgeChromium.html">
+        Microsoft Edge Chromium
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.MicrosoftOffice365.html">
+        Microsoft Office 365
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.MicrosoftOneDrive.html">
+        Microsoft One 드라이브
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.MicrosoftTeams.html">
+        Microsoft 팀
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.MicrosoftTeamsAVD.html">
+        AVD를 위한 Microsoft 팀
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.NvidiaCudaDrivers.html">
+        NVIDIA CUDA 드라이버
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.NvidiaGridDrivers.html">
+        NVIDIA Grid 드라이버
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.AVDScreenCaptureProtection.html">
+        Avd 화면 캡처 보호
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/scriptlibrary.ZoomVDI-AVD.html">
+        AVD 확대/축소
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 고급</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Advanced.fslogix_profile_shrink.html">
+        FSLogix 프로필 축소
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> NetApp VDS v5.4 비디오</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/video_content_netapptv.html">
+        NetApp TV 콘텐츠
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/video_azure_AVDRDS_deploy_54.html">
+        AVD 또는 RDS를 배포합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/video_azure_AVD_hostpool_54.html">
+        Azure에서 AVD 호스트 풀을 추가합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/video_azure_AVD_users_appgroups_54.html">
+        AVD 사용자 및 앱 그룹을 관리합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/video_azure_AVDRDS_optimize_resources_54.html">
+        리소스 관리 및 비용 최소화
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/video_VDS_day_in_the_life.html">
+        AVD 및 RDS에 대한 애플리케이션 관리 자동화
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/virtual-desktop-service/Architectual.upgrade_AVD_v1_to_v2.html">
+        v1 AVD 호스트 풀을 v2로 업그레이드합니다
+      </a></li></ul></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container -->
+    <article class="page-content">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://www.netapp.com">홈</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">설명서</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/ko-kr/virtual-desktop-service/">Virtual&nbsp;Desktop&nbsp;Service</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          Virtual Desktop Service – v6.0 릴리즈 노트
+        </li>
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> 본 한국어 번역은 사용자 편의를 위해 제공되는 기계 번역입니다. 영어 버전과 한국어 버전이 서로 어긋나는 경우에는 언제나 영어 버전이 우선합니다. </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Virtual Desktop Service – v6.0 릴리즈 노트</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2022-01-31 15:56:21 +0000">01/31/2022</time>
+    
+  
+
+<span>기여자
+  <a target="_blank" href="https://github.com/tvanroo">
+    <img  class="avatar avatar-small"
+          alt="tvanroo"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/29737083?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+</span>
+
+
+</p>
+
+
+<div class="sect1">
+<h2 id="vds-v6-릴리스-2022년-1월-20일-목요일">VDS V6 릴리스: 2022년 1월 20일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 가상 데스크톱 서비스 v6 _ 시기: _ 2022 년 1월 20일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스가 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>ACE(Azure Cost Estimator)의 링크 리디렉션 문제에 대한 버그 수정</p>
+</li>
+<li>
+<p>사전 예방을 위한 보안 및 성능 개선 사항을 제공합니다</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-v6-릴리스-2022년-1월-6일-목요일">VDS V6 릴리스: 2022년 1월 6일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2022 년 1월 6일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스가 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-2">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>파트너와 하위 파트너 모두를 위한 셀프 서비스 암호 재설정 보고서를 소개합니다</p>
+</li>
+<li>
+<p>배포 프로세스 시작 시 고유한 Azure 인증 문제에 대한 버그 수정.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-v6-릴리스-2021년-12월-16일-목요일">VDS V6 릴리스: 2021년 12월 16일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2021년 12월 16일 목요일 오후 10시부터 오후 11시까지 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-3">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>기본 SMS 공급자를 사용할 수 없는 경우 MFA에 대한 보조 SMS 메시지 전송 기능 향상</p>
+</li>
+<li>
+<p>Windows용 VDS 클라이언트에 사용되는 인증서로 업데이트합니다</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-v6-릴리스-2021년-12월-2일-목요일-변경-계획-없음">VDS V6 릴리스: 2021년 12월 2일 목요일 - 변경 계획 없음</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2021년 12월 2일 목요일 오후 10시 – 오후 11시 Eastern_Impact: _ 없음</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-v6-핫픽스-2021년-11월-18일-목요일">VDS V6 핫픽스: 2021년 11월 18일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2021년 11월 18일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-4">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>AAD가 AADDS 기반인 PAM 문제에 대한 버그 수정</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-v6-핫픽스-2021년-11월-8일-월요일">VDS V6 핫픽스: 2021년 11월 8일 월요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 가상 데스크톱 서비스 v6 _ 시기: _ 2021년 11월 8일 월요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-5">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>모든 사용자에 대해 VDS UI에서 채팅 상자를 활성화합니다</p>
+</li>
+<li>
+<p>배포 선택 항목의 고유한 조합에 대한 버그 수정</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-v6-릴리스-2021년-11월-7일-일요일">VDS V6 릴리스: 2021년 11월 7일 일요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 가상 데스크톱 서비스 v6 _ 시기: _ 2021년 11월 7일 일요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-6">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>FSLogix 프로필의 자동 축소를 해제하는 Command Center 옵션을 소개합니다</p>
+</li>
+<li>
+<p>AADDS(Azure Active Directory Domain Services)를 활용하는 배포 시 PAM에 대한 버그 수정</p>
+</li>
+<li>
+<p>사전 예방을 위한 보안 및 성능 개선 사항을 제공합니다</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="azure-비용-추정기">Azure 비용 추정기</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>다양한 지역에서 업데이트된 서비스를 이용할 수 있습니다</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-v6-릴리스-2021년-10월-21일-목요일">VDS V6 릴리스: 2021년 10월 21일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2021년 10월 21일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-7">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>FSLogix 프로필의 자동 축소를 해제하는 Command Center 옵션을 소개합니다</p>
+</li>
+<li>
+<p>FSLogix 프로필이 마운트된 위치를 보여 주는 야간 보고서가 개선되었습니다</p>
+</li>
+<li>
+<p>Azure US South Central 영역에서 CWMGR1(플랫폼 VM)에 사용되는 기본 VM 시리즈/크기를 D2S v4로 업데이트합니다</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-v6-릴리스-2021년-10월-7일-목요일">VDS V6 릴리스: 2021년 10월 7일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2021년 10월 7일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-8">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>특정 프로비저닝 컬렉션 구성이 제대로 저장되지 않는 시나리오에 대한 버그 수정</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-v6-릴리스-2021년-9월-23일-목요일">VDS V6 릴리스: 2021년 9월 23일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2021년 9월 23일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-9">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>AADDS 기반 배포와 통합하기 위해 PAM에 대한 업데이트</p>
+</li>
+<li>
+<p>비 AVD 배포에 대한 작업 영역 모듈에 RemoteApp URL을 표시합니다</p>
+</li>
+<li>
+<p>특정 온-프레미스 Active Directory 구성에서 최종 사용자를 관리자로 만드는 시나리오에 대한 버그 수정</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-v6-릴리스-2021년-9월-9일-목요일">VDS V6 릴리스: 2021년 9월 9일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2021년 9월 9일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-10">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>사전 예방을 위한 보안 및 성능 개선 사항을 제공합니다</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-v6-릴리스-2021년-8월-26일-목요일">VDS V6 릴리스: 2021년 8월 26일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2021년 8월 26일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-11">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>VDS 관리 UI에 대한 액세스 권한이 부여되면 사용자 데스크톱에 있는 URL로 업데이트합니다</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-v6-릴리스-2021년-8월-12일-목요일">VDS V6 릴리스: 2021년 8월 12일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2021년 8월 12일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-12">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Insights 기능 및 컨텍스트의 향상된 기능</p>
+</li>
+<li>
+<p>백업 스케줄 빈도 처리 개선</p>
+</li>
+<li>
+<p>버그 수정 - 서비스 재시작 시 CwVmAutomation 서비스 검사 구성에 대한 문제를 해결합니다</p>
+</li>
+<li>
+<p>버그 수정 - 특정 시나리오에서 구성을 저장할 수 없는 DCConifg 관련 문제를 해결합니다</p>
+</li>
+<li>
+<p>사전 예방을 위한 보안 및 성능 개선 사항을 제공합니다</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-v6-핫픽스-2021년-7월-30일-화요일">VDS V6 핫픽스: 2021년 7월 30일 화요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2021년 7월 30일 금요일 오후 7시~오후 8시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-13">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>자동화를 더욱 쉽게 개선할 수 있는 배포 템플릿 업데이트</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-v6-릴리스-2021년-7월-29일-목요일">VDS V6 릴리스: 2021년 7월 29일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2021년 7월 29일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-14">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>버그 수정 - CWAgent가 의도한 대로 설치되지 않은 VMware 배포 문제를 해결합니다</p>
+</li>
+<li>
+<p>버그 수정 - 데이터 역할이 지정된 서버를 생성해도 제대로 작동하지 않는 VMware 배포 문제를 해결합니다</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-v6-핫픽스-2021년-7월-20일-화요일">VDS V6 핫픽스: 2021년 7월 20일 화요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2021년 7월 20일 화요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-15">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>특정 구성에서 비정상적으로 많은 양의 API 트래픽을 일으키는 문제를 해결합니다</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-6-0-릴리스-2021년-7월-15일-목요일">VDS 6.0 릴리스: 2021년 7월 15일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 6.0 가상 데스크톱 서비스 _ 시기: _ 2021년 7월 15일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-16">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Insights 통합 기능 향상 – 사용자별 성능 메트릭을 캡처하여 사용자 컨텍스트에 표시합니다</p>
+</li>
+<li>
+<p>ANF 프로비저닝 자동화 개선 – 고객의 Azure 테넌트에서 공급자로서 NetApp을 자동으로 등록하는 기능이 향상되었습니다</p>
+</li>
+<li>
+<p>새 AVD 작업 공간을 만들 때 구문 조정</p>
+</li>
+<li>
+<p>사전 예방을 위한 보안 및 성능 개선 사항을 제공합니다</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-6-0-릴리스-2021년-6월-24일-목요일">VDS 6.0 릴리스: 2021년 6월 24일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 6.0 가상 데스크톱 서비스 _ 시기: _ 2021년 6월 4일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/virtual-desktop-service/images/note.svg" alt="참고">
+</td>
+<td class="content">
+7월 4일경에 일정이 잡기때문에 다음 VDS 릴리스는 목요일 7월 15일에 출시될 예정입니다.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-17">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Windows 가상 데스크톱(WVD)이 이제 Azure 가상 데스크톱(AVD)임을 반영하는 업데이트</p>
+</li>
+<li>
+<p>Excel 내보내기의 사용자 이름 형식 버그 수정</p>
+</li>
+<li>
+<p>사용자 지정 브랜드의 HTML5 로그인 페이지를 위한 향상된 구성</p>
+</li>
+<li>
+<p>사전 예방을 위한 보안 및 성능 개선 사항을 제공합니다</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="비용-추정기">비용 추정기</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Windows 가상 데스크톱(WVD)이 이제 Azure 가상 데스크톱(AVD)임을 반영하는 업데이트</p>
+</li>
+<li>
+<p>새로운 지역에서 더 많은 서비스/GPU VM을 사용할 수 있음을 반영하는 업데이트가 있습니다</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-6-0-릴리스-2021년-6월-10일-목요일">VDS 6.0 릴리스: 2021년 6월 10일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 6.0 가상 데스크톱 서비스 _ 시기: _ 2021년 6월 10일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-18">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>추가 HTML5 브라우저 기반 게이트웨이/VM 액세스 포인트 도입</p>
+</li>
+<li>
+<p>호스트 풀을 삭제한 후 사용자 라우팅이 개선되었습니다</p>
+</li>
+<li>
+<p>관리되지 않는 호스트 풀을 가져오는 것이 예상대로 작동하지 않는 시나리오에 대한 버그 수정</p>
+</li>
+<li>
+<p>사전 예방을 위한 보안 및 성능 개선 사항을 제공합니다</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-6-0-릴리스-2021년-6월-10일-목요일-2">VDS 6.0 릴리스: 2021년 6월 10일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 6.0 가상 데스크톱 서비스 _ 시기: _ 2021년 6월 10일 목요일 오후 10시 동부 지역 _ 영향: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="기술적-개선-사항">기술적 개선 사항:</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>각 VM에 설치된 .NET Framework 버전을 v4.7.2에서 v4.8.0으로 업데이트합니다</p>
+</li>
+<li>
+<p>로컬 제어 플레인 팀과 다른 모든 엔터티 간에 https:// 및 TLS 1.2 이상을 사용하는 추가적인 백엔드 적용</p>
+</li>
+<li>
+<p>Command Center에서 백업 삭제 작업에 대한 버그 수정 – CWMGR1의 표준 시간대를 올바르게 참조합니다</p>
+</li>
+<li>
+<p>명령 센터 작업의 이름을 Azure 파일 공유에서 Azure 파일 공유로 변경합니다</p>
+</li>
+<li>
+<p>Azure 공유 이미지 갤러리의 명명 규칙 업데이트</p>
+</li>
+<li>
+<p>동시 사용자 로그인 수 수집 기능이 향상되었습니다</p>
+</li>
+<li>
+<p>CWMGR1 VM에서 트래픽 아웃바운드를 제한하는 경우 CWMGR1에서 허용되는 아웃바운드 트래픽으로 업데이트합니다</p>
+</li>
+<li>
+<p>CWMGR1에서 아웃바운드 트래픽을 제한하지 않는 경우 여기에서 업데이트할 필요가 없습니다</p>
+</li>
+<li>
+<p>CWMGR1에서 아웃바운드 트래픽을 제한하는 경우 vdctoolsapiprimary.azurewebsites.net 액세스를 허용하십시오. 참고: 더 이상 vdctoolsapi.trafficmanager.net 액세스를 허용할 필요가 없습니다.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="배포-개선-사항">배포 개선 사항:</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>서버 이름에 사용자 지정 접두사를 향후 지원하기 위한 기반을 마련합니다</p>
+</li>
+<li>
+<p>Azure 배포의 프로세스 자동화 및 중복성이 향상되었습니다</p>
+</li>
+<li>
+<p>Google Cloud Platform 구축을 위한 수많은 구축 자동화 개선 사항</p>
+</li>
+<li>
+<p>Google Cloud Platform 배포에서 Windows Server 2019를 지원합니다</p>
+</li>
+<li>
+<p>Windows 10 20H2 EVD 이미지가 있는 일부 시나리오에 대한 버그 수정</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="서비스-제공-개선-사항">서비스 제공 개선 사항:</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Insights 통합을 도입하여 사용자 환경, VM 및 스토리지 계층을 위한 스트리밍 성능 데이터를 제공합니다</p>
+</li>
+<li>
+<p>에서는 최근에 방문한 VDS 페이지로 빠르게 탐색할 수 있는 기능을 제공합니다</p>
+</li>
+<li>
+<p>Azure 구축 시 목록(사용자, 그룹, 서버, 애플리케이션 등)의 로드 시간이 크게 향상되었습니다</p>
+</li>
+<li>
+<p>사용자, 그룹, 서버, 관리자, 보고서 목록을 쉽게 내보낼 수 있는 기능을 소개합니다. 등</p>
+</li>
+<li>
+<p>고객에 대해 VDS MFA 방법을 사용할 수 있는 방법을 제어하는 기능을 소개합니다(고객이 선호하는 이메일보다 선호함) SMS, 예:)</p>
+</li>
+<li>
+<p>VDS 셀프 서비스 암호 재설정 이메일에 대한 사용자 정의 가능한 "보낸 사람" 필드를 소개합니다</p>
+</li>
+<li>
+<p>VDS 셀프 서비스 암호 재설정 이메일만 지정된 도메인(회사 소유 vs 개인, 예:)</p>
+</li>
+<li>
+<p>에서는 사용자에게 전자 메일을 계정에 추가하라는 메시지를 표시할 수 있는 업데이트 또는 MFA/셀프 서비스 암호 재설정을 사용할 수 있습니다</p>
+</li>
+<li>
+<p>중지된 배포를 시작할 때 배포 내의 모든 VM도 시작합니다</p>
+</li>
+<li>
+<p>새로 생성된 Azure VM에 할당할 IP 주소를 결정하는 성능 향상</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-6-0-릴리스-2021년-5월-27일-목요일">VDS 6.0 릴리스: 2021년 5월 27일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 6.0 가상 데스크톱 서비스 _ 시기: _ 2021년 5월 27일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-19">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>AVD 호스트 풀의 풀링된 세션 호스트에 대한 Connect 시작 을 소개합니다</p>
+</li>
+<li>
+<p>Cloud Insights 통합을 통해 사용자 성능 메트릭을 소개합니다</p>
+</li>
+<li>
+<p>작업 영역 모듈에서 서버 탭을 더 두드러지게 표시합니다</p>
+</li>
+<li>
+<p>VM이 VDS에서 삭제된 경우 Azure Backup을 통해 VM 복원을 허용합니다</p>
+</li>
+<li>
+<p>서버에 연결 기능의 향상된 처리</p>
+</li>
+<li>
+<p>인증서를 자동으로 생성 및 업데이트할 때 변수 처리 기능이 향상되었습니다</p>
+</li>
+<li>
+<p>드롭다운 메뉴에서 X를 클릭해도 선택 항목이 예상대로 지워지지 않는 문제에 대한 버그 수정</p>
+</li>
+<li>
+<p>SMS 메시지 프롬프트의 안정성 및 자동 오류 처리 기능 향상</p>
+</li>
+<li>
+<p>사용자 지원 역할 업데이트 – 이제 로그인한 사용자의 프로세스를 종료할 수 있습니다</p>
+</li>
+<li>
+<p>사전 예방을 위한 보안 및 성능 개선 사항을 제공합니다</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-6-0-릴리스-2021년-5월-13일-목요일">VDS 6.0 릴리스: 2021년 5월 13일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 6.0 가상 데스크톱 서비스 _ 시기: _ 2021년 5월 13일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-20">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>추가 AVD 호스트 풀 속성 소개</p>
+</li>
+<li>
+<p>백 엔드 서비스 문제가 발생할 경우 Azure 구현에서 추가 자동화 복원력을 제공합니다</p>
+</li>
+<li>
+<p>서버에 연결 기능을 사용할 때 새 브라우저 탭에 서버 이름을 포함합니다</p>
+</li>
+<li>
+<p>각 그룹의 사용자 수를 표시합니다</p>
+</li>
+<li>
+<p>모든 구축 환경에서 서버에 연결 기능에 대한 복원력 향상</p>
+</li>
+<li>
+<p>조직 및 최종 사용자를 위한 MFA 옵션 설정을 위한 추가 개선 사항</p>
+<div class="ulist">
+<ul>
+<li>
+<p>SMS가 유일한 MFA 옵션으로 설정되어 있는 경우, 이메일 주소가 아닌 전화 번호가 필요합니다</p>
+</li>
+<li>
+<p>이메일이 유일한 MFA 옵션으로 설정된 경우 이메일 주소는 필요하지만 전화번호는 필요하지 않습니다</p>
+</li>
+<li>
+<p>SMS와 이메일을 모두 MFA 옵션으로 설정한 경우 이메일 주소와 전화 번호가 모두 필요합니다</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>선명도 향상 - Azure가 스냅샷의 크기를 반환하지 않으므로 Azure 백업 스냅샷의 크기를 제거합니다</p>
+</li>
+<li>
+<p>Azure가 아닌 환경에서 스냅샷을 삭제하는 기능을 추가합니다</p>
+</li>
+<li>
+<p>특수 문자를 사용할 때 AVD 호스트 풀 생성에 대한 버그 수정</p>
+</li>
+<li>
+<p>리소스 탭을 통해 호스트 풀의 워크로드 스케줄링에 대한 버그 수정</p>
+</li>
+<li>
+<p>대량 사용자 가져오기를 취소할 때 나타나는 오류 메시지에 대한 버그 수정</p>
+</li>
+<li>
+<p>프로비저닝 컬렉션에 추가된 애플리케이션의 설정에 대한 가능한 시나리오에 대한 버그 수정</p>
+</li>
+<li>
+<p>알림/메시지를 보내는 이메일 주소로 업데이트 – 이제 메시지는 <a href="mailto:noreply@vds.netapp.com">noreply@vds.netapp.com</a> 에서 전송됩니다</p>
+<div class="ulist">
+<ul>
+<li>
+<p>인바운드 이메일 주소를 안전하게 수신하는 고객은 이 이메일 주소를 추가해야 합니다</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-6-0-릴리스-2021년-4월-29일-목요일">VDS 6.0 릴리스: 2021년 4월 29일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 6.0 가상 데스크톱 서비스 _ 시기: _ 2021년 4월 29일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-21">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>개인 AVD 호스트 풀에 대한 Connect 시작 기능을 소개합니다</p>
+</li>
+<li>
+<p>Workspace 모듈에 스토리지 컨텍스트를 소개합니다</p>
+</li>
+<li>
+<p>Cloud Insights 통합을 통한 스토리지(Azure NetApp Files) 모니터링 도입</p>
+<div class="ulist">
+<ul>
+<li>
+<p>IOPS 모니터링</p>
+</li>
+<li>
+<p>지연 시간 모니터링</p>
+</li>
+<li>
+<p>용량 모니터링</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>VM 클론 생성 작업에 대한 로깅 향상</p>
+</li>
+<li>
+<p>특정 워크로드 스케줄링 시나리오에 대한 버그 수정</p>
+</li>
+<li>
+<p>특정 시나리오에서 VM의 시간대를 표시하지 않는 버그 수정</p>
+</li>
+<li>
+<p>특정 시나리오에서 AVD 사용자를 로그아웃하지 않기 위한 버그 수정</p>
+</li>
+<li>
+<p>NetApp 브랜드 적용을 반영하는 자동으로 생성된 이메일 업데이트</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-6-0-핫픽스-2021년-4월-16일-금요일">VDS 6.0 핫픽스: 2021년 4월 16일 금요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 6.0 가상 데스크톱 서비스 _ 시기: _ 2021년 4월 16일 금요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-22">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>자동화된 인증서 관리를 개선한 지난밤의 업데이트 이후 발생한 자동 인증서 생성 문제를 해결합니다</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-6-0-릴리스-2021년-4월-15일-목요일">VDS 6.0 릴리스: 2021년 4월 15일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 6.0 가상 데스크톱 서비스 _ 시기: _ 2021년 4월 15일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-23">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Insights 통합의 향상된 기능:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>건너뛴 프레임 – 네트워크 리소스가 부족합니다</p>
+</li>
+<li>
+<p>건너뛴 프레임 - 클라이언트 리소스가 부족합니다</p>
+</li>
+<li>
+<p>프레임 건너뜀 – 서버 리소스 부족</p>
+</li>
+<li>
+<p>OS 디스크 - 읽기 바이트</p>
+</li>
+<li>
+<p>OS 디스크 - 쓰기 바이트</p>
+</li>
+<li>
+<p>OS 디스크 - 초당 읽기 바이트</p>
+</li>
+<li>
+<p>OS 디스크 - 초당 쓰기 바이트 수입니다</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>배포 모듈의 작업 기록에 대한 업데이트 - 작업 기록 처리 개선</p>
+</li>
+<li>
+<p>일부 시나리오에서 디스크에서 Azure 백업을 CWMGR1로 복원할 수 없는 문제에 대한 버그 수정</p>
+</li>
+<li>
+<p>인증서가 자동으로 업데이트 및 생성되지 않는 문제에 대한 버그 수정</p>
+</li>
+<li>
+<p>중지된 배포가 빠르게 시작되지 않는 문제에 대한 버그 수정</p>
+</li>
+<li>
+<p>작업 영역을 만들 때 상태 드롭다운 목록으로 업데이트합니다. 목록에서 "국가" 항목을 제거합니다</p>
+</li>
+<li>
+<p>NetApp 브랜드가 반영되는 추가 업데이트</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-6-0-핫픽스-2021년-4월-7일-수요일">VDS 6.0 핫픽스: 2021년 4월 7일 수요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 6.0 가상 데스크톱 서비스 _ 시기: _ 2021년 4월 7일 수요일 오후 10시 – 오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-24">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Azure에서 응답 시간이 점점 다양해지고 있기 때문에 구축 마법사 중에 Azure 자격 증명을 입력할 때 응답을 기다리는 시간이 늘어나고 있습니다.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vds-6-0-릴리스-2021년-4월-1일-목요일">VDS 6.0 릴리스: 2021년 4월 1일 목요일</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>_ 구성 요소: _ 6.0 가상 데스크톱 서비스 _ 시기: _ 2021년 4월 1일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</p>
+</div>
+<div class="sect2">
+<h3 id="가상-데스크톱-서비스-25">가상 데스크톱 서비스</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>NetApp Cloud Insights 통합 업데이트 - 새로운 스트리밍 데이터 포인트:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>NVIDIA GPU 성능 데이터</p>
+</li>
+<li>
+<p>왕복 시간</p>
+</li>
+<li>
+<p>사용자 입력 지연</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>VM이 최종 사용자의 연결을 허용하지 않도록 설정된 경우에도 VM에 대한 관리 연결을 허용하도록 서버에 연결 기능을 업데이트합니다</p>
+</li>
+<li>
+<p>후속 릴리즈에서 API가 향상되어 브랜딩 및 브랜딩이 활성화됩니다</p>
+</li>
+<li>
+<p>HTML5를 통해 서버에 연결 또는 RDS 사용자 세션을 통해 HTML5 연결에서 사용할 수 있는 작업 메뉴에 대한 향상된 가시성을 제공합니다</p>
+</li>
+<li>
+<p>스크립트된 이벤트 활동 이름으로 지원되는 QTY 문자를 늘립니다</p>
+</li>
+<li>
+<p>유형별로 프로비저닝 컬렉션 OS 선택 항목이 업데이트되었습니다</p>
+<div class="ulist">
+<ul>
+<li>
+<p>AVD 및 Windows 10의 경우 VDI 컬렉션 유형을 사용하여 Windows 10 OS가 있는지 확인합니다</p>
+</li>
+<li>
+<p>Windows Server OS의 경우 공유 컬렉션 유형을 사용합니다</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>사전 예방을 위한 보안 및 성능 개선 사항을 제공합니다</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/virtual-desktop-service/issues/new?body=Page%3A%20[Virtual Desktop Service – v6.0 릴리즈 노트](https://docs.netapp.com/ko-kr/virtual-desktop-service/Reference.Release_Notes.vds_v6.0_release_notes.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/virtual-desktop-service/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/virtual-desktop-service/blob/main/sub.Reference.Release_Notes.vds_v6.0_release_notes.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/virtual-desktop-service/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/virtual-desktop-service/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">이 페이지의 내용</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div style="clear: both"></div><!-- Main needs to have height -->
+</div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+
+</ul>
+</div>
+<div class="n-footer__social-links">
+<ul class="n-footer__social-link-list">
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
+<span class="n-footer__social-link-text">blog</span>
+<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+  <title>blog@</title>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#blog"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
+<span class="n-footer__social-link-text">community</span>
+<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+<title>community@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#comments"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
+<span class="n-footer__social-link-text">twitter</span>
+<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+<title>twitter@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#twitter"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
+<span class="n-footer__social-link-text">facebook</span>
+<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+<title>facebook@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#facebook"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+<span class="n-footer__social-link-text">linkedin</span>
+<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+<title>linkedin@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#linkedin"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+<span class="n-footer__social-link-text">youtube</span>
+<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+<title>youtube@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#youtube"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+<span class="n-footer__social-link-text">slideshare</span>
+<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+<title>slideshare@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/virtual-desktop-service/common/svg/sprite.svg#slideshare"></use>
+</svg>
+
+</a>
+</li>
+</ul>
+</div>
+
+</div>
+<div class="n-footer__bottom-right">
+  <p class="n-footer__fine-print">웹 사이트에 대한 피드백이 있으십니까?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">의견을 공유해 주십시오</a>
+  <a href="https://docs.netapp.com/ko-kr/announcements/" class="n-footer__copyright">공지 사항</a>
+  </p>
+</div>
+</div>
+</div>
+</footer>
+
+      </div>
+
+      <!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ko-kr/virtual-desktop-service/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ko-kr/virtual-desktop-service/js/prism.js'></script>
+      <script type="text/javascript" src='/ko-kr/virtual-desktop-service/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ko-kr/virtual-desktop-service/js/www-ntap.js'></script>
+    <script src='/ko-kr/virtual-desktop-service/js/tabbed-blocks.js'></script>
+  </body>
+
+  
+</html>
