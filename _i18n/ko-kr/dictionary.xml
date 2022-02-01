@@ -4731,4 +4731,7 @@
   <block id="40b4efb37895d327a4e6134b05f98845" category="sidebar">리소스 관리 및 비용 최소화</block>
   <block id="b0e9038d535164893f7c6af3eac68b19" category="sidebar">AVD 및 RDS에 대한 애플리케이션 관리 자동화</block>
   <block id="160a4c43add4282278f715aef7950d51" category="sidebar">v1 AVD 호스트 풀을 v2로 업그레이드합니다</block>
+  <block id="8a92fe96e3b6ce1519fb08d694c4177c" category="doc">VDS V6 릴리스: 2022년 2월 3일 목요일</block>
+  <block id="9e331e61b4691f5e61f2e99dcb3dff3b" category="paragraph">_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2022 년 2월 3일 목요일 오후 10시부터 오후 11시까지 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</block>
+  <block id="365a3b510bb41f1a84144bc4291a3f7b" category="list-text">VDM에 대한 프로필 로밍 검색 기능이 향상되었습니다</block>
 </blocks>
