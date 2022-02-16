@@ -4734,4 +4734,8 @@
   <block id="8a92fe96e3b6ce1519fb08d694c4177c" category="doc">VDS V6 릴리스: 2022년 2월 3일 목요일</block>
   <block id="9e331e61b4691f5e61f2e99dcb3dff3b" category="paragraph">_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2022 년 2월 3일 목요일 오후 10시부터 오후 11시까지 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</block>
   <block id="365a3b510bb41f1a84144bc4291a3f7b" category="list-text">VDM에 대한 프로필 로밍 검색 기능이 향상되었습니다</block>
+  <block id="86157e22d534bd0182643b0a06605565" category="doc">VDS V6 릴리스: 2022년 2월 17일 목요일</block>
+  <block id="a30deb188ffb2252655d9d92edfca79e" category="paragraph">_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2022 년 2월 17일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</block>
+  <block id="7cf4dc0da4aaa884f4ffeff1d15fce34" category="list-text">응용 프로그램 인스턴스 도입 - 동일한 소프트웨어의 여러 버전 및 버전을 보다 효율적으로 관리할 수 있습니다</block>
+  <block id="8a8fa72e6038a0fab54f22ca58c27de2" category="list-text">사전 예방을 위한 보안 개선 사항 및 버그 수정 사항을 제공합니다</block>
 </blocks>
