@@ -45,7 +45,7 @@ Azure AVD(Virtual Desktop)에 대한 Microsoft 모범 사례 표준과 같은 �
 
 == 지원을 받는 중입니다
 
-이메일 지원: VDSsupport@netapp.com
+이메일 지원: support@spotpc.netapp.com
 
 전화 지원: 844.645.6789
 

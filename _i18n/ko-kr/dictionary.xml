@@ -612,7 +612,6 @@
   <block id="5327b77165f2952e493ceffcb00fc97d" category="paragraph">TSData 서버를 복제할 때, 단계 중 하나는 c:\Home, c:\Data 및 c:\Pro 폴더를 삭제하여 중복 파일이 없도록 하는 것입니다. 이 경우 클론 프로세스가 실패했습니다. 이 파일을 삭제하는 동안 문제가 발생했습니다. 이 오류는 모호합니다. 일반적으로 이는 열린 파일 또는 프로세스가 있기 때문에 클론 이벤트가 실패했음을 의미합니다. 다음 시도에서는 모든 AV를 비활성화하십시오(이 오류에 대한 설명이 있을 수 있음).</block>
   <block id="6c0305575fb55798e7104b46cc095d14" category="summary">AVD에서 VDS를 제거하는 단계별 가이드</block>
   <block id="026762681803b0b54c05c75c5d569298" category="doc">Avd 분해 가이드</block>
-  <block id="0be4b6e6da48ad5cabf39106a217d56a" category="paragraph">이 문서에서는 AVD 최종 사용자 액세스를 유지하면서 VDS 및 NetApp 제어 제거를 다룹니다. 앞으로는 기본 Azure/Windows 관리 툴을 사용할 것입니다. 이 프로세스가 완료되면 VDSsupport@netapp.com 으로 연락하여 NetApp이 백 엔드 및 청구 시스템을 정리할 수 있도록 하는 것이 좋습니다.</block>
   <block id="27e9db240004b05007ee4eeefd910984" category="section-title">초기 상태입니다</block>
   <block id="33c7300390dcfab4d74d3a725d17fbd4" category="list-text">Avd 배포</block>
   <block id="2970bf7ec93a730b8e0fe2ef1e42725f" category="list-text">TDS1은 FS Logix 파일 공유 소프트웨어입니다</block>
@@ -4208,7 +4207,6 @@
   <block id="a52ac08ae4d07f05a995fa807fe68756" category="paragraph"><block ref="a52ac08ae4d07f05a995fa807fe68756" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f7cd53d88d604de6f5f913c26420bd4d" category="list-text">원하는 "보낸 사람" 주소(유효해야 함)</block>
   <block id="714c982f3a51e3b0e556412e1f6e897d" category="list-text">설정을 적용해야 하는 클라이언트(또는 모두)</block>
-  <block id="f23c22d118174cbb45febe6e23021749" category="paragraph">지원 케이스 열기에 대한 자세한 내용은 VDSsupport@netapp.com 으로 이메일을 보내주십시오</block>
   <block id="9fc3b6578e202985e3091b3313385ef1" category="paragraph">VDS 지원을 받으면 SMTP 서비스로 주소를 검증하고 이 설정을 활성화합니다. 원본 주소 도메인의 공용 DNS 레코드를 업데이트하여 전자 메일 전송 기능을 최대화하는 것이 가장 좋습니다.</block>
   <block id="6f30b85bb1a4277a75da7a383c5118f7" category="section-title">비밀번호 복잡성</block>
   <block id="cc7b7104ec932b941820f8f4f84c583e" category="paragraph">VDS는 암호 복잡성을 강제로 적용할 수 있도록 구성할 수 있습니다. 이 설정은 클라우드 작업 영역 설정 섹션의 작업 영역 세부 정보 페이지에 있습니다.</block>
@@ -4535,7 +4533,6 @@
   <block id="846cfd57afaf8469152ebdd6a21cbe89" category="paragraph">단일 포털로 비즈니스 유연성을 극대화하여 기술 스택의 모든 계층을 제어할 수 있습니다.</block>
   <block id="71ad52d349f6fc3c22edb56da50b7300" category="paragraph">자세한 내용:<block ref="fe0b001fc1844a11f38bc5eb2c9398f3" category="inline-link-rx"></block></block>
   <block id="a29672185d73dcf6d2ddc1aef91bb364" category="section-title">지원을 받는 중입니다</block>
-  <block id="8b5916065a046e9dcfc0a86ec2effceb" category="paragraph">이메일 지원: VDSsupport@netapp.com</block>
   <block id="88cc9e245d04dc16592a51f8acaca39e" category="paragraph">전화 지원: 844.645.6789</block>
   <block id="f1f12b2afaf19ca6628af96787f70622" category="inline-link-macro">VDS Support Portal(VDS 지원 포털)</block>
   <block id="c0c6ed3b421e3e68c5af66c287e10eab" category="paragraph"><block ref="c0c6ed3b421e3e68c5af66c287e10eab" category="inline-link-macro-rx"></block></block>
@@ -4738,4 +4735,7 @@
   <block id="a30deb188ffb2252655d9d92edfca79e" category="paragraph">_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2022 년 2월 17일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</block>
   <block id="7cf4dc0da4aaa884f4ffeff1d15fce34" category="list-text">응용 프로그램 인스턴스 도입 - 동일한 소프트웨어의 여러 버전 및 버전을 보다 효율적으로 관리할 수 있습니다</block>
   <block id="8a8fa72e6038a0fab54f22ca58c27de2" category="list-text">사전 예방을 위한 보안 개선 사항 및 버그 수정 사항을 제공합니다</block>
+  <block id="0fc8d44a910622a70a5db1690b734048" category="paragraph">이메일 지원: support@spotpc.netapp.com</block>
+  <block id="0e759b5faf907f44ba11f26893de416a" category="paragraph">지원 케이스 열기에 대한 자세한 내용은 support@spotpc.netapp.com 으로 이메일을 보내주십시오</block>
+  <block id="d2778cf2b9c1fbc4daf229157e9e211c" category="paragraph">이 문서에서는 AVD 최종 사용자 액세스를 유지하면서 VDS 및 NetApp 제어 제거를 다룹니다. 앞으로는 기본 Azure/Windows 관리 툴을 사용할 것입니다. 이 프로세스가 완료되면 support@spotpc.netapp.com 으로 연락하여 NetApp이 백 엔드 및 청구 시스템을 정리할 수 있도록 하는 것이 좋습니다.</block>
 </blocks>
