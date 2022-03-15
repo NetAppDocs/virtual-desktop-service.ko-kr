@@ -4738,4 +4738,9 @@
   <block id="0fc8d44a910622a70a5db1690b734048" category="paragraph">이메일 지원: support@spotpc.netapp.com</block>
   <block id="0e759b5faf907f44ba11f26893de416a" category="paragraph">지원 케이스 열기에 대한 자세한 내용은 support@spotpc.netapp.com 으로 이메일을 보내주십시오</block>
   <block id="d2778cf2b9c1fbc4daf229157e9e211c" category="paragraph">이 문서에서는 AVD 최종 사용자 액세스를 유지하면서 VDS 및 NetApp 제어 제거를 다룹니다. 앞으로는 기본 Azure/Windows 관리 툴을 사용할 것입니다. 이 프로세스가 완료되면 support@spotpc.netapp.com 으로 연락하여 NetApp이 백 엔드 및 청구 시스템을 정리할 수 있도록 하는 것이 좋습니다.</block>
+  <block id="8b9a4a08873c5c870575086fb699c10a" category="doc">VDS V6 릴리스: 목요일, 3월 2022년 17일</block>
+  <block id="f66ce27a4d0050402dd86bc778435c6d" category="paragraph">_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2022 년 3월 17일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스가 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</block>
+  <block id="f6502fb800f842c72c1e4ae553783b8b" category="section-title">VDS V6 릴리스: 목요일, 3월 3, 2022</block>
+  <block id="7a4f19598c2ff520ad7cb48c3dd3c492" category="paragraph">_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2022 년 3월 3일 목요일 오후 10시~오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</block>
+  <block id="672f8bd701c0fdf84358a0f197cfee8b" category="list-text">서버에 연결 기능을 사용한 후 서버 연결을 끊는 경우 개선된 환경이 제공됩니다</block>
 </blocks>
