@@ -354,7 +354,7 @@ _ 구성 요소: _ 5.3 Cloud Workspace Management Suite _ when: _ 2020년 4월 3
 
 === HTML5 로그인 환경
 
-* 을(를) 위한 을(를) 호스트하는 비하인드 스토리 https://login.cloudworkspace.com[] 및. 참고: 사용자 지정 브랜드의 HTML5 로그인 포털에는 아무런 영향이 없습니다.
+* 을(를) 위한 을(를) 호스트하는 비하인드 스토리 https://login.cloudworkspace.com[] 및 https://login.cloudjumper.com[]. 참고: 사용자 지정 브랜드의 HTML5 로그인 포털에는 아무런 영향이 없습니다.
 * 셀프 서비스 암호 재설정이 제공되지 않은 일부 시나리오에 대한 버그 수정
 
 
@@ -631,7 +631,7 @@ _ 구성 요소: _ 5.3 Cloud Workspace Management Suite _ when: _ 2020년 1월 2
 
 === Cloud Workspace Management Suite를 참조하십시오
 
-* 이전 버전을 리디렉션합니다 https://iit.hostwindow.net[] 현대적인 위치에 있습니다
+* 이전 버전을 리디렉션합니다 https://iit.hostwindow.net[] 현대적인 위치에 있습니다 https://manage.cloudworkspace.com[]
 * IE 11을 통해 로그인하는 CWMS 관리자의 하위 집합에 대한 버그 수정
 * API 사용자를 삭제하면 화면이 지워진 상태에서 삭제했지만 CWMS에서 삭제된 것으로 표시되지 않는 시각적 문제를 해결합니다
 * 신규/테스트 환경을 다시 프로비저닝할 수 있도록 구독 취소 프로세스를 간소화합니다

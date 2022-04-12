@@ -15,7 +15,7 @@ Provisioning Collections(컬렉션 프로비저닝)는 VM 이미지의 생성 �
 
 .프로비저닝 수집 워크플로우는 다음과 같이 높은 수준에서 이루어집니다.
 . 임시 VM(예 "CWT1")은 기존 이미지(스톡 이미지 또는 이전에 저장된 프로비저닝 컬렉션)를 기반으로 구축됩니다.
-. VDS 관리자는 를 사용하여 임시 VM을 사용자 지정하여 요구 사항에 맞춥니다 link:Management.Scripted_Events.scripted_events.html["스크립트 이벤트"],  및/또는 타사 관리 도구.
+. VDS 관리자는 를 사용하여 임시 VM을 사용자 지정하여 요구 사항에 맞춥니다 link:Management.Scripted_Events.scripted_events.html["스크립트 이벤트"], link:#customizing-the-temporary-vm["서버에 연결합니다"] 및/또는 타사 관리 도구.
 . 사용자 지정되면 VDS 관리자가 * Validate * (확인 *)를 클릭하고 검증 프로세스를 트리거하여 이미지를 자동으로 완성하고 sysprep을 실행하며 임시 VM을 삭제하고 VDS 전체에 이미지를 배포할 수 있도록 합니다.
 
 
