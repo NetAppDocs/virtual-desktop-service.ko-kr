@@ -1,4 +1,5 @@
 = 수동 단계 개요
+:allow-uri-read: 
 
 
 

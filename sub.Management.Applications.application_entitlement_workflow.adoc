@@ -5,6 +5,7 @@ summary: VDS의 최종 사용자에게 응용 프로그램을 배포하는 단�
 keywords:  
 ---
 = RDS용 애플리케이션 자격 워크플로우
+:allow-uri-read: 
 
 
 

@@ -1,4 +1,5 @@
 = 최종 사용자 관점
+:allow-uri-read: 
 
 
 

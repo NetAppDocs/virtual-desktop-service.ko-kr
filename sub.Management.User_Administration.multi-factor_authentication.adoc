@@ -5,6 +5,7 @@ summary: '멀티팩터 인증(MFA) 구성'
 keywords:  
 ---
 = 멀티팩터 인증(MFA)
+:allow-uri-read: 
 
 
 

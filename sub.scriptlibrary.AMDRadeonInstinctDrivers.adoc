@@ -5,6 +5,7 @@ summary: 스크립트 설명서 - AMD Radeon 본능적인 드라이버
 keywords:  
 ---
 = 스크립트 기반 이벤트 설명서 - AMD Radeon 본능적 드라이버
+:allow-uri-read: 
 
 
 

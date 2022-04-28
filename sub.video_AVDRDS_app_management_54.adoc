@@ -5,6 +5,7 @@ summary: NetApp VDS v5.4를 사용하여 AVD 및 RDS의 애플리케이션 관�
 keywords:  
 ---
 = NetApp VDS v5.4를 사용하여 AVD 및 RDS의 애플리케이션 관리를 자동화합니다
+:allow-uri-read: 
 
 
 

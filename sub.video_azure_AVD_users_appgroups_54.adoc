@@ -5,6 +5,7 @@ summary: NetApp VDS v5.4를 사용하여 Azure에서 AVD 사용자 및 앱 그�
 keywords:  
 ---
 = NetApp VDS v5.4를 사용하여 Azure에서 AVD 사용자 및 앱 그룹을 추가하고 관리합니다
+:allow-uri-read: 
 
 
 

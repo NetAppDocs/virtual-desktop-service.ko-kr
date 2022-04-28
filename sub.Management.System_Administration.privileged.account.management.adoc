@@ -5,6 +5,7 @@ summary:
 keywords:  
 ---
 = 특별 권한 계정 관리(PAM)
+:allow-uri-read: 
 
 
 

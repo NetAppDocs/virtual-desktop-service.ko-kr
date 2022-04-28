@@ -5,6 +5,7 @@ summary: 프로비저닝 컬렉션 요약
 keywords:  
 ---
 = 컬렉션 프로비저닝
+:allow-uri-read: 
 
 
 

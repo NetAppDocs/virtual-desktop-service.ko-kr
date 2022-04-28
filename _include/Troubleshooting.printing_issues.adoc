@@ -1,4 +1,5 @@
 = 오류
+:allow-uri-read: 
 
 
 

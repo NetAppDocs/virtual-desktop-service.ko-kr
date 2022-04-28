@@ -5,6 +5,7 @@ summary: NetApp VDS 릴리스 노트 v5.0
 keywords:  
 ---
 = CWS – v5.0 릴리스 정보
+:allow-uri-read: 
 
 
 

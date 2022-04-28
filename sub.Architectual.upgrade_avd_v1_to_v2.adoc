@@ -5,6 +5,7 @@ summary: AVD를 v1에서 v2로 업데이트하는 방법에 대한 가이드
 keywords:  
 ---
 = AVD 호스트 풀을 v1(2019년 가을)에서 v2(2020년 봄)로 업데이트
+:allow-uri-read: 
 
 
 

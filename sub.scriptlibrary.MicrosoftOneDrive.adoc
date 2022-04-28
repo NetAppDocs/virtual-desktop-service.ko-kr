@@ -5,6 +5,7 @@ summary: 스크립트 설명서 - Microsoft OneDrive
 keywords:  
 ---
 = 스크립팅된 이벤트 설명서 - Microsoft OneDrive
+:allow-uri-read: 
 
 
 

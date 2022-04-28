@@ -5,6 +5,7 @@ summary: 스크립트 문서 - Microsoft Edge Chromium 최적화
 keywords:  
 ---
 = 스크립트 이벤트 문서 - Microsoft Edge Chromium 최적화
+:allow-uri-read: 
 
 
 

@@ -1,4 +1,5 @@
 = VDI/AVD 개요 확대/축소
+:allow-uri-read: 
 
 
 

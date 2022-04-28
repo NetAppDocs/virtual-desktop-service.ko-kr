@@ -5,6 +5,7 @@ summary: 백업 구성
 keywords:  
 ---
 = 백업 일정을 구성합니다
+:allow-uri-read: 
 
 
 

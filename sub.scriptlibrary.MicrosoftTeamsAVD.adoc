@@ -5,6 +5,7 @@ summary: 스크립트 설명서 - AVD용 Microsoft 팀
 keywords:  
 ---
 = 스크립팅된 이벤트 설명서 - AVD용 Microsoft 팀
+:allow-uri-read: 
 
 
 

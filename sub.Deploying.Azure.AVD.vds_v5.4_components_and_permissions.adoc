@@ -5,6 +5,7 @@ summary: VDS 구성 요소 및 권한
 keywords:  
 ---
 = VDS 구성 요소 및 권한
+:allow-uri-read: 
 
 
 

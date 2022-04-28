@@ -5,6 +5,7 @@ summary: 스크립트 설명서 - Microsoft Edge Chromium
 keywords:  
 ---
 = 스크립트 이벤트 문서 - Microsoft Edge Chromium
+:allow-uri-read: 
 
 
 

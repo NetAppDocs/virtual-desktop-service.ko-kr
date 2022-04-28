@@ -5,6 +5,7 @@ summary: NetApp VDS v5.4를 사용하여 AVD 호스트 풀을 생성합니다
 keywords:  
 ---
 = NetApp VDS v5.4를 사용하여 AVD 호스트 풀을 생성합니다
+:allow-uri-read: 
 
 
 

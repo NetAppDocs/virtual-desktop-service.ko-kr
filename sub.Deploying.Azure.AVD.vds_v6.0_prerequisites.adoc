@@ -4,6 +4,7 @@ permalink: Deploying.Azure.AVD.vds_v6.0_prerequisites.html
 summary: Avd 및 VDS 사전 요구 사항 
 ---
 = Avd 및 VDS v6.0 필수 구성 요소
+:allow-uri-read: 
 
 
 

@@ -5,6 +5,7 @@ summary: 와일드카드 SSL 인증서 갱신 프로세스
 keywords:  
 ---
 = 와일드카드 SSL 인증서 갱신 프로세스
+:allow-uri-read: 
 
 
 

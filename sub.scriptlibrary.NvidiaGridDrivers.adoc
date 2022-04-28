@@ -5,6 +5,7 @@ summary: 스크립트 설명서 - Nvidia 그리드 드라이버
 keywords:  
 ---
 = 스크립트 이벤트 설명서 - Nvidia 그리드 드라이버
+:allow-uri-read: 
 
 
 

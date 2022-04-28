@@ -5,6 +5,7 @@ summary: 인터넷 품질 문제 해결을 위한 단계별 가이드
 keywords:  
 ---
 = 인터넷 연결 품질 문제 해결
+:allow-uri-read: 
 
 
 

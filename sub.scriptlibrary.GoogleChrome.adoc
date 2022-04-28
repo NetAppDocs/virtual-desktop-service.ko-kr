@@ -5,6 +5,7 @@ summary: 스크립트 설명서 - Google Chrome
 keywords:  
 ---
 = 스크립팅된 이벤트 설명서 - Google Chrome
+:allow-uri-read: 
 
 
 

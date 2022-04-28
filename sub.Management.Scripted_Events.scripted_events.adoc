@@ -5,6 +5,7 @@ summary: 스크립트 이벤트
 keywords:  
 ---
 = 스크립트 이벤트
+:allow-uri-read: 
 
 
 

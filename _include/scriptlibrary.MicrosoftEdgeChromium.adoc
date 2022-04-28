@@ -1,4 +1,5 @@
 = Microsoft Edge Chromium 개요
+:allow-uri-read: 
 
 
 

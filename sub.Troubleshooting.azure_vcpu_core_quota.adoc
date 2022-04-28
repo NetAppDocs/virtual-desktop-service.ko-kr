@@ -5,6 +5,7 @@ summary: Azure vCPU 코어 할당량 문제를 해결하기 위한 단계별 가
 keywords:  
 ---
 = Azure vCPU 코어 할당량
+:allow-uri-read: 
 
 
 

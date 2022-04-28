@@ -5,6 +5,7 @@ summary: NetApp VDS 릴리즈 노트 v5.4
 keywords:  
 ---
 = Virtual Desktop Service – v5.4 릴리즈 노트
+:allow-uri-read: 
 
 
 

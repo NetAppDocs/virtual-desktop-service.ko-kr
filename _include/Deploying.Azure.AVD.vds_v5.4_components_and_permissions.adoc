@@ -1,4 +1,5 @@
 = Avd 및 VDS 보안 엔터티 및 서비스
+:allow-uri-read: 
 
 
 

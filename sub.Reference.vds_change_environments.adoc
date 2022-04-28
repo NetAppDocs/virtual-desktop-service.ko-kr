@@ -5,6 +5,7 @@ summary: NetApp VDS 환경의 변화
 keywords:  
 ---
 = VDS 환경 변경
+:allow-uri-read: 
 
 
 

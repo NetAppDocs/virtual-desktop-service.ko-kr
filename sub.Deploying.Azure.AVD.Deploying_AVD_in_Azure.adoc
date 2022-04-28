@@ -5,6 +5,7 @@ summary: VDS를 Azure에 배포하는 단계별 가이드
 keywords:  
 ---
 = Avd 배포 가이드
+:allow-uri-read: 
 
 
 

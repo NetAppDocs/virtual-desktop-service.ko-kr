@@ -1,4 +1,5 @@
 = Gallery 개요에 템플릿 복사
+:allow-uri-read: 
 
 
 

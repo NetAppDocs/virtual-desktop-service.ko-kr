@@ -4,6 +4,7 @@ permalink: Deploying.Azure.AVD.vds_v5.4_prerequisites.html
 summary: Avd 및 VDS 사전 요구 사항 
 ---
 = Avd 및 VDS v5.4 사전 요구 사항
+:allow-uri-read: 
 
 
 

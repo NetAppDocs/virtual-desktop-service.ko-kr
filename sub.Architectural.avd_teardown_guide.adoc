@@ -5,6 +5,7 @@ summary: AVD에서 VDS를 제거하는 단계별 가이드
 keywords:  
 ---
 = Avd 분해 가이드
+:allow-uri-read: 
 
 
 

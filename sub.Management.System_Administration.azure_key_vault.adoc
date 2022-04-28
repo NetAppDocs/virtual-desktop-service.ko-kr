@@ -5,6 +5,7 @@ summary: AZ에서 VDS 자격 증명에 액세스
 keywords:  
 ---
 = Azure Key Vault에서 VDS 자격 증명에 액세스
+:allow-uri-read: 
 
 
 

@@ -5,6 +5,7 @@ summary: 레벨 3 관리자 계정을 생성하는 방법
 keywords:  
 ---
 = 도메인 관리자("레벨 3") 계정을 생성합니다
+:allow-uri-read: 
 
 
 

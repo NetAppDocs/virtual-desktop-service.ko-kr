@@ -1,4 +1,5 @@
 = VDS, GFC 및 ANF - 전 세계적으로 구축된 클라우드 데스크탑용 솔루션
+:allow-uri-read: 
 
 
 

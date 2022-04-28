@@ -5,6 +5,7 @@ summary: 디스크 크기 자동 증가 기능
 keywords:  
 ---
 = 디스크 공간 자동 증가 기능
+:allow-uri-read: 
 
 
 

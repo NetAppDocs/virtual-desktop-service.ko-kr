@@ -5,6 +5,7 @@ summary: VDS의 최종 사용자에게 응용 프로그램을 배포하는 단�
 keywords:  
 ---
 = AVD에 대한 애플리케이션 사용 권한 워크플로
+:allow-uri-read: 
 
 
 

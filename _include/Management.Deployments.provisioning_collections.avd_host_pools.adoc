@@ -1,4 +1,5 @@
 = Avd 세션 호스트 업데이트 프로세스
+:allow-uri-read: 
 
 
 

@@ -5,6 +5,7 @@ summary: 스크립트 설명서 - Ezeep Print 앱
 keywords:  
 ---
 = 스크립트 이벤트 설명서 - Ezeep Print 앱
+:allow-uri-read: 
 
 
 

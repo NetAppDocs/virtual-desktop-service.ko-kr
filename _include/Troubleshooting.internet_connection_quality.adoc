@@ -1,4 +1,5 @@
 = 증상
+:allow-uri-read: 
 
 
 

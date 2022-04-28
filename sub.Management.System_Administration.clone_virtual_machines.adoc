@@ -5,6 +5,7 @@ summary: VM 클로닝
 keywords:  
 ---
 = 가상 머신 클론 생성
+:allow-uri-read: 
 
 
 

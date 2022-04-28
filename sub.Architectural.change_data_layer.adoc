@@ -5,6 +5,7 @@ summary: 스토리지 플랫폼 변경에 대한 단계별 가이드
 keywords:  
 ---
 = 스토리지 플랫폼을 리디렉션하는 중입니다
+:allow-uri-read: 
 
 
 

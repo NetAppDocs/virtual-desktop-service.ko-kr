@@ -5,6 +5,7 @@ summary: 'VDS Command Center 기능 "Copy Template to Gallery(갤러리에 템�
 keywords:  
 ---
 = Command Center 명령: Gallery에 템플릿 복사
+:allow-uri-read: 
 
 
 

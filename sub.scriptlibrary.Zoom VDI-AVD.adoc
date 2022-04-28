@@ -5,6 +5,7 @@ summary: 스크립트 설명서 - VDI AVD 확대/축소
 keywords:  
 ---
 = 스크립트 이벤트 설명서 - VDI AVD 확대/축소
+:allow-uri-read: 
 
 
 

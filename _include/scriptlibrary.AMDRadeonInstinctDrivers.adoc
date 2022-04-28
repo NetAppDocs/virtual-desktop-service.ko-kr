@@ -1,4 +1,5 @@
 = AMD Radeon 본능적인 드라이버 개요
+:allow-uri-read: 
 
 
 

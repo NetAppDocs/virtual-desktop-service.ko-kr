@@ -5,6 +5,7 @@ summary: NetApp VDS v5.4를 사용하여 AVD 또는 RDS를 Azure에 배포합니
 keywords:  
 ---
 = NetApp VDS v5.4를 사용하여 AVD 또는 RDS를 Azure에 배포합니다
+:allow-uri-read: 
 
 
 

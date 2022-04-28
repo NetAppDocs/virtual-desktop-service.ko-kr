@@ -5,6 +5,7 @@ summary: 사용자 배경화면을 활성화하는 방법
 keywords:  
 ---
 = 사용자 세션에 대해 바탕 화면 배경 무늬를 활성화합니다
+:allow-uri-read: 
 
 
 

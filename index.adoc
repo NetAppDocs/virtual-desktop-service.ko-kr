@@ -5,6 +5,7 @@ summary: Virtual Desktop Service 설명서 포털에 오신 것을 환영합니�
 keywords:  
 ---
 = Virtual Desktop Service Documentation(가상 데스크탑 서비스 설명서
+:allow-uri-read: 
 
 
 

@@ -5,6 +5,7 @@ summary: 데이터 마이그레이션 시의 고려 사항 요약
 keywords:  
 ---
 = 데이터 마이그레이션 고려 사항
+:allow-uri-read: 
 
 
 

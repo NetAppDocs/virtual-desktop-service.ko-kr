@@ -5,6 +5,7 @@ summary: AADDS NDS 및 SSO 문제 해결을 위한 단계별 가이드
 keywords:  
 ---
 = Azure용 DNS forwarding은 O365 ID를 통해 추가 및 SSO를 제공합니다
+:allow-uri-read: 
 
 
 

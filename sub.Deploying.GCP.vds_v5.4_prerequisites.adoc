@@ -4,6 +4,7 @@ permalink: Deploying.GCP.vds_v5.4_prerequisites.html
 summary: GCP 및 VDS 사전 요구 사항 
 ---
 = Google Compute Platform(GCP) 및 VDS 사전 요구 사항
+:allow-uri-read: 
 
 
 

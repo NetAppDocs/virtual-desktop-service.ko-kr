@@ -5,6 +5,7 @@ summary: 타사 액세스 가이드
 keywords:  
 ---
 = 제3자에 대한 임시 액세스 제공
+:allow-uri-read: 
 
 
 

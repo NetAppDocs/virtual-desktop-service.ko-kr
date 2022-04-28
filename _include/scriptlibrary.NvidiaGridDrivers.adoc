@@ -1,4 +1,5 @@
 = NVIDIA GRID 드라이버 개요
+:allow-uri-read: 
 
 
 

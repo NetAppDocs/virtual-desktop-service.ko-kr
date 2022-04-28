@@ -5,6 +5,7 @@ summary: 스크립트 설명서 - AMD Radeon 본능적인 드라이버
 keywords:  
 ---
 = VDS 논리적 계층 개요
+:allow-uri-read: 
 
 
 

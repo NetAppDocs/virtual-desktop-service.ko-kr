@@ -5,6 +5,7 @@ summary: 매핑된 드라이브 추가 및 이동
 keywords:  
 ---
 = 매핑된 드라이브 추가 및 이동
+:allow-uri-read: 
 
 
 

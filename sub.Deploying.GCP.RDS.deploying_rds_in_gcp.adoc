@@ -4,6 +4,7 @@ permalink: Deploying.GCP.RDS.deploying_rds_in_gcp.html
 summary: GCP에 RDS를 배포하기 위한 단계별 가이드 
 ---
 = Google Cloud(GCP)용 RDS 구축 가이드
+:allow-uri-read: 
 
 
 

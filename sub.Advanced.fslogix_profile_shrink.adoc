@@ -5,6 +5,7 @@ summary: FSLogix 프로필 축소 기능 요약
 keywords:  
 ---
 = FSLogix 프로필 축소
+:allow-uri-read: 
 
 
 
