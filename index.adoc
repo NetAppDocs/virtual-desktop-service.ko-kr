@@ -50,7 +50,7 @@ Azure AVD(Virtual Desktop)에 대한 Microsoft 모범 사례 표준과 같은 �
 
 전화 지원: 844.645.6789
 
-link:https://cloudjumper.zendesk.com["VDS Support Portal(VDS 지원 포털)"]
+link:https://support.spot.io["VDS Support Portal(VDS 지원 포털)"]
 
 일반 지원 업무 시간: 월-금, 오전 7:00-오후 7:00(중부 표준시).
 
