@@ -47,7 +47,7 @@ WARNING: 이 Microsoft Teams 설치는 Azure의 AVD에 특정한 사용자 정�
 
 === 작업 추가 대화 상자 창 스크린샷
 
-image::scriptlibrary.activity.InstallMicrosoftTeamsAVD.png[scriptlibrary.activity.InstallMicrosoftTeamsAVD]
+image::scriptlibrary.script.InstallMicrosoftTeamsAVD.png[scriptlibrary.script.InstallMicrosoftTeamsAVD]
 
 
 

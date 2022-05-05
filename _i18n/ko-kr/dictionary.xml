@@ -2002,7 +2002,6 @@
   <block id="6f3ba1bbc481f887c52659a9295e45bd" category="paragraph">이 스크립트 패키지는 쇼콜라티 패키지 관리자를 사용하여 Microsoft 팀 AVD_를 설치/제거합니다 <block ref="c5ec4b919c462535a88ca6c450c12437" category="inline-link-rx"></block> 를 눌러 구축을 수행합니다. VM을 만들 때 VDS에서 초콜릿을 배포하지만 이 스크립트가 누락된 경우 초콜릿을 사전 요구 사항으로 확인하고 설치합니다.</block>
   <block id="a78af9cb5044239f2c73e401d610d15f" category="admonition">이 Microsoft Teams 설치는 Azure의 AVD에 특정한 사용자 정의 및 구성 요소가 있는 AVD 환경에 구축되도록 특별히 구성됩니다. <block ref="437c7738f20c22773a5ae4970a143474" category="inline-link-macro-rx"></block> RDS 배포용으로 제공됩니다.</block>
   <block id="99ac46c040fc2191fa765181ab6d5aac" category="paragraph">이 응용 프로그램의 기본 바로 가기 경로는 아래에 입력되며 바로 가기는 다음과 같습니다: `\\shortcut\Microsoft teams AVD.LNK'</block>
-  <block id="edac1fb47b396115723f32b843b89a55" category="image-alt">scriptlibrary.activity.InstallMicrosoftTeamsAVD</block>
   <block id="c6f89f26926a9c16573e5dc704918f72" category="doc">RDS 세션 호스트 업데이트 프로세스</block>
   <block id="bdd29d71967b219cee10e1b276793a0e" category="paragraph">VDS는 Provisioning Collections(프로비저닝 컬렉션) 및 * Add Server *(서버 추가 *) 기능을 사용하여 RDS 환경에서 세션 호스트를 쉽게 업데이트할 수 있는 방법을 제공합니다. 이 프로세스는 최종 사용자에게 영향을 주지 않고 이전 이미지 반복을 기반으로 후속 이미지 업데이트를 반복적으로 수행할 수 있습니다.</block>
   <block id="277085593474bb8f6c955c167f2623a1" category="list-title">RDS 세션 호스트 업데이트 프로세스는 다음과 같습니다.</block>
@@ -3652,25 +3651,17 @@
   <block id="098b02c52f0db3d5ddbdd0288ca7ec20" category="paragraph">기본적으로 모든 호스트 풀은 Windows 데스크톱 환경에 대한 액세스를 할당하는 데 사용되는 단일 앱 그룹으로 시작됩니다. 이 세션 호스트에 설치된 모든 애플리케이션은 이 앱 그룹에 할당된 최종 사용자가 액세스할 수 있습니다.</block>
   <block id="1973c675e440465f67198c5c6a06af65" category="list-title">VDS의 사용자에 대해 데스크톱 리소스를 활성화하려면 다음을 수행합니다.</block>
   <block id="4976a77bf3f5152bc054082a6f0307ae" category="list-text">작업 공간 &gt; AVD &gt; 호스트 풀 &gt; 앱 그룹 페이지로 이동하고 "데스크톱" 리소스에 대한 앱 그룹을 클릭합니다.</block>
-  <block id="3a9159413b8c5248957238ae412ac8d3" category="image-alt">관리.응용 프로그램.AVD 응용 프로그램 권한 워크플로 349fe</block>
   <block id="71480c203ed7b59af7a7e9e6318c3c98" category="list-text">앱 그룹 내에서 편집 을 클릭합니다</block>
-  <block id="e55b52acdc0847fa119a08a20ec465ee" category="image-alt">Management.Applications.AVD 응용 프로그램 사용 권한 워크플로 3bcfc</block>
   <block id="b7f126ce5e82a2008a4e482580ea8ae0" category="list-text">편집 대화 상자에서 사용자 및/또는 그룹별로 이 앱 그룹에 사용자를 추가하거나 제거할 수 있습니다.</block>
-  <block id="8dd96d112e4daa5e5cbdd2e088cc1538" category="image-alt">Management.Applications.AVD 응용 프로그램 사용 권한 워크플로 07ff0</block>
   <block id="0aeea781bb4573e7a7b80d9e0959a102" category="section-title">RemoteApp 액세스 제공</block>
   <block id="0a14f1535ea14c5bd93244bb6dbf4792" category="paragraph">RemoteApps에 대한 액세스 권한을 프로비저닝하려면 호스트 풀 내에 새 앱 그룹을 생성해야 합니다. 생성된 후에는 해당 앱을 이 앱 그룹에 할당해야 합니다.</block>
   <block id="3d2884c0236d13ed6261947f4b728fcc" category="admonition">이러한 세션 호스트의 모든 애플리케이션은 이 호스트 풀의 "데스크톱" AppGroup에 할당된 모든 사용자가 사용할 수 있습니다. 앱에 대한 액세스 권한을 제공하기 위해 RemoteApp 앱 그룹을 통해 액세스를 프로비저닝할 필요가 없습니다. RemoteApp 앱 그룹은 로컬 장치에서 스트리밍 앱으로 AS-If로 실행되는 앱에 대한 액세스를 활성화하는 데만 필요합니다.</block>
   <block id="5433662a54506604d2c01b4c71d4e834" category="section-title">새 앱 그룹을 생성합니다</block>
   <block id="f5a55acd43f8d93045189303323088e0" category="list-text">작업 공간 &gt; AVD &gt; 호스트 풀 &gt; 앱 그룹 페이지로 이동하고 _ + 앱 그룹 추가 _ 버튼을 클릭합니다</block>
-  <block id="4827d1cb4a1c718653466145675decb0" category="image-alt">관리.응용 프로그램.AVD 응용 프로그램 권한 워크플로 d33da</block>
   <block id="f3d6d092150d8d04d31f44e77e0ac3a7" category="list-text">이 앱 그룹의 이름, 작업 공간 및 대화명을 입력합니다. 할당할 사용자 및/또는 그룹을 선택하고 _Save_를 클릭합니다</block>
-  <block id="973b2fc8ea2aeaa2d778153f723b7ec4" category="image-alt">Management.Applications.AVD 응용 프로그램 권한 워크플로 242eb</block>
   <block id="fe21569904a64074304530d0d7b3834f" category="section-title">응용 프로그램을 앱 그룹에 추가합니다</block>
   <block id="474fdb99403b967e01f54886073db222" category="list-text">작업 공간 &gt; AVD &gt; 호스트 풀 &gt; 앱 그룹 페이지로 이동하고 "RemoteApp" 리소스에 대한 앱 그룹을 클릭합니다.</block>
-  <block id="aa48cfc5de9c883c19cf67592140446a" category="image-alt">Management.Applications.AVD 응용 프로그램 자격 워크플로 3dcde</block>
-  <block id="6c3e4645a69cdcb7d8eabf8fd67340f7" category="image-alt">관리.응용 프로그램.AVD 응용 프로그램 사용 권한 워크플로 27a41</block>
   <block id="7ae4c2ef09690aa217f7605a240c3da4" category="list-text">"Remote Apps(원격 앱)" 섹션까지 아래로 스크롤합니다. VDS가 스트리밍에 사용할 수 있는 앱을 표시하기 위해 세션 호스트를 직접 쿼리하므로 이 섹션을 채우는 데 시간이 걸릴 수 있습니다.</block>
-  <block id="6c7c9b816af581d8b27f9aa09850ca3f" category="image-alt">관리.응용 프로그램.AVD 응용 프로그램 사용 권한 워크플로 1e9f2</block>
   <block id="2c986f5e26a059d90f20656e8c46ba09" category="list-text">이 앱 그룹의 사용자가 RemoteApp 리소스로 액세스할 수 있는 앱을 검색하고 선택합니다.</block>
   <block id="0f391e304edce1b10b20a085b56e0e19" category="paragraph">기본적으로 최종 사용자 세션에 표시되는 공유 폴더는 세 개입니다. 이러한 폴더는 정의된 스토리지 계층에서 찾을 수 있습니다. 파일 서버(TSD1 또는 D1) 또는 Azure Files, Azure NetApp Files, NetApp CVO, NetApp CVS와 같은 스토리지 서비스에 있을 수 있습니다.</block>
   <block id="9ce0722670efe23050ead5bb86b8f7dc" category="paragraph">이 문서에서는 명확한 이해를 돕기 위해 회사 코드 "NECA"를 사용하는 고객을 예로 소개합니다. 이 예제에서는 NECATSD1이라는 단일 TDS1 서버가 구축되었다고 가정합니다. 폴더를 다른 VM("NECAD1"이라는 이름)으로 이동하는 프로세스를 진행할 것입니다. 이 전략은 다음 예와 같이 동일한 시스템의 파티션 간 또는 다른 시스템으로 이동하는 데 사용할 수 있습니다.</block>
@@ -4749,4 +4740,13 @@
   <block id="48ec1b6ca4060e9afc6dbe33558f4bcb" category="doc">VDS V6 릴리스: 목요일, 4월 2022년 28일</block>
   <block id="e4d6f09426e41b980d4a3f3266790d19" category="paragraph">_ 구성 요소: _ 가상 데스크톱 서비스 v6_when: _ 2022 년 4월 28일 목요일 오후 10시 - 오후 11시 Eastern_Impact: _ 최종 사용자를 위한 데스크톱 및 애플리케이션 서비스에 대한 액세스는 중단 없이 유지됩니다. 가상 데스크톱 서비스에 대한 액세스는 계속 사용할 수 있습니다.</block>
   <block id="89409045b0da12074a8c0b7efe465d1b" category="paragraph"><block ref="89409045b0da12074a8c0b7efe465d1b" category="inline-link-macro-rx"></block></block>
+  <block id="d75afdafc6f7225842e083ec218d848b" category="image-alt">Management.Applications.Avd 응용 프로그램 권한 워크플로 349fe</block>
+  <block id="7b719da5fae273115c3fe35eb79582f1" category="image-alt">Management.Applications.Avd 응용 프로그램 권한 워크플로 3bcfc</block>
+  <block id="f592ebe1f3f1646e8f20b2c2fa1dbd61" category="image-alt">Management.Applications.Avd 응용 프로그램 권한 워크플로 07ff0</block>
+  <block id="249122c2d8a6270528965d090670bb01" category="image-alt">Management.Applications.Avd 응용 프로그램 권한 워크플로 d33da</block>
+  <block id="bee50d9bdee1e6b1f7e8ee84532418c2" category="image-alt">Management.Applications.Avd 애플리케이션 권한 워크플로 242eb</block>
+  <block id="ad0c47a5f55e9205bdf8bf8b85043167" category="image-alt">Management.Applications.Avd 응용 프로그램 자격 워크플로 3dcde</block>
+  <block id="a7dab824482b734079866a316af7ae4a" category="image-alt">관리.응용 프로그램.Avd 응용 프로그램 권한 워크플로 27a41</block>
+  <block id="b6c688be79377537acc1844f52e4ad41" category="image-alt">관리.응용 프로그램.Avd 응용 프로그램 권한 워크플로 1e9f2</block>
+  <block id="e943abf86369cd490191063c26874ded" category="image-alt">scriptlibrary.script.InstallMicrosoftTeamsAVD</block>
 </blocks>

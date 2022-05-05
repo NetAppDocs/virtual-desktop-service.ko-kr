@@ -67,15 +67,15 @@ image::Management.Deployments.vds_sites-0e880.png[관리.배포.VDS 사이트 0e
 .VDS의 사용자에 대해 데스크톱 리소스를 활성화하려면 다음을 수행합니다.
 . 작업 공간 > AVD > 호스트 풀 > 앱 그룹 페이지로 이동하고 "데스크톱" 리소스에 대한 앱 그룹을 클릭합니다.
 +
-image::Management.Applications.AVD_application_entitlement_workflow-349fe.png[관리.응용 프로그램.AVD 응용 프로그램 권한 워크플로 349fe]
+image::Management.Applications.avd_application_entitlement_workflow-349fe.png[Management.Applications.Avd 응용 프로그램 권한 워크플로 349fe]
 
 . 앱 그룹 내에서 편집 을 클릭합니다
 +
-image::Management.Applications.AVD_application_entitlement_workflow-3bcfc.png[Management.Applications.AVD 응용 프로그램 사용 권한 워크플로 3bcfc]
+image::Management.Applications.avd_application_entitlement_workflow-3bcfc.png[Management.Applications.Avd 응용 프로그램 권한 워크플로 3bcfc]
 
 . 편집 대화 상자에서 사용자 및/또는 그룹별로 이 앱 그룹에 사용자를 추가하거나 제거할 수 있습니다.
 +
-image::Management.Applications.AVD_application_entitlement_workflow-07ff0.png[Management.Applications.AVD 응용 프로그램 사용 권한 워크플로 07ff0]
+image::Management.Applications.avd_application_entitlement_workflow-07ff0.png[Management.Applications.Avd 응용 프로그램 권한 워크플로 07ff0]
 
 
 
@@ -94,11 +94,11 @@ NOTE: 이러한 세션 호스트의 모든 애플리케이션은 이 호스트 �
 
 . 작업 공간 > AVD > 호스트 풀 > 앱 그룹 페이지로 이동하고 _ + 앱 그룹 추가 _ 버튼을 클릭합니다
 +
-image::Management.Applications.AVD_application_entitlement_workflow-d33da.png[관리.응용 프로그램.AVD 응용 프로그램 권한 워크플로 d33da]
+image::Management.Applications.avd_application_entitlement_workflow-d33da.png[Management.Applications.Avd 응용 프로그램 권한 워크플로 d33da]
 
 . 이 앱 그룹의 이름, 작업 공간 및 대화명을 입력합니다. 할당할 사용자 및/또는 그룹을 선택하고 _Save_를 클릭합니다
 +
-image::Management.Applications.AVD_application_entitlement_workflow-242eb.png[Management.Applications.AVD 응용 프로그램 권한 워크플로 242eb]
+image::Management.Applications.avd_application_entitlement_workflow-242eb.png[Management.Applications.Avd 애플리케이션 권한 워크플로 242eb]
 
 
 
@@ -108,15 +108,15 @@ image::Management.Applications.AVD_application_entitlement_workflow-242eb.png[Ma
 
 . 작업 공간 > AVD > 호스트 풀 > 앱 그룹 페이지로 이동하고 "RemoteApp" 리소스에 대한 앱 그룹을 클릭합니다.
 +
-image::Management.Applications.AVD_application_entitlement_workflow-3dcde.png[Management.Applications.AVD 응용 프로그램 자격 워크플로 3dcde]
+image::Management.Applications.avd_application_entitlement_workflow-3dcde.png[Management.Applications.Avd 응용 프로그램 자격 워크플로 3dcde]
 
 . 앱 그룹 내에서 편집 을 클릭합니다
 +
-image::Management.Applications.AVD_application_entitlement_workflow-27a41.png[관리.응용 프로그램.AVD 응용 프로그램 사용 권한 워크플로 27a41]
+image::Management.Applications.avd_application_entitlement_workflow-27a41.png[관리.응용 프로그램.Avd 응용 프로그램 권한 워크플로 27a41]
 
 . "Remote Apps(원격 앱)" 섹션까지 아래로 스크롤합니다. VDS가 스트리밍에 사용할 수 있는 앱을 표시하기 위해 세션 호스트를 직접 쿼리하므로 이 섹션을 채우는 데 시간이 걸릴 수 있습니다.
 +
-image::Management.Applications.AVD_application_entitlement_workflow-1e9f2.png[관리.응용 프로그램.AVD 응용 프로그램 사용 권한 워크플로 1e9f2]
+image::Management.Applications.avd_application_entitlement_workflow-1e9f2.png[관리.응용 프로그램.Avd 응용 프로그램 권한 워크플로 1e9f2]
 
 . 이 앱 그룹의 사용자가 RemoteApp 리소스로 액세스할 수 있는 앱을 검색하고 선택합니다.
 
