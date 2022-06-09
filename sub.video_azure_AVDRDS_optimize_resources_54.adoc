@@ -12,5 +12,5 @@ keywords:
 
 == 개요
 
-video::IABgjxLCWkI[youtube, ]
+video::IABgjxLCWkI[youtube]
 =

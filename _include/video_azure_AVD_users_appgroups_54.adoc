@@ -6,4 +6,4 @@
 
 == 개요
 
-video::RftG7v9n8hw[youtube, ]
+video::RftG7v9n8hw[youtube]

@@ -31,7 +31,7 @@ NOTE: 이 워크플로는 RDS 배포에만 적용됩니다. AVD 응용 프로그
 NOTE: 3 및 4단계는 아래 그림과 같이 스크립트된 이벤트를 사용하여 완전히 자동화할 수 있습니다
 
 .비디오 연습
-video::19NpO8v15BE[youtube, ]
+video::19NpO8v15BE[youtube]
 
 
 == 응용 프로그램을 App Catalog에 추가합니다

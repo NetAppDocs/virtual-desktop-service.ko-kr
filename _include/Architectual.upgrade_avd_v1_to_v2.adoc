@@ -40,5 +40,5 @@ image:upgrade1.png[""]
 
 === 비디오 데모
 
-video::e4T_Ze6IlMo[youtube, ]
+video::e4T_Ze6IlMo[youtube]
 추가 질문이 있는 경우 서비스 담당자에게 문의하십시오.

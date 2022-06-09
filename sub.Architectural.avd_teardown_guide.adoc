@@ -37,7 +37,7 @@ CW 에이전트는 환경의 모든 컴퓨터에서 실행됩니다. 이 프로�
 
 === CW Agent 서비스 비디오를 삭제합니다
 
-video::l9ASmM5aap0[youtube, ]
+video::l9ASmM5aap0[youtube]
 
 
 == CW 에이전트 디렉터리를 삭제합니다
@@ -49,7 +49,7 @@ video::l9ASmM5aap0[youtube, ]
 
 === CW Agent 디렉토리 비디오를 삭제합니다
 
-video::hMM_z4K2-iI[youtube, ]
+video::hMM_z4K2-iI[youtube]
 
 
 == 시작 바로 가기를 제거합니다
@@ -64,7 +64,7 @@ video::hMM_z4K2-iI[youtube, ]
 
 === 시작 바로 가기 비디오를 제거합니다
 
-video::U0YLZ3Qfu9w[youtube, ]
+video::U0YLZ3Qfu9w[youtube]
 
 
 == '사용자' 및 '회사' GPO의 연결을 해제합니다
@@ -86,7 +86,7 @@ VDS에 의해 구현되는 GPO는 세 가지가 있습니다. 두 개의 연결�
 
 === '사용자' 및 '회사' GPO 비디오의 연결을 해제합니다
 
-video::cb68ri3HKUw[youtube, ]
+video::cb68ri3HKUw[youtube]
 
 
 == CWMGR1을 종료합니다
@@ -104,7 +104,7 @@ GPO 변경 사항을 적용하면 CWMGR1 VM을 종료할 수 있습니다. AVD �
 
 === CWMGR1 비디오를 종료합니다
 
-video::avk9HyIiC_s[youtube, ]
+video::avk9HyIiC_s[youtube]
 
 
 == NetApp VDS 서비스 계정을 삭제합니다
@@ -126,7 +126,7 @@ VDS에서 사용하는 Azure AD 서비스 계정을 제거할 수 있습니다. 
 
 === NetApp VDS 서비스 계정 비디오를 삭제합니다
 
-video::_VToVNp49cg[youtube, ]
+video::_VToVNp49cg[youtube]
 
 
 == 앱 등록을 삭제합니다
@@ -141,7 +141,7 @@ VDS를 배포할 때 두 개의 앱 등록이 이루어집니다. 삭제할 수 
 
 === 앱 등록 동영상을 삭제합니다
 
-video::iARz2nw1Oks[youtube, ]
+video::iARz2nw1Oks[youtube]
 
 
 == 엔터프라이즈 응용 프로그램을 삭제합니다
@@ -156,7 +156,7 @@ VDS 배포 시 두 개의 엔터프라이즈 응용 프로그램이 배포됩니
 
 === 엔터프라이즈 응용 프로그램 비디오를 삭제합니다
 
-video::3eQzTPdilWk[youtube, ]
+video::3eQzTPdilWk[youtube]
 
 
 == CWMGR1이 중지되었는지 확인합니다
@@ -167,7 +167,7 @@ video::3eQzTPdilWk[youtube, ]
 
 === CWMGR1이 정지 비디오인지 확인합니다
 
-video::Ux9nkDk5lU4[youtube, ]
+video::Ux9nkDk5lU4[youtube]
 
 
 == 로그인 및 최종 사용자
@@ -178,4 +178,4 @@ video::Ux9nkDk5lU4[youtube, ]
 
 === 로그인 및 최종 사용자 비디오
 
-video::SuS-OTHJz7Y[youtube, ]
+video::SuS-OTHJz7Y[youtube]

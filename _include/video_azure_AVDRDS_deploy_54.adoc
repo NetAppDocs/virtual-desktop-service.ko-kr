@@ -6,4 +6,4 @@
 
 == 개요
 
-video::Gp2DzWBc0Go[youtube, ]
+video::Gp2DzWBc0Go[youtube]
